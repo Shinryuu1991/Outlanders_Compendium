@@ -1,0 +1,3819 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Outlander's Papers</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400&family=Almendra+SC&family=Cinzel+Decorative:wght@700&family=Fondamento:ital@0;1&display=swap">
+<style>
+/* Layout: release papers from the Census and Excise Office. Choices on the left, in the guide's order; the finished sheet on the right. */
+:root {
+  --paper: #F4EAD5; --paper-2: #EBDDBF; --paper-3: #FBF5E8;
+  --ink: #2B1B0E; --ink-2: #6A5440; --rule: #D5C19A;
+  --red: #6B1D10; --brown: #5A2E12; --gold: #8C6A2F;
+  --wash: #E5D2AC; --stripe: rgba(140, 106, 47, 0.07); --warn: #9A3412; --ok: #3F6212;
+  --f-display: "Cinzel Decorative", "Almendra", Georgia, serif;
+  --f-head: "Almendra", Georgia, "Times New Roman", serif;
+  --f-sc: "Almendra SC", "Almendra", Georgia, serif;
+  --f-body: "Fondamento", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #17110C; --paper-2: #1F1710; --paper-3: #241B13; --ink: #E9DCC2; --ink-2: #B5A07F; --rule: #4A3826;
+  --red: #E48D72; --brown: #E3C08B; --gold: #C9A25A; --wash: #34261A; --stripe: rgba(201, 162, 90, 0.06); --warn: #F0A27A; --ok: #A3C46B; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #17110C; --paper-2: #1F1710; --paper-3: #241B13; --ink: #E9DCC2; --ink-2: #B5A07F; --rule: #4A3826;
+  --red: #E48D72; --brown: #E3C08B; --gold: #C9A25A; --wash: #34261A; --stripe: rgba(201, 162, 90, 0.06); --warn: #F0A27A; --ok: #A3C46B; color-scheme: dark; }
+
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5; }
+a { color: var(--red); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 3px; }
+button, input, select, textarea { font: inherit; color: inherit; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper-2); border-bottom: 1px solid var(--rule); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper-2); }
+header.bar .in { display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; align-items: center; padding-block: 0.55rem; max-width: 92rem; margin: 0 auto; }
+.brand { font-family: var(--f-display); color: var(--red); font-size: 1.15rem; line-height: 1.1; margin-right: auto; text-decoration: none; }
+.brand small { display: block; font-family: var(--f-head); font-style: italic; color: var(--ink-2); font-size: 0.75rem; }
+.bar select { max-width: 12rem; }
+.btn { border: 1px solid var(--gold); background: var(--paper-3); border-radius: 6px; padding: 0.28rem 0.7rem; cursor: pointer; font-family: var(--f-sc); font-size: 0.82rem; color: var(--brown); }
+.btn:hover { background: var(--wash); }
+.btn.primary { background: var(--brown); color: var(--paper); border-color: var(--brown); }
+.btn.danger { color: var(--warn); border-color: var(--warn); }
+.toast { font-family: var(--f-sc); font-size: 0.8rem; color: var(--ok); min-width: 4rem; }
+.bar .tabs { display: none; }
+
+main.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 1.5rem; max-width: 92rem; margin: 0 auto; padding-block: 1.2rem 4rem; }
+.col { min-width: 0; }
+.sheetcol { position: sticky; top: 4.5rem; align-self: start; max-height: calc(100vh - 5.5rem); overflow-y: auto; padding-right: 0.2rem; }
+
+/* Builder steps */
+details.step { background: var(--paper-3); border: 1px solid var(--rule); border-radius: 10px; margin-bottom: 0.8rem; }
+details.step > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 1rem; }
+details.step > summary::-webkit-details-marker { display: none; }
+.sn { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 1.8rem; height: 1.8rem; border-radius: 999px; border: 1.5px solid var(--gold);
+  color: var(--red); font-family: var(--f-sc); font-size: 0.9rem; }
+.step.done .sn { background: var(--gold); color: var(--paper); }
+.st { font-family: var(--f-head); color: var(--brown); font-size: 1.2rem; flex: 1; min-width: 0; }
+.st small { display: block; font-family: var(--f-body); font-size: 0.82rem; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.body { padding: 0 1rem 1rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.guide { font-family: var(--f-sc); font-size: 0.78rem; }
+.row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 0.6rem 0.8rem; }
+label.f { display: flex; flex-direction: column; gap: 0.2rem; font-family: var(--f-sc); font-size: 0.8rem; color: var(--gold); letter-spacing: 0.02em; min-width: 0; }
+select, input[type=text], input[type=number], textarea { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 0.35rem 0.5rem;
+  font-family: var(--f-body); font-size: 0.95rem; color: var(--ink); min-width: 0; width: 100%; box-sizing: border-box; letter-spacing: 0; }
+textarea { min-height: 3.2rem; resize: vertical; }
+select:focus, input:focus, textarea:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 35%, transparent); }
+.note { font-size: 0.88rem; color: var(--ink-2); }
+.warn { font-size: 0.86rem; color: var(--warn); }
+.card { border-left: 3px solid var(--gold); background: var(--paper); padding: 0.5rem 0.8rem; border-radius: 0 6px 6px 0; font-size: 0.92rem; }
+.card p { margin: 0 0 0.35rem; } .card p:last-child { margin: 0; } .card ul { margin: 0.2rem 0 0.4rem; padding-left: 1.2rem; }
+.card b { color: var(--brown); }
+.traits { display: flex; flex-direction: column; gap: 0.3rem; }
+.traits details { font-size: 0.9rem; } .traits summary { cursor: pointer; font-family: var(--f-head); color: var(--brown); }
+.traits details > div { padding: 0.2rem 0 0.3rem 1rem; } .traits p { margin: 0 0 0.3rem; } .traits ul { margin: 0 0 0.3rem; padding-left: 1.2rem; }
+.seg { display: inline-flex; border: 1px solid var(--gold); border-radius: 8px; overflow: hidden; flex-wrap: wrap; }
+.seg button { border: 0; background: transparent; padding: 0.3rem 0.8rem; cursor: pointer; font-family: var(--f-sc); font-size: 0.85rem; color: var(--brown); }
+.seg button[aria-pressed="true"] { background: var(--brown); color: var(--paper); }
+.scores { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.4rem; }
+.sc { border: 1px solid var(--rule); border-radius: 8px; padding: 0.4rem 0.3rem; text-align: center; background: var(--paper); display: flex; flex-direction: column; gap: 0.2rem; align-items: stretch; min-width: 0; }
+.sc .ab { font-family: var(--f-sc); color: var(--red); font-size: 0.85rem; }
+.sc .pb { display: flex; align-items: center; justify-content: center; gap: 0.25rem; }
+.sc .pb button { width: 1.6rem; height: 1.6rem; border-radius: 999px; border: 1px solid var(--gold); background: var(--paper-3); cursor: pointer; color: var(--brown); padding: 0; line-height: 1; }
+.sc .v { font-family: var(--f-head); font-size: 1.3rem; }
+.sc .fin { font-size: 0.78rem; color: var(--ink-2); }
+.rolls { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.rolls input { width: 3.6rem; text-align: center; }
+.pill { display: inline-block; border: 1px solid var(--rule); border-radius: 999px; padding: 0 0.55rem; font-size: 0.82rem; margin: 0.1rem 0.15rem 0.1rem 0; background: var(--paper); }
+.chk { display: flex; gap: 0.4rem; align-items: center; font-size: 0.92rem; }
+
+/* The sheet */
+.sheet { background: var(--paper-3); border: 1px solid var(--gold); border-radius: 10px; padding: 1rem 1.1rem 1.2rem; }
+.sheet h2 { font-family: var(--f-display); color: var(--red); font-size: 1.45rem; margin: 0; line-height: 1.15; text-wrap: balance; overflow-wrap: anywhere; }
+.sheet .who { font-family: var(--f-head); font-style: italic; color: var(--ink-2); margin: 0.15rem 0 0.7rem; }
+.sheet h3 { font-family: var(--f-sc); color: var(--red); font-weight: 400; font-size: 0.95rem; letter-spacing: 0.04em; border-bottom: 1px solid var(--gold); margin: 1rem 0 0.45rem; padding-bottom: 0.15rem; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(5.2rem, 1fr)); gap: 0.4rem; }
+.stat { border: 1px solid var(--rule); border-radius: 8px; text-align: center; padding: 0.35rem 0.2rem; background: var(--paper); }
+.stat b { display: block; font-family: var(--f-head); font-size: 1.35rem; color: var(--ink); font-weight: 400; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat span { font-family: var(--f-sc); font-size: 0.7rem; color: var(--gold); letter-spacing: 0.03em; }
+.abil { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.35rem; }
+.ab6 { border: 1px solid var(--rule); border-radius: 8px; text-align: center; padding: 0.3rem 0.1rem; background: var(--paper); }
+.ab6 .n { font-family: var(--f-sc); color: var(--red); font-size: 0.75rem; }
+.ab6 .m { font-family: var(--f-head); font-size: 1.35rem; line-height: 1.05; }
+.ab6 .s { font-size: 0.78rem; color: var(--ink-2); }
+.ab6 .sv { font-size: 0.72rem; color: var(--ink-2); border-top: 1px dotted var(--rule); margin-top: 0.2rem; padding-top: 0.1rem; }
+.ab6 .sv.p { color: var(--red); }
+.two { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1rem; }
+.skills { list-style: none; margin: 0; padding: 0; font-size: 0.88rem; columns: 1; }
+.skills li { display: flex; gap: 0.45rem; align-items: baseline; padding: 0.05rem 0; border-bottom: 1px dotted var(--rule); }
+.skills .dot { width: 0.6rem; height: 0.6rem; border-radius: 999px; border: 1px solid var(--gold); flex: none; transform: translateY(0.05rem); }
+.skills .dot.p { background: var(--gold); } .skills .dot.e { background: var(--red); border-color: var(--red); }
+.skills .b { font-variant-numeric: tabular-nums; min-width: 2rem; text-align: right; font-family: var(--f-head); }
+.skills .a { font-family: var(--f-sc); font-size: 0.7rem; color: var(--ink-2); margin-left: auto; }
+.kv { font-size: 0.9rem; margin: 0 0 0.35rem; } .kv b { font-family: var(--f-sc); font-weight: 400; color: var(--gold); font-size: 0.78rem; letter-spacing: 0.03em; margin-right: 0.3rem; }
+table.atk { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+table.atk th { font-family: var(--f-sc); font-weight: 400; color: var(--brown); text-align: left; background: var(--wash); padding: 0.25rem 0.4rem; }
+table.atk td { padding: 0.25rem 0.4rem; border-top: 1px solid var(--rule); vertical-align: top; font-variant-numeric: tabular-nums; }
+.feat { font-size: 0.88rem; margin: 0 0 0.3rem; } .feat b { font-family: var(--f-head); color: var(--brown); font-weight: 400; }
+.sheet .src { font-family: var(--f-sc); font-size: 0.68rem; color: var(--ink-2); }
+.empty { color: var(--ink-2); font-style: italic; font-size: 0.9rem; }
+dialog { border: 1px solid var(--gold); border-radius: 10px; background: var(--paper-3); color: var(--ink); max-width: min(34rem, 92vw); }
+dialog::backdrop { background: rgba(20, 12, 6, 0.5); }
+dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-size: 0.8rem; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+@media (max-width: 860px) {
+  main.grid { grid-template-columns: minmax(0, 1fr); }
+  .sheetcol { position: static; max-height: none; overflow: visible; }
+  .bar .tabs { display: inline-flex; }
+  main.grid[data-tab="build"] .sheetcol, main.grid[data-tab="sheet"] .buildcol { display: none; }
+}
+/* two columns, but a narrow sheet (also inside the compendium on smaller laptops) */
+@media (min-width: 861px) and (max-width: 1020px) {
+  .abil { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .two { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .scores, .abil { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .two { grid-template-columns: minmax(0, 1fr); }
+  .brand { font-size: 1rem; }
+  header.bar { position: static; }
+  .brand small { display: none; }
+}
+@media print {
+  header.bar, .buildcol, body::before { display: none !important; }
+  main.grid { display: block; padding: 0; }
+  .sheetcol { position: static; max-height: none; overflow: visible; }
+  .sheet { border: 0; padding: 0; background: none; }
+  body { background: #fff; color: #000; }
+}
+</style>
+
+
+</head>
+<body>
+<header class="bar"><div class="in wrap">
+  <a class="brand" href="#">Outlander's Papers<small>Character builder for the Vvardenfell campaign · 3E 417</small></a>
+  <label class="sr" for="who">Character</label>
+  <select id="who"></select>
+  <button class="btn" type="button" id="newBtn">New</button>
+  <button class="btn" type="button" id="copyBtn">Copy sheet</button>
+  <button class="btn" type="button" id="codeBtn">Save code</button>
+  <button class="btn" type="button" id="loadBtn">Load code</button>
+  <button class="btn" type="button" id="printBtn" hidden>Print</button>
+  <button class="btn danger" type="button" id="delBtn">Delete</button>
+  <span class="toast" id="toast" role="status"></span>
+  <div class="tabs seg" role="tablist"><button type="button" data-tab="build" aria-pressed="true">Build</button><button type="button" data-tab="sheet" aria-pressed="false">Sheet</button></div>
+</div></header>
+
+<main class="grid wrap" id="grid" data-tab="build">
+  <div class="col buildcol" id="build"></div>
+  <div class="col sheetcol"><div class="sheet" id="sheet"></div></div>
+</main>
+
+<dialog id="dlg"><form method="dialog" id="dlgForm">
+  <p id="dlgText" style="margin-top:0"></p>
+  <textarea id="dlgArea" aria-label="Save code"></textarea>
+  <p style="display:flex;gap:.5rem;justify-content:flex-end;margin-bottom:0"><button class="btn" value="cancel" type="submit">Close</button><button class="btn primary" id="dlgOk" value="ok" type="submit">Load</button></p>
+</form></dialog>
+
+<script type="application/json" id="data">{
+"skills": [
+{
+"name": "Acrobatics",
+"ab": "Dex"
+},
+{
+"name": "Animal Handling",
+"ab": "Wis"
+},
+{
+"name": "Arcana",
+"ab": "Int"
+},
+{
+"name": "Athletics",
+"ab": "Str"
+},
+{
+"name": "Deception",
+"ab": "Cha"
+},
+{
+"name": "History",
+"ab": "Int"
+},
+{
+"name": "Insight",
+"ab": "Wis"
+},
+{
+"name": "Intimidation",
+"ab": "Cha"
+},
+{
+"name": "Investigation",
+"ab": "Int"
+},
+{
+"name": "Medicine",
+"ab": "Wis"
+},
+{
+"name": "Nature",
+"ab": "Int"
+},
+{
+"name": "Perception",
+"ab": "Wis"
+},
+{
+"name": "Performance",
+"ab": "Cha"
+},
+{
+"name": "Persuasion",
+"ab": "Cha"
+},
+{
+"name": "Religion",
+"ab": "Int"
+},
+{
+"name": "Sleight of Hand",
+"ab": "Dex"
+},
+{
+"name": "Stealth",
+"ab": "Dex"
+},
+{
+"name": "Survival",
+"ab": "Wis"
+}
+],
+"races": [
+{
+"name": "Altmer (High Elves)",
+"intro": "The Altmer believe they are the most civilised people in Tamriel, and they are happy to explain why.",
+"standing": "Respected as mages, resented as snobs",
+"homeland": "Summerset Isles",
+"sizeText": "Medium (about 5½–6½ feet tall)",
+"traits": [
+{
+"name": "Altmeri Spellcraft",
+"text": "<p>You know the <i>Prestidigitation<\/i> cantrip. Whenever you finish a long rest, you can swap it for another Wizard cantrip. You also learn one level one spell from the following: <i>Shield<\/i>, <i>Find Familiar<\/i>, <i>Magic Missile<\/i>, <i>Colour Spray<\/i> or <i>Cure Wounds<\/i>. You learn <i>Detect Magic<\/i> at level 3 and <i>Misty Step<\/i> at level 5.<\/p>"
+},
+{
+"name": "Darkvision",
+"text": "<p>You have Darkvision with a range of 60 feet.<\/p>"
+},
+{
+"name": "Highborn",
+"text": "<p>Once per long rest, when you finish a short rest, choose one:<\/p><ul><li>You regain one expended spell slot. The slot's level can be no higher than half your Proficiency Bonus, rounded up.<\/li><li>You regain the use of one spell from Altmeri Spellcraft.<\/li><\/ul>"
+},
+{
+"name": "Keen Senses",
+"text": "<p>You have proficiency in your choice of Insight, Perception or Survival.<\/p>"
+},
+{
+"name": "Trance",
+"text": "<p>You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours of meditation, staying conscious throughout.<\/p>"
+}
+],
+"id": "altmer",
+"short": "Altmer",
+"speed": 30,
+"darkvision": 60,
+"spellAbility": true,
+"skills": {
+"choose": [
+{
+"n": 1,
+"from": [
+"Insight",
+"Perception",
+"Survival"
+],
+"label": "Keen Senses"
+}
+]
+},
+"spells": {
+"cantrips": [
+"Prestidigitation"
+],
+"choose": [
+{
+"n": 1,
+"level": 1,
+"from": [
+"Shield",
+"Find Familiar",
+"Magic Missile",
+"Colour Spray",
+"Cure Wounds"
+],
+"label": "Altmeri Spellcraft"
+}
+],
+"later": [
+[
+"Detect Magic",
+3
+],
+[
+"Misty Step",
+5
+]
+]
+}
+},
+{
+"name": "Argonians",
+"intro": "Argonians are patient, unreadable, and very good at outlasting the people who underestimate them.",
+"standing": "Often enslaved; slavery is legal here",
+"homeland": "Black Marsh",
+"sizeText": "Medium (about 5–6 feet tall)",
+"traits": [
+{
+"name": "Amphibious",
+"text": "<p>You can breathe both air and water.<\/p>"
+},
+{
+"name": "Bite",
+"text": "<p>Your fanged jaws are a natural weapon you can use for Unarmed Strikes. A hit deals Piercing damage equal to 1d6 plus your Strength modifier, instead of the normal Bludgeoning damage.<\/p>"
+},
+{
+"name": "Hist Resilience",
+"text": "<p>You have Resistance to Poison damage. You have Advantage on saving throws to avoid or end the Poisoned condition, and on saving throws against disease.<\/p>"
+},
+{
+"name": "Marsh Instincts",
+"text": "<p>You have proficiency in two of these skills: Animal Handling, Medicine, Nature, Perception, Stealth or Survival.<\/p>"
+},
+{
+"name": "Scaled Hide",
+"text": "<p>While you aren't wearing armor, your base Armor Class is 13 plus your Dexterity modifier. You can use this instead of worn armour if it gives you a higher AC. A Shield works as normal.<\/p>"
+}
+],
+"id": "argonian",
+"short": "Argonian",
+"speed": 30,
+"swim": 30,
+"resist": [
+"Poison"
+],
+"adv": [
+"saves against the Poisoned condition and disease"
+],
+"natArmor": 13,
+"unarmed": [
+"1d6",
+"Piercing",
+"Bite"
+],
+"skills": {
+"choose": [
+{
+"n": 2,
+"from": [
+"Animal Handling",
+"Medicine",
+"Nature",
+"Perception",
+"Stealth",
+"Survival"
+],
+"label": "Marsh Instincts"
+}
+]
+}
+},
+{
+"name": "Bosmer (Wood Elves)",
+"intro": "The Bosmer are cheerful, quick and hard to pin down, bound by a pact that forbids them to harm a single leaf.",
+"standing": "Tolerated, and watched in markets",
+"homeland": "Valenwood",
+"sizeText": "Medium (about 4½–5½ feet tall)",
+"traits": [
+{
+"name": "Beast Tongue",
+"text": "<p>At level 3, you learn <i>Speak with Animals<\/i>.<\/p>"
+},
+{
+"name": "Bosmer Archery",
+"text": "<p>You have proficiency with Longbows and Shortbows.<\/p>"
+},
+{
+"name": "Darkvision",
+"text": "<p>You have Darkvision with a range of 60 feet.<\/p>"
+},
+{
+"name": "Fey Ancestry",
+"text": "<p>You have Advantage on saving throws to avoid or end the Charmed condition.<\/p>"
+},
+{
+"name": "Keen Senses",
+"text": "<p>You have proficiency in your choice of Insight, Perception or Survival.<\/p>"
+},
+{
+"name": "Trance",
+"text": "<p>You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours of meditation, staying conscious throughout.<\/p>"
+},
+{
+"name": "Woodland Magic",
+"text": "<p>You know the <i>Druidcraft<\/i> cantrip. At level 5, you learn <i>Pass without Trace<\/i>.<\/p>"
+}
+],
+"id": "bosmer",
+"short": "Bosmer",
+"speed": 35,
+"darkvision": 60,
+"spellAbility": true,
+"adv": [
+"saves against the Charmed condition"
+],
+"weapons": [
+"Long bow",
+"Short bow"
+],
+"skills": {
+"choose": [
+{
+"n": 1,
+"from": [
+"Insight",
+"Perception",
+"Survival"
+],
+"label": "Keen Senses"
+}
+]
+},
+"spells": {
+"cantrips": [
+"Druidcraft"
+],
+"later": [
+[
+"Speak with Animals",
+3
+],
+[
+"Pass without Trace",
+5
+]
+]
+}
+},
+{
+"name": "Bretons",
+"intro": "Bretons are Men with a little elf in them, and a lot of politics.",
+"standing": "Common in the guilds; mildly trusted",
+"homeland": "High Rock",
+"sizeText": "Medium (about 5–6 feet tall)",
+"traits": [
+{
+"name": "Darkvision",
+"text": "<p>You have Darkvision with a range of 60 feet.<\/p>"
+},
+{
+"name": "Dragonskin",
+"text": "<p>When you take damage from a spell, you can take a Reaction to halve that damage, absorbing some of the spell's energy. You also regain one expended level 1 spell slot, if you have one. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+},
+{
+"name": "Higher Education",
+"text": "<p>You have proficiency in two skills of your choice.<\/p>"
+},
+{
+"name": "Resist Magicka",
+"text": "<p>You have Advantage on saving throws against spells and cantrips that deal damage.<\/p>"
+}
+],
+"id": "breton",
+"short": "Breton",
+"speed": 30,
+"darkvision": 60,
+"adv": [
+"saves against spells and cantrips that deal damage"
+],
+"skills": {
+"choose": [
+{
+"n": 2,
+"from": [
+"Acrobatics",
+"Animal Handling",
+"Arcana",
+"Athletics",
+"Deception",
+"History",
+"Insight",
+"Intimidation",
+"Investigation",
+"Medicine",
+"Nature",
+"Perception",
+"Performance",
+"Persuasion",
+"Religion",
+"Sleight of Hand",
+"Stealth",
+"Survival"
+],
+"label": "Higher Education"
+}
+]
+}
+},
+{
+"name": "Dunmer (Dark Elves)",
+"intro": "The Dunmer are proud, insular and cursed, and this is their island.",
+"standing": "Home turf, unless you're an Ashlander",
+"homeland": "Morrowind",
+"sizeText": "Medium (about 5–6 feet tall)",
+"traits": [
+{
+"name": "Ancestor Guardian",
+"text": "<p>At level 5, you learn <i>Sanctuary<\/i>. When you cast it without a spell slot using this trait, you must target yourself. The ward appears as the spirit of an ancestor.<\/p>"
+},
+{
+"name": "Ancestral Teachings",
+"text": "<p>You have proficiency in your choice of Arcana, Athletics, Persuasion, Religion or Survival.<\/p>"
+},
+{
+"name": "Ashen Blood",
+"text": "<p>You have Resistance to Fire damage. You know the <i>Fire Bolt<\/i> cantrip, and at level 3 you learn <i>Hellish Rebuke<\/i>.<\/p>"
+},
+{
+"name": "Ashen Presence",
+"text": "<p>You know the <i>Thaumaturgy<\/i> cantrip.<\/p>"
+},
+{
+"name": "Darkvision",
+"text": "<p>You have Darkvision with a range of 60 feet.<\/p>"
+},
+{
+"name": "Dunmer Versatility",
+"text": "<p>You have proficiency with shortswords, daggers and longbows.<\/p>"
+}
+],
+"id": "dunmer",
+"short": "Dunmer",
+"speed": 30,
+"darkvision": 60,
+"spellAbility": true,
+"resist": [
+"Fire"
+],
+"weapons": [
+"Shortsword",
+"Dagger",
+"Long bow"
+],
+"skills": {
+"choose": [
+{
+"n": 1,
+"from": [
+"Arcana",
+"Athletics",
+"Persuasion",
+"Religion",
+"Survival"
+],
+"label": "Ancestral Teachings"
+}
+]
+},
+"spells": {
+"cantrips": [
+"Fire Bolt",
+"Thaumaturgy"
+],
+"later": [
+[
+"Hellish Rebuke",
+3
+],
+[
+"Sanctuary",
+5
+]
+]
+}
+},
+{
+"name": "Imperials",
+"intro": "Imperials run the Empire, and they would like you to fill out the correct form about it.",
+"standing": "The occupiers, addressed politely",
+"homeland": "Cyrodiil",
+"sizeText": "Medium (about 5–6 feet tall)",
+"traits": [
+{
+"name": "Legion Discipline",
+"text": "<p>You have Advantage on saving throws to avoid or end the Frightened condition.<\/p>"
+},
+{
+"name": "Legion Training",
+"text": "<p>You have proficiency with shields, broadswords and spears.<\/p>"
+},
+{
+"name": "Shield Wall",
+"text": "<p>When a creature you can see hits you, or an ally within 5 feet of you, with an attack while you are holding a shield, you can take a reaction to add your Proficiency Bonus to the target's AC against that attack, potentially causing a miss. You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.<\/p>"
+},
+{
+"name": "Voice of the Emperor",
+"text": "<p>You have proficiency in Persuasion.<\/p>"
+}
+],
+"id": "imperial",
+"short": "Imperial",
+"speed": 30,
+"adv": [
+"saves against the Frightened condition"
+],
+"armor": [
+"Shields"
+],
+"weapons": [
+"Broadsword",
+"Spear"
+],
+"skills": {
+"fixed": [
+"Persuasion"
+]
+}
+},
+{
+"name": "Khajiit",
+"intro": "Khajiit are agile, sharp-witted and ruled by the moons. They are also blamed for most of the skooma on Vvardenfell, which is only partly fair.",
+"standing": "Often enslaved; suspected of skooma trading",
+"homeland": "Elsweyr",
+"sizeText": "Medium (about 5–6 feet tall)",
+"traits": [
+{
+"name": "Claws",
+"text": "<p>Your claws are natural weapons you can use for Unarmed Strikes. A hit deals Slashing damage equal to 1d6 plus your Strength modifier, instead of the normal Bludgeoning damage.<\/p>"
+},
+{
+"name": "Eye of Night",
+"text": "<p>You have Darkvision with a range of 120 feet.<\/p>"
+},
+{
+"name": "Feline Agility",
+"text": "<p>When you move on your turn in combat, you can double your Speed until the end of that turn. Once you do, you can't do so again until you spend one of your turns moving 0 feet.<\/p>"
+},
+{
+"name": "Feline Talent",
+"text": "<p>You have proficiency in Perception and Stealth.<\/p>"
+}
+],
+"id": "khajiit",
+"short": "Khajiit",
+"speed": 30,
+"climb": 30,
+"darkvision": 120,
+"unarmed": [
+"1d6",
+"Slashing",
+"Claws"
+],
+"skills": {
+"fixed": [
+"Perception",
+"Stealth"
+]
+}
+},
+{
+"name": "Nords",
+"intro": "Nords are tall, tough, loud and honest, often more honest than the situation needs.",
+"standing": "Old enemies, still remembered",
+"homeland": "Skyrim",
+"sizeText": "Medium (about 6–7 feet tall)",
+"traits": [
+{
+"name": "Battle Cry",
+"text": "<p>When you take the Attack action, you can replace one of your attacks with a wordless roar. Each creature of your choice within 30 feet of you that can hear you must make a Wisdom saving throw (DC 8 + your Constitution modifier + your Proficiency Bonus). On a failure, a creature has the Frightened condition for 1 minute. It repeats the save at the end of each of its turns, ending the effect on itself on a success. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+},
+{
+"name": "Imposing",
+"text": "<p>You gain Proficiency in Intimidation.<\/p>"
+},
+{
+"name": "Nord Hardiness",
+"text": "<p>You have Resistance to Cold and Lightning damage.<\/p>"
+},
+{
+"name": "Savage Attacks",
+"text": "<p>When you score a Critical Hit with a melee weapon, roll one of the weapon's damage dice one more time and add it to the Critical Hit's extra damage.<\/p>"
+}
+],
+"id": "nord",
+"short": "Nord",
+"speed": 30,
+"resist": [
+"Cold",
+"Lightning"
+],
+"skills": {
+"fixed": [
+"Intimidation"
+]
+}
+},
+{
+"name": "Orsimer (Orcs)",
+"intro": "Orcs are Mer who were cast out, and they have built a culture around never being cast out again.",
+"standing": "Hired as mercenaries, rarely trusted further",
+"homeland": "Orsinium",
+"sizeText": "Medium (about 6–7 feet tall)",
+"traits": [
+{
+"name": "Berserk",
+"text": "<p>As a bonus action you fly into a berserk rage for one minute. While it lasts you gain the following effects:<\/p><ul><li>You gain temporary hit points equal to your level plus your proficiency bonus.<\/li><li>You have advantage on attack rolls with melee weapons and unarmed strikes, and those attacks deal additional damage equal to your proficiency bonus.<\/li><li>Attack rolls have advantage against you, and you have disadvantage on dexterity saving throws.<\/li><\/ul><p>Once you use this ability, you can't do so again until you complete a long rest.<\/p>"
+},
+{
+"name": "Darkvision",
+"text": "<p>You have Darkvision with a range of 60 feet.<\/p>"
+},
+{
+"name": "Imposing",
+"text": "<p>You gain Proficiency in Intimidation.<\/p>"
+},
+{
+"name": "Orcish Smithing",
+"text": "<p>You have proficiency with Smith's Tools.<\/p>"
+},
+{
+"name": "Relentless Endurance",
+"text": "<p>When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+}
+],
+"id": "orc",
+"short": "Orc",
+"speed": 30,
+"darkvision": 60,
+"tools": [
+"Smith's Tools"
+],
+"skills": {
+"fixed": [
+"Intimidation"
+]
+}
+},
+{
+"name": "Redguards",
+"intro": "Redguards are the finest natural warriors in Tamriel, and they know it.",
+"standing": "Respected as warriors; few close friends",
+"homeland": "Hammerfell",
+"sizeText": "Medium (about 5½–6½ feet tall)",
+"traits": [
+{
+"name": "Adrenaline Rush",
+"text": "<p>As a bonus action, you push your body past its limits. For 1 minute your Speed increases by 10 feet, you have Advantage on Strength and Dexterity checks and saving throws, and you gain Temporary Hit Points equal to your level. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+},
+{
+"name": "Redguard Resilience",
+"text": "<p>You have Resistance to Poison damage. You have Advantage on saving throws to avoid or end the Poisoned condition, and on saving throws against disease.<\/p>"
+},
+{
+"name": "Way of the Sword",
+"text": "<p>You have proficiency with broadswords, claymores, longswords, rapiers, sabers, and shortswords. You can also use the mastery property of one of these sword types, as if you had the Weapon Mastery feature; if you already have the Weapon Mastery feature, it's an extra weapon you've mastered. Whenever you finish a long rest, you can change which sword you've chosen.<\/p>"
+}
+],
+"id": "redguard",
+"short": "Redguard",
+"speed": 30,
+"resist": [
+"Poison"
+],
+"adv": [
+"saves against the Poisoned condition and disease"
+],
+"weapons": [
+"Broadsword",
+"Claymore",
+"Longsword",
+"Rapier",
+"Saber",
+"Shortsword"
+],
+"swordMastery": [
+"Broadsword",
+"Claymore",
+"Longsword",
+"Rapier",
+"Saber",
+"Shortsword"
+]
+}
+],
+"classes": [
+{
+"id": "barbarian",
+"name": "Barbarian",
+"hitDie": 12,
+"primary": "Strength",
+"saves": [
+"Str",
+"Con"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Animal Handling",
+"Athletics",
+"Intimidation",
+"Nature",
+"Perception",
+"Survival"
+]
+},
+"armor": [
+"Light",
+"Medium",
+"Shields"
+],
+"weapons": [
+"Simple",
+"Martial"
+],
+"tools": [],
+"features": [
+[
+"Rage",
+"Enter a rage twice per Long Rest: Resistance to Bludgeoning, Piercing and Slashing damage, +2 damage on Strength attacks."
+],
+[
+"Unarmored Defense",
+"Without armour, your AC is 10 + Dexterity + Constitution. A shield still works."
+],
+[
+"Weapon Mastery",
+"Use the mastery properties of 2 kinds of Simple or Martial melee weapons."
+]
+],
+"cast": null,
+"mastery": 2,
+"unarmored": "Con",
+"onVvardenfell": "Nords from Skyrim and Orcs from the mountains of Orsinium bring their fury with them. House Redoran respects it; everyone else keeps their distance.",
+"wanted": "The Fighters Guild, House Redoran"
+},
+{
+"id": "bard",
+"name": "Bard",
+"hitDie": 8,
+"primary": "Charisma",
+"saves": [
+"Dex",
+"Cha"
+],
+"skillChoices": {
+"n": 3,
+"from": [
+"Acrobatics",
+"Animal Handling",
+"Arcana",
+"Athletics",
+"Deception",
+"History",
+"Insight",
+"Intimidation",
+"Investigation",
+"Medicine",
+"Nature",
+"Perception",
+"Performance",
+"Persuasion",
+"Religion",
+"Sleight of Hand",
+"Stealth",
+"Survival"
+]
+},
+"armor": [
+"Light"
+],
+"weapons": [
+"Simple"
+],
+"tools": [
+{
+"choose": 3,
+"of": "instrument"
+}
+],
+"features": [
+[
+"Bardic Inspiration",
+"As a Bonus Action, give an ally a d6 to add to a d20 roll, a number of times equal to your Charisma modifier per Long Rest."
+],
+[
+"Spellcasting",
+"You cast Bard spells using Charisma."
+]
+],
+"cast": {
+"ability": "Cha",
+"cantrips": 2,
+"prepared": 4,
+"slots": 2,
+"list": "Bard"
+},
+"onVvardenfell": "Imperial courtiers, Breton minstrels and Khajiit storytellers. On an island that runs on favours, a silver tongue is worth more than a sword.",
+"wanted": "House Hlaalu, the Thieves Guild"
+},
+{
+"id": "cleric",
+"name": "Cleric",
+"hitDie": 8,
+"primary": "Wisdom",
+"saves": [
+"Wis",
+"Cha"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"History",
+"Insight",
+"Medicine",
+"Persuasion",
+"Religion"
+]
+},
+"armor": [
+"Light",
+"Medium",
+"Shields"
+],
+"weapons": [
+"Simple"
+],
+"tools": [],
+"features": [
+[
+"Spellcasting",
+"You cast Cleric spells using Wisdom, and use a holy symbol as your focus."
+],
+[
+"Divine Order",
+"Choose Protector (Martial weapons and Heavy armour) or Thaumaturge (an extra cantrip, and Wisdom added to Arcana and Religion)."
+]
+],
+"cast": {
+"ability": "Wis",
+"cantrips": 3,
+"prepared": 4,
+"slots": 2,
+"list": "Cleric"
+},
+"order": "divine",
+"faith": "domains",
+"onVvardenfell": "A priest of the Imperial Cult, the Tribunal Temple or a Daedric shrine. You choose your god in Step Six.",
+"wanted": "The Temple, the Imperial Cult"
+},
+{
+"id": "druid",
+"name": "Druid",
+"hitDie": 8,
+"primary": "Wisdom",
+"saves": [
+"Int",
+"Wis"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Arcana",
+"Animal Handling",
+"Insight",
+"Medicine",
+"Nature",
+"Perception",
+"Religion",
+"Survival"
+]
+},
+"armor": [
+"Light",
+"Shields"
+],
+"weapons": [
+"Simple"
+],
+"tools": [
+"Herbalism Kit"
+],
+"features": [
+[
+"Druidic",
+"You know the secret language of druids, and always have Speak with Animals prepared."
+],
+[
+"Spellcasting",
+"You cast Druid spells using Wisdom."
+],
+[
+"Primal Order",
+"Choose Magician (an extra cantrip, and Wisdom added to Arcana and Nature) or Warden (Martial weapons and Medium armour)."
+]
+],
+"cast": {
+"ability": "Wis",
+"cantrips": 2,
+"prepared": 4,
+"slots": 2,
+"list": "Druid"
+},
+"order": "primal",
+"onVvardenfell": "Bosmer of the Green Pact and followers of Kyne. Vvardenfell's wilds are ash and giant fungus, and its spirits are strange.",
+"wanted": "The Mages Guild, which will want to study you; the Ashlanders, who might respect you"
+},
+{
+"id": "fighter",
+"name": "Fighter",
+"hitDie": 10,
+"primary": "Strength or Dexterity",
+"saves": [
+"Str",
+"Con"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Acrobatics",
+"Animal Handling",
+"Athletics",
+"History",
+"Insight",
+"Intimidation",
+"Persuasion",
+"Perception",
+"Survival"
+]
+},
+"armor": [
+"Light",
+"Medium",
+"Heavy",
+"Shields"
+],
+"weapons": [
+"Simple",
+"Martial"
+],
+"tools": [],
+"features": [
+[
+"Fighting Style",
+"Gain a Fighting Style feat of your choice."
+],
+[
+"Second Wind",
+"As a Bonus Action, regain 1d10 + your level in Hit Points, twice per Long Rest."
+],
+[
+"Weapon Mastery",
+"Use the mastery properties of 3 kinds of Simple or Martial weapons."
+]
+],
+"cast": null,
+"mastery": 3,
+"style": true,
+"onVvardenfell": "Legion veterans, caravan guards and Redguard swords for hire. There is always work on Vvardenfell for someone who can fight.",
+"wanted": "The Fighters Guild, the Imperial Legion, House Redoran"
+},
+{
+"id": "monk",
+"name": "Monk",
+"hitDie": 8,
+"primary": "Dexterity and Wisdom",
+"saves": [
+"Str",
+"Dex"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Acrobatics",
+"Athletics",
+"History",
+"Insight",
+"Religion",
+"Stealth"
+]
+},
+"armor": [],
+"weapons": [
+"Simple",
+"Martial (Light)"
+],
+"tools": [
+{
+"choose": 1,
+"of": "artisanOrInstrument"
+}
+],
+"features": [
+[
+"Martial Arts",
+"Unarmed Strikes and monk weapons can use Dexterity and deal 1d6 damage; make an Unarmed Strike as a Bonus Action."
+],
+[
+"Unarmored Defense",
+"Without armour or a shield, your AC is 10 + Dexterity + Wisdom."
+]
+],
+"cast": null,
+"unarmored": "Wis",
+"martialArts": "1d6",
+"onVvardenfell": "Pilgrims, ascetics and students of the old unarmed schools. Vivec's own warriors, the Buoyant Armigers, prize that kind of discipline.",
+"wanted": "The Temple, the Morag Tong"
+},
+{
+"id": "paladin",
+"name": "Paladin",
+"hitDie": 10,
+"primary": "Strength and Charisma",
+"saves": [
+"Wis",
+"Cha"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Athletics",
+"Insight",
+"Intimidation",
+"Medicine",
+"Persuasion",
+"Religion"
+]
+},
+"armor": [
+"Light",
+"Medium",
+"Heavy",
+"Shields"
+],
+"weapons": [
+"Simple",
+"Martial"
+],
+"tools": [],
+"features": [
+[
+"Lay On Hands",
+"A pool of 5 Hit Points you can restore by touch, refilled on a Long Rest."
+],
+[
+"Spellcasting",
+"You cast Paladin spells using Charisma."
+],
+[
+"Weapon Mastery",
+"Use the mastery properties of 2 kinds of weapons you're proficient with."
+]
+],
+"cast": {
+"ability": "Cha",
+"cantrips": 0,
+"prepared": 2,
+"slots": 2,
+"list": "Paladin"
+},
+"mastery": 2,
+"faith": "oaths",
+"onVvardenfell": "A holy knight of the Nine Divines, or the sworn servant of another power. The Temple's Ordinators dislike competition. You choose your god in Step Six.",
+"wanted": "The Imperial Cult, the Imperial Legion"
+},
+{
+"id": "ranger",
+"name": "Ranger",
+"hitDie": 10,
+"primary": "Dexterity and Wisdom",
+"saves": [
+"Str",
+"Dex"
+],
+"skillChoices": {
+"n": 3,
+"from": [
+"Animal Handling",
+"Athletics",
+"Insight",
+"Investigation",
+"Nature",
+"Perception",
+"Stealth",
+"Survival"
+]
+},
+"armor": [
+"Light",
+"Medium",
+"Shields"
+],
+"weapons": [
+"Simple",
+"Martial"
+],
+"tools": [],
+"features": [
+[
+"Spellcasting",
+"You cast Ranger spells using Wisdom."
+],
+[
+"Favored Enemy",
+"You always have Hunter's Mark prepared, and can cast it twice per Long Rest without a slot."
+],
+[
+"Weapon Mastery",
+"Use the mastery properties of 2 kinds of weapons you're proficient with."
+]
+],
+"cast": {
+"ability": "Wis",
+"cantrips": 0,
+"prepared": 2,
+"slots": 2,
+"list": "Ranger",
+"always": [
+"Hunter's Mark"
+]
+},
+"mastery": 2,
+"onVvardenfell": "Bosmer hunters, Redguard trackers and Nord woodsmen. The island needs guides through country that wants you dead.",
+"wanted": "The Fighters Guild, the East Empire Company"
+},
+{
+"id": "rogue",
+"name": "Rogue",
+"hitDie": 8,
+"primary": "Dexterity",
+"saves": [
+"Dex",
+"Int"
+],
+"skillChoices": {
+"n": 4,
+"from": [
+"Acrobatics",
+"Athletics",
+"Deception",
+"Insight",
+"Intimidation",
+"Investigation",
+"Perception",
+"Persuasion",
+"Sleight of Hand",
+"Stealth"
+]
+},
+"armor": [
+"Light"
+],
+"weapons": [
+"Simple",
+"Martial (Finesse or Light)"
+],
+"tools": [
+"Thieves' Tools"
+],
+"features": [
+[
+"Expertise",
+"Double your Proficiency Bonus for two of your skills."
+],
+[
+"Sneak Attack",
+"Once per turn, deal an extra 1d6 damage with a Finesse or Ranged weapon when you have Advantage or an ally is next to the target."
+],
+[
+"Thieves' Cant",
+"You know the thieves' secret language, and one other language of your choice."
+],
+[
+"Weapon Mastery",
+"Use the mastery properties of 2 kinds of weapons you're proficient with."
+]
+],
+"cast": null,
+"mastery": 2,
+"expertise": 2,
+"extraLanguage": true,
+"onVvardenfell": "Thieves, spies and cutpurses. The Thieves Guild has followed the Empire to the island, and the Camonna Tong would like it gone.",
+"wanted": "The Thieves Guild, House Hlaalu"
+},
+{
+"id": "sorcerer",
+"name": "Sorcerer",
+"hitDie": 6,
+"primary": "Charisma",
+"saves": [
+"Con",
+"Cha"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Arcana",
+"Deception",
+"Insight",
+"Intimidation",
+"Persuasion",
+"Religion"
+]
+},
+"armor": [],
+"weapons": [
+"Simple"
+],
+"tools": [],
+"features": [
+[
+"Spellcasting",
+"You cast Sorcerer spells using Charisma."
+],
+[
+"Innate Sorcery",
+"As a Bonus Action, twice per Long Rest, boost your spells for 1 minute: +1 to their save DC and Advantage on spell attacks."
+]
+],
+"cast": {
+"ability": "Cha",
+"cantrips": 4,
+"prepared": 2,
+"slots": 2,
+"list": "Sorcerer"
+},
+"onVvardenfell": "Bretons with Direnni blood, Altmer born with a gift, or stranger heritage still. The Mages Guild is wary of untrained power; the Telvanni admire it.",
+"wanted": "The Mages Guild, House Telvanni"
+},
+{
+"id": "warlock",
+"name": "Warlock",
+"hitDie": 8,
+"primary": "Charisma",
+"saves": [
+"Wis",
+"Cha"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Arcana",
+"Deception",
+"History",
+"Intimidation",
+"Investigation",
+"Nature",
+"Religion"
+]
+},
+"armor": [
+"Light"
+],
+"weapons": [
+"Simple"
+],
+"tools": [],
+"features": [
+[
+"Eldritch Invocations",
+"Choose one invocation."
+],
+[
+"Pact Magic",
+"You cast Warlock spells using Charisma, and regain your slot on a Short or Long Rest."
+]
+],
+"cast": {
+"ability": "Cha",
+"cantrips": 2,
+"prepared": 2,
+"slots": 1,
+"list": "Warlock",
+"pact": true
+},
+"faith": "patrons",
+"invocations": 1,
+"onVvardenfell": "You made a bargain with a Daedric Prince. Serving one of the Good Daedra is accepted; serving any other Prince is heresy. You choose your patron in Step Six.",
+"wanted": "Your patron's cult, if you can find it"
+},
+{
+"id": "wizard",
+"name": "Wizard",
+"hitDie": 6,
+"primary": "Intelligence",
+"saves": [
+"Int",
+"Wis"
+],
+"skillChoices": {
+"n": 2,
+"from": [
+"Arcana",
+"History",
+"Insight",
+"Investigation",
+"Medicine",
+"Nature",
+"Religion"
+]
+},
+"armor": [],
+"weapons": [
+"Simple"
+],
+"tools": [],
+"features": [
+[
+"Spellcasting",
+"You cast Wizard spells using Intelligence, from a spellbook that starts with six level 1 spells."
+],
+[
+"Ritual Adept",
+"Cast any Ritual spell in your spellbook as a Ritual without preparing it."
+],
+[
+"Arcane Recovery",
+"Once per day on a Short Rest, regain an expended level 1 spell slot."
+]
+],
+"cast": {
+"ability": "Int",
+"cantrips": 3,
+"prepared": 4,
+"slots": 2,
+"list": "Wizard",
+"spellbook": 6
+},
+"onVvardenfell": "A scholar trained by the Mages Guild in Cyrodiil, or in the towers of the Summerset Isles. The Telvanni wizard-lords think Guild mages are amateurs.",
+"wanted": "The Mages Guild, House Telvanni"
+}
+],
+"fightingStyles": [
+"Archery",
+"Blind Fighting",
+"Defense",
+"Dueling",
+"Great Weapon Fighting",
+"Interception",
+"Protection",
+"Thrown Weapon Fighting",
+"Two-Weapon Fighting",
+"Unarmed Fighting"
+],
+"backgrounds": [
+{
+"id": "acolyte",
+"name": "Acolyte",
+"group": "Player's Handbook",
+"abilities": [
+"Int",
+"Wis",
+"Cha"
+],
+"skills": [
+"Insight",
+"Religion"
+],
+"tool": "Calligrapher's Supplies",
+"toolChoice": null,
+"desc": "You served a temple: a Tribunal shrine on the mainland, an Imperial Cult chapel in Cyrodiil, or something less respectable.",
+"equipment": "Calligrapher's Supplies, a book of prayers, a holy symbol, 10 sheets of parchment, a robe and 8 gp",
+"gold": 8,
+"altGold": 50,
+"connection": "The priests of your faith on Vvardenfell will shelter you for a night and carry a message for you, as they would anywhere."
+},
+{
+"id": "artisan",
+"name": "Artisan",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Dex",
+"Int"
+],
+"skills": [
+"Investigation",
+"Persuasion"
+],
+"tool": null,
+"toolChoice": "artisan",
+"desc": "You learned a trade, such as bonemold armour, Hlaalu silks, netch-leather or Imperial glasswork.",
+"equipment": "The Artisan's Tools you chose, 2 pouches, Traveller's Clothes and 32 gp",
+"gold": 32,
+"altGold": 50,
+"connection": "Your old master wrote you a letter of introduction to a fellow craftsman in Vivec, Balmora or Ebonheart."
+},
+{
+"id": "charlatan",
+"name": "Charlatan",
+"group": "Player's Handbook",
+"abilities": [
+"Dex",
+"Con",
+"Cha"
+],
+"skills": [
+"Deception",
+"Sleight of Hand"
+],
+"tool": "Forgery Kit",
+"toolChoice": null,
+"desc": "You've sold fake relics to pilgrims and painted stones to the gullible as soul gems.",
+"equipment": "A Forgery Kit, a costume, Fine Clothes and 15 gp",
+"gold": 15,
+"altGold": 50,
+"connection": "An old partner gave you the name of a forger in Vivec's Foreign Quarter, and told you to mention theirs."
+},
+{
+"id": "criminal",
+"name": "Criminal",
+"group": "Player's Handbook",
+"abilities": [
+"Dex",
+"Con",
+"Int"
+],
+"skills": [
+"Sleight of Hand",
+"Stealth"
+],
+"tool": "Thieves' Tools",
+"toolChoice": null,
+"desc": "You've worked for a thieves' guild, the Camonna Tong on the mainland, or against both.",
+"equipment": "2 daggers, Thieves' Tools, a crowbar, 2 pouches, Traveller's Clothes and 16 gp",
+"gold": 16,
+"altGold": 50,
+"connection": "Your old crew gave you the name of a fence on Vvardenfell, and of one thief there who owes them a favour."
+},
+{
+"id": "entertainer",
+"name": "Entertainer",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Dex",
+"Cha"
+],
+"skills": [
+"Acrobatics",
+"Performance"
+],
+"tool": null,
+"toolChoice": "instrument",
+"desc": "You've tumbled, sung or told stories in taverns and on street corners across the Empire.",
+"equipment": "The musical instrument you chose, 2 costumes, a mirror, perfume, Traveller's Clothes and 11 gp",
+"gold": 11,
+"altGold": 50,
+"connection": "A travelling troupe you once worked with is touring Vvardenfell, and will put you on the bill."
+},
+{
+"id": "farmer",
+"name": "Farmer",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Con",
+"Wis"
+],
+"skills": [
+"Animal Handling",
+"Nature"
+],
+"tool": "Carpenter's Tools",
+"toolChoice": null,
+"desc": "You've worked saltrice paddies, herded guar or tended a kwama egg mine on the mainland.",
+"equipment": "A sickle, Carpenter's Tools, a healer's kit, an iron pot, a shovel, Traveller's Clothes and 30 gp",
+"gold": 30,
+"altGold": 50,
+"connection": "Farmers are the same everywhere: those along Vvardenfell's roads will feed someone who talks like one of them, and tell you what's been prowling at night."
+},
+{
+"id": "guard",
+"name": "Guard",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Int",
+"Wis"
+],
+"skills": [
+"Athletics",
+"Perception"
+],
+"tool": null,
+"toolChoice": "gaming",
+"desc": "You've stood watch for the Legion, a Great House or a merchant's caravan.",
+"equipment": "A spear, a light crossbow, 20 bolts, the gaming set you chose, a hooded lantern, manacles, a quiver, Traveller's Clothes and 12 gp",
+"gold": 12,
+"altGold": 50,
+"connection": "You carry a letter of recommendation from your old captain to a guard captain on Vvardenfell."
+},
+{
+"id": "guide",
+"name": "Guide",
+"group": "Player's Handbook",
+"abilities": [
+"Dex",
+"Con",
+"Wis"
+],
+"skills": [
+"Stealth",
+"Survival"
+],
+"tool": "Cartographer's Tools",
+"toolChoice": null,
+"desc": "You've led travellers through the swamps, hills and ash of mainland Morrowind, or the wilds of another province.",
+"equipment": "A shortbow, 20 arrows, Cartographer's Tools, a bedroll, a quiver, a tent, Traveller's Clothes and 3 gp",
+"gold": 3,
+"altGold": 50,
+"connection": "A guide on Vvardenfell will trade you local knowledge for news of the roads you know."
+},
+{
+"id": "hermit",
+"name": "Hermit",
+"group": "Player's Handbook",
+"abilities": [
+"Con",
+"Wis",
+"Cha"
+],
+"skills": [
+"Medicine",
+"Religion"
+],
+"tool": "Herbalism Kit",
+"toolChoice": null,
+"desc": "You lived apart, in a hut on a lonely coast, a cave in the hills or the shadow of a wizard's tower.",
+"equipment": "A quarterstaff, an Herbalism Kit, a bedroll, a book of philosophy, a lamp, 3 flasks of oil, Traveller's Clothes and 16 gp",
+"gold": 16,
+"altGold": 50,
+"connection": "An Ashlander wise woman you met in the wilds told you to seek out her sister, who lives with a tribe on Vvardenfell."
+},
+{
+"id": "merchant",
+"name": "Merchant",
+"group": "Player's Handbook",
+"abilities": [
+"Con",
+"Int",
+"Cha"
+],
+"skills": [
+"Animal Handling",
+"Persuasion"
+],
+"tool": "Navigator's Tools",
+"toolChoice": null,
+"desc": "You've bought and sold for a Hlaalu trading house, the East Empire Company or yourself.",
+"equipment": "Navigator's Tools, 2 pouches, Traveller's Clothes and 22 gp",
+"gold": 22,
+"altGold": 50,
+"connection": "Your house or company has a factor on Vvardenfell who'll share the gossip about prices with you, and who's been buying what."
+},
+{
+"id": "noble",
+"name": "Noble",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Int",
+"Cha"
+],
+"skills": [
+"History",
+"Persuasion"
+],
+"tool": null,
+"toolChoice": "gaming",
+"desc": "You come from a minor house of Cyrodiil, a Hlaalu family on the rise or an old Redoran line from the mainland.",
+"equipment": "The gaming set you chose, Fine Clothes, perfume and 29 gp",
+"gold": 29,
+"altGold": 50,
+"connection": "One Great House councillor or Imperial official on Vvardenfell knows your family, for better or worse."
+},
+{
+"id": "sage",
+"name": "Sage",
+"group": "Player's Handbook",
+"abilities": [
+"Con",
+"Int",
+"Wis"
+],
+"skills": [
+"Arcana",
+"History"
+],
+"tool": "Calligrapher's Supplies",
+"toolChoice": null,
+"desc": "You've studied in the Imperial Library, a Mages Guild hall or a Telvanni archive on the mainland.",
+"equipment": "A quarterstaff, Calligrapher's Supplies, a book of history, 8 sheets of parchment, a robe and 8 gp",
+"gold": 8,
+"altGold": 50,
+"connection": "A scholar in Vivec or Balmora has written to you for years, and answers your questions, slowly."
+},
+{
+"id": "sailor",
+"name": "Sailor",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Dex",
+"Wis"
+],
+"skills": [
+"Acrobatics",
+"Perception"
+],
+"tool": "Navigator's Tools",
+"toolChoice": null,
+"desc": "You've crewed Company ships, fishing boats or coastal ferries around Tamriel.",
+"equipment": "A dagger, Navigator's Tools, a rope, Traveller's Clothes and 20 gp",
+"gold": 20,
+"altGold": 50,
+"connection": "The captains of the Inner Sea know your old ship by name, and you know which of them carry passengers without asking questions."
+},
+{
+"id": "scribe",
+"name": "Scribe",
+"group": "Player's Handbook",
+"abilities": [
+"Dex",
+"Int",
+"Wis"
+],
+"skills": [
+"Investigation",
+"Perception"
+],
+"tool": "Calligrapher's Supplies",
+"toolChoice": null,
+"desc": "You've copied scripture for the Temple, records for a Great House or forms for the Empire.",
+"equipment": "Calligrapher's Supplies, Fine Clothes, a lamp, 3 flasks of oil, 12 sheets of parchment and 23 gp",
+"gold": 23,
+"altGold": 50,
+"connection": "You know how Imperial paperwork works, and the name of a clerk in Vvardenfell's Census and Excise Office who owes your old office a favour."
+},
+{
+"id": "soldier",
+"name": "Soldier",
+"group": "Player's Handbook",
+"abilities": [
+"Str",
+"Dex",
+"Con"
+],
+"skills": [
+"Athletics",
+"Intimidation"
+],
+"tool": null,
+"toolChoice": "gaming",
+"desc": "You've served in the Imperial Legion, a Great House's army or a mercenary company.",
+"equipment": "A spear, a shortbow, 20 arrows, the gaming set you chose, a healer's kit, a quiver, Traveller's Clothes and 14 gp",
+"gold": 14,
+"altGold": 50,
+"connection": "In any Legion fort, Vvardenfell's included, you can find someone who served where you did."
+},
+{
+"id": "wayfarer",
+"name": "Wayfarer",
+"group": "Player's Handbook",
+"abilities": [
+"Dex",
+"Wis",
+"Cha"
+],
+"skills": [
+"Insight",
+"Stealth"
+],
+"tool": "Thieves' Tools",
+"toolChoice": null,
+"desc": "You grew up on the streets of Mournhold, the Imperial City or another crowded city.",
+"equipment": "2 daggers, Thieves' Tools, a gaming set of your choice, a bedroll, 2 pouches, Traveller's Clothes and 16 gp",
+"gold": 16,
+"altGold": 50,
+"connection": "Street children are the same everywhere. On Vvardenfell, they'll tell you what they've seen for a few coins, once they see you know the game."
+},
+{
+"id": "ashlander-exile",
+"name": "Ashlander Exile",
+"group": "Morrowind",
+"abilities": [
+"Str",
+"Dex",
+"Wis"
+],
+"skills": [
+"Animal Handling",
+"Survival"
+],
+"tool": "Leatherworker's Tools",
+"toolChoice": null,
+"desc": "You left one of the Ashlander tribes that still wander the wild country of mainland Morrowind, or they made you leave. All your life you've heard of the great tribes of Vvardenfell, who live in the shadow of Red Mountain.",
+"equipment": "Leatherworker's Tools, a spear, Traveller's Clothes, a bedroll, a tinderbox, a pouch and 40 gp",
+"gold": 40,
+"altGold": 50,
+"connection": "Ashlanders share their customs across the water. The four great tribes of Vvardenfell, the Urshilaku, the Ahemmusa, the Zainab and the Erabenimsun, will hear you out as kin, if warily."
+},
+{
+"id": "company-clerk",
+"name": "Company Clerk",
+"group": "Morrowind",
+"abilities": [
+"Int",
+"Wis",
+"Cha"
+],
+"skills": [
+"Insight",
+"Investigation"
+],
+"tool": "Calligrapher's Supplies",
+"toolChoice": null,
+"desc": "You've kept the East Empire Company's ledgers in a mainland port, and you've seen how creative the Vvardenfell accounts get on paper.",
+"equipment": "Calligrapher's Supplies, a blank ledger (a book), Traveller's Clothes and 13 gp",
+"gold": 13,
+"altGold": 50,
+"connection": "Your name is on the Company's books, so its clerks in Ebonheart will treat you as one of their own, and show you a manifest if you ask nicely."
+},
+{
+"id": "ebony-miner",
+"name": "Ebony Miner",
+"group": "Morrowind",
+"abilities": [
+"Str",
+"Con",
+"Wis"
+],
+"skills": [
+"Athletics",
+"Perception"
+],
+"tool": "Smith's Tools",
+"toolChoice": null,
+"desc": "You've swung a pick in the ebony mines of mainland Morrowind or Skyrim, and learned to smelt and work what you dug out. Every miner you've met talks about Vvardenfell's mines, the richest in Tamriel.",
+"equipment": "A miner's pick, an Apprentice's armourer's hammer, a hooded lantern, Traveller's Clothes and 36 gp",
+"gold": 36,
+"altGold": 50,
+"connection": "You know the trade: which mine-owners are honest, who buys raw ore without asking questions, and the names of the Vvardenfell mines every miner talks about."
+},
+{
+"id": "fighters-guild-journeyman",
+"name": "Fighters Guild Journeyman",
+"group": "Morrowind",
+"abilities": [
+"Str",
+"Dex",
+"Con"
+],
+"skills": [
+"Athletics",
+"Survival"
+],
+"tool": "Smith's Tools",
+"toolChoice": null,
+"desc": "You've taken the Guild's contracts on the mainland: rats, bandits and the occasional thing in a cave. You've learned to keep your own gear in one piece.",
+"equipment": "A Journeyman's armourer's hammer, a healer's kit, Traveller's Clothes, a bedroll, a rope and 26 gp",
+"gold": 26,
+"altGold": 50,
+"connection": "Your Guild writ is good in any hall, Ebonheart's included. They'll give you a bunk for the night and tell you which contracts pay."
+},
+{
+"id": "freed-slave",
+"name": "Freed Slave",
+"group": "Morrowind",
+"abilities": [
+"Str",
+"Dex",
+"Con"
+],
+"skills": [
+"Athletics",
+"Stealth"
+],
+"tool": null,
+"toolChoice": "artisan",
+"desc": "You were owned in Morrowind, perhaps bought in the slave markets of Tear, and now you aren't. You kept the trade they forced on you, and nothing else. Most freed slaves are Argonians or Khajiit, and wise ones carry papers that prove their freedom.",
+"equipment": "The Artisan's Tools you chose, Traveller's Clothes, a pouch and 32 gp",
+"gold": 32,
+"altGold": 50,
+"connection": "The Twin Lamps, the secret network that smuggles slaves to freedom, helped you once. You know one of their signs, and that they're at work on Vvardenfell too."
+},
+{
+"id": "mages-guild-associate",
+"name": "Mages Guild Associate",
+"group": "Morrowind",
+"abilities": [
+"Int",
+"Wis",
+"Con"
+],
+"skills": [
+"Arcana",
+"Investigation"
+],
+"tool": "Alchemist's Supplies",
+"toolChoice": null,
+"desc": "You've studied at a Guild hall on the mainland or in Cyrodiil, mostly the alchemy, which pays.",
+"equipment": "An Apprentice's mortar and pestle, a robe and 24 gp",
+"gold": 24,
+"altGold": 50,
+"connection": "Your mentor wrote you a letter of introduction to the Guild on Vvardenfell, and any Guild hall will let you use its library."
+},
+{
+"id": "nord-skald",
+"name": "Nord Skald",
+"group": "Morrowind",
+"abilities": [
+"Str",
+"Int",
+"Cha"
+],
+"skills": [
+"History",
+"Performance"
+],
+"tool": null,
+"toolChoice": "instrument",
+"desc": "You keep the sagas of your people, and you're making new ones whether anyone asked or not.",
+"equipment": "A drum, a book of sagas, Traveller's Clothes and 17 gp",
+"gold": 17,
+"altGold": 50,
+"connection": "Nords everywhere know the old sagas you sing, and any Nord on the island will buy you a mead for a new one."
+},
+{
+"id": "pilgrim",
+"name": "Pilgrim",
+"group": "Morrowind",
+"abilities": [
+"Con",
+"Wis",
+"Cha"
+],
+"skills": [
+"Religion",
+"Survival"
+],
+"tool": "Herbalism Kit",
+"toolChoice": null,
+"desc": "You've served at Temple shrines on the mainland, and now you're making the pilgrimage you've dreamed of: the Seven Graces, whose shrines are all on Vvardenfell.",
+"equipment": "An Herbalism Kit, a Temple holy symbol, a robe, a bedroll, a map of the shrines and 37 gp",
+"gold": 37,
+"altGold": 50,
+"connection": "Temple priests and shrine-keepers will give a pilgrim a meal and a mat for the night, and remember your face."
+},
+{
+"id": "silt-strider-caravaner",
+"name": "Silt Strider Caravaner",
+"group": "Morrowind",
+"abilities": [
+"Con",
+"Wis",
+"Cha"
+],
+"skills": [
+"Animal Handling",
+"Persuasion"
+],
+"tool": "Cartographer's Tools",
+"toolChoice": null,
+"desc": "You've steered the great silt striders between the towns of mainland Morrowind, and talked your passengers out of their nerves.",
+"equipment": "Cartographer's Tools, Traveller's Clothes, a rope, a bedroll and 31 gp",
+"gold": 31,
+"altGold": 50,
+"connection": "Caravaners are a close trade. The strider ports on Vvardenfell will treat you as one of their own, and tell you who's been travelling where."
+},
+{
+"id": "smuggler",
+"name": "Smuggler",
+"group": "Morrowind",
+"abilities": [
+"Str",
+"Dex",
+"Cha"
+],
+"skills": [
+"Athletics",
+"Deception"
+],
+"tool": "Navigator's Tools",
+"toolChoice": null,
+"desc": "You've rowed contraband into coves on the mainland where the Legion doesn't look.",
+"equipment": "Navigator's Tools, a hooded lantern for signalling, Traveller's Clothes, a rope and 17 gp",
+"gold": 17,
+"altGold": 50,
+"connection": "You know the signals smugglers use around the Inner Sea, and the Bitter Coast's crews know your old one by reputation."
+}
+],
+"signs": [
+{
+"id": "warrior",
+"name": "The Warrior",
+"month": "Last Seed (August)",
+"guardian": "Guardian",
+"brief": "Rerolls for attacks, Strength and Constitution",
+"flavour": "Those born under the Warrior are gifted with weapons of every kind. They are also known for short tempers.",
+"traits": [
+{
+"name": "Warrior's Precision",
+"text": "<p>When you miss with an attack roll using a weapon or an Unarmed Strike, or fail a Strength or Constitution check or saving throw, you can reroll the d20, and you must use the new roll. You can do this a number of times equal to your Proficiency Bonus, and you regain all uses when you finish a long rest.<\/p>"
+}
+]
+},
+{
+"id": "mage",
+"name": "The Mage",
+"month": "Rain's Hand (April)",
+"guardian": "Guardian",
+"brief": "Two cantrips; rerolls for your spells",
+"flavour": "Those born under the Mage have a natural talent for spells. They are also known for arrogance and absent-mindedness.",
+"traits": [
+{
+"name": "Gift of the Mage",
+"text": "<p>You learn two cantrips from the Wizard spell list. Whenever you gain a level, you can replace one of them with another Wizard cantrip.<\/p>"
+},
+{
+"name": "Mage's Mastery",
+"text": "<p>When you miss with a spell attack roll, you can reroll the d20, and you must use the new roll. When a creature succeeds on a saving throw against a spell you cast, you can force it to reroll, and it must use the new roll. You can do either a number of times equal to your Proficiency Bonus, and regain all uses after completing a Long Rest.<\/p>"
+}
+],
+"cantripChoice": {
+"n": 2,
+"list": "Wizard"
+}
+},
+{
+"id": "thief",
+"name": "The Thief",
+"month": "Evening Star (December)",
+"guardian": "Guardian",
+"brief": "Luck points for Advantage or Disadvantage",
+"flavour": "The Thief is the darkest of the Guardians. Those born under it are rarely thieves, but they take more risks than most people and are seldom caught.",
+"traits": [
+{
+"name": "Thief's Luck",
+"text": "<p>You have a number of Luck Points equal to your Proficiency Bonus, and you regain all of them when you finish a long rest. You can spend one in these ways:<\/p><ul><li>When you make a Dexterity, Intelligence, Wisdom or Charisma check or saving throw, you can give yourself advantage on the roll.<\/li><li>When a creature makes an attack roll against you, you can spend a Luck Point to impose Disadvantage on that roll.<\/li><\/ul>"
+}
+]
+},
+{
+"id": "lady",
+"name": "The Lady",
+"month": "Heartfire (September)",
+"guardian": "Warrior",
+"brief": "Persuasion, extra hit points and faster recovery",
+"flavour": "Those born under the Lady are kind, tolerant and hard to wear down.",
+"traits": [
+{
+"name": "Lady's Favour",
+"text": "<p>You have proficiency in Persuasion. If you already have it, choose another Charisma skill instead.<\/p>"
+},
+{
+"name": "Lady's Grace",
+"text": "<p>Your Hit Point maximum increases by 1, and it increases by 1 again each time you gain a level. Whenever you roll a Hit Die to regain Hit Points, you regain extra Hit Points equal to your Proficiency Bonus. When you finish a Short Rest, you remove 1 Exhaustion level.<\/p>"
+}
+],
+"skills": {
+"fixed": [
+"Persuasion"
+],
+"dupFrom": [
+"Deception",
+"Intimidation",
+"Performance",
+"Persuasion"
+]
+},
+"hpPerLevel": 1
+},
+{
+"id": "steed",
+"name": "The Steed",
+"month": "Mid Year (June)",
+"guardian": "Warrior",
+"brief": "Faster movement, Athletics and quick reactions",
+"flavour": "Those born under the Steed are restless and impatient, always in a hurry to be somewhere else.",
+"traits": [
+{
+"name": "Fleet",
+"text": "<p>You have advantage on Initiative rolls.<\/p>"
+},
+{
+"name": "Steed's Stride",
+"text": "<p>Your Speed increases by 10 feet.<\/p>"
+},
+{
+"name": "Tireless",
+"text": "<p>You have proficiency in Athletics. If you already have it, choose another Strength or Dexterity skill instead. When you take the Dash action, difficult terrain doesn't slow you down.<\/p>"
+}
+],
+"skills": {
+"fixed": [
+"Athletics"
+],
+"dupFrom": [
+"Acrobatics",
+"Athletics",
+"Sleight of Hand",
+"Stealth"
+]
+},
+"speed": 10,
+"initAdv": true
+},
+{
+"id": "lord",
+"name": "The Lord",
+"month": "First Seed (March)",
+"guardian": "Warrior",
+"brief": "Self-healing; weakness to fire",
+"flavour": "Those born under the Lord are hardier and healthier than most, and slow to stay down. The same blood makes them burn easily.",
+"traits": [
+{
+"name": "Blood of the North",
+"text": "<p>As a Bonus Action, you can regain Hit Points equal to your level plus a number of d10s equal to half your Proficiency Bonus (rounded up). Once you use this trait, you can't do so again until you finish a short or long rest.<\/p>"
+},
+{
+"name": "Trollkin",
+"text": "<p>You have Disadvantage on saving throws against effects that deal Fire damage.<\/p>"
+}
+]
+},
+{
+"id": "apprentice",
+"name": "The Apprentice",
+"month": "Sun's Height (July)",
+"guardian": "Mage",
+"brief": "An extra spell slot; weakness to magic",
+"flavour": "Those born under the Apprentice have a special affinity for magic, and an equal vulnerability to it.",
+"traits": [
+{
+"name": "Apprentice's Wellspring",
+"text": "<p>You have one extra spell slot, as described above. You regain it when you finish a long rest.<\/p>"
+},
+{
+"name": "Arcane Frailty",
+"text": "<p>When a spell deals damage to you, it deals extra damage equal to your Proficiency Bonus.<\/p>"
+}
+],
+"extraSlots": 1,
+"noncasterList": "Wizard"
+},
+{
+"id": "atronach",
+"name": "The Atronach",
+"month": "Sun's Dusk (November)",
+"guardian": "Mage",
+"brief": "Extra spell slots and spell absorption; slow recovery",
+"flavour": "Those born under the Atronach are born spellcasters with vast reserves of power. They can't replenish that power naturally, so they draw it from the spells cast at them.",
+"traits": [
+{
+"name": "Deep Reserve",
+"text": "<p>You have two extra spell slots, as described above. You regain them when you finish a Long Rest, subject to Stunted Magicka.<\/p>"
+},
+{
+"name": "Spell Absorption",
+"text": "<p>When you succeed on a saving throw against a spell, or a spell attack roll against you misses, you can take a Reaction to regain one expended spell slot. The slot's level can be no higher than half your Proficiency Bonus, rounded up.<\/p>"
+},
+{
+"name": "Stunted Magicka",
+"text": "<p>Whenever a Short or Long Rest would restore all your expended spell slots, you instead regain only half of them, rounded up. You choose which ones.<\/p>"
+}
+],
+"extraSlots": 2,
+"noncasterList": "Sorcerer"
+},
+{
+"id": "ritual",
+"name": "The Ritual",
+"month": "Morning Star (January)",
+"guardian": "Mage",
+"brief": "Healing and turning the undead",
+"flavour": "Those born under the Ritual carry a spark of divine blessing. They can heal the living and drive back the dead.",
+"traits": [
+{
+"name": "Mara's Gift",
+"text": "<p>You learn <i>Cure Wounds<\/i>.<\/p>"
+},
+{
+"name": "Blessed Word",
+"text": "<p>As a Magic action, you can call on the Divines. Each Undead within 30 feet of you that can see or hear you must make a Wisdom saving throw against your birthsign save DC. On a failure, it has the Frightened condition for 1 minute; it repeats the save at the end of each of its turns, ending the effect on a success. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+}
+],
+"spells": [
+[
+"Cure Wounds",
+1
+]
+]
+},
+{
+"id": "lover",
+"name": "The Lover",
+"month": "Sun's Dawn (February)",
+"guardian": "Thief",
+"brief": "A stunning touch and a graceful skill",
+"flavour": "Those born under the Lover are graceful and passionate. Their touch can stop a person in their tracks, at some cost to themselves.",
+"traits": [
+{
+"name": "Lover's Kiss",
+"text": "<p>As a Magic action, you can touch a creature within reach. It must make a Wisdom saving throw against your birthsign save DC. On a failure, it has the Incapacitated condition and its Speed is 0 until the end of its next turn. Afterward, you have Disadvantage on attack rolls until the end of your next turn. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+},
+{
+"name": "Lover's Grace",
+"text": "<p>You have proficiency in your choice of Acrobatics or Performance.<\/p>"
+}
+],
+"skills": {
+"choose": [
+{
+"n": 1,
+"from": [
+"Acrobatics",
+"Performance"
+],
+"label": "Lover's Grace"
+}
+]
+}
+},
+{
+"id": "shadow",
+"name": "The Shadow",
+"month": "Second Seed (May)",
+"guardian": "Thief",
+"brief": "Brief invisibility",
+"flavour": "Those born under the Shadow can hide in plain sight, wrapping themselves in darkness when they need to.",
+"traits": [
+{
+"name": "Moonshadow",
+"text": "<p>As a Bonus Action, you can give yourself the Invisible condition until the end of your next turn. It ends early if you make an attack roll, deal damage or cast a spell. Once you use this trait, you can't do so again until you finish a short or long rest.<\/p>"
+}
+]
+},
+{
+"id": "tower",
+"name": "The Tower",
+"month": "Frostfall (October)",
+"guardian": "Thief",
+"brief": "Opening locks and detecting magic",
+"flavour": "Those born under the Tower have a nose for gold and a way with locks. Few doors stay closed to them.",
+"traits": [
+{
+"name": "Tower Key",
+"text": "<p>You have proficiency with Thieves' Tools. You also learn <i>Knock<\/i>; when you cast it using this trait, it makes no sound.<\/p>"
+},
+{
+"name": "Beggar's Nose",
+"text": "<p>You learn <i>Detect Magic<\/i>.<\/p>"
+}
+],
+"tools": [
+"Thieves' Tools"
+],
+"spells": [
+[
+"Knock",
+2
+],
+[
+"Detect Magic",
+1
+]
+]
+},
+{
+"id": "serpent",
+"name": "The Serpent",
+"month": "None",
+"guardian": "None",
+"brief": "Poisonous touches that hurt you too; shrugging off ailments",
+"flavour": "The Serpent wanders the sky with no season and no master. Those born under it are said to be both the most blessed and the most cursed of all. Its gift is poison, and it never comes free.",
+"traits": [
+{
+"name": "Star-Curse",
+"text": "<p>As a Magic action, you can touch a creature within reach. It must make a Constitution saving throw against your birthsign save DC. On a failure, it takes 3d6 Poison damage and has the Poisoned condition for 1 minute; it repeats the save at the end of each of its turns, ending the condition on a success. On a success, it takes half as much damage and isn't Poisoned. This damage ignores Resistance to Poison damage. You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a long rest.<\/p><p>The damage increases by 1d6 when you reach levels 5 (4d6), 11 (5d6) and 17 (6d6).<\/p>"
+},
+{
+"name": "Shed Skin",
+"text": "<p>As a Bonus Action, you can end the Poisoned condition on yourself, along with one of these: the Charmed condition, the Frightened condition, or one spell of level 3 or lower that's affecting you. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+},
+{
+"name": "Serpent's Price",
+"text": "<p>When you use Star-Curse, you take Poison damage equal to your Proficiency Bonus. This damage can't be reduced or prevented in any way.<\/p>"
+}
+]
+}
+],
+"equipment": {
+"Barbarian": [
+{
+"label": "From home",
+"text": "A greataxe, 4 handaxes, an Explorer's Pack and 15 gp",
+"gold": 15
+},
+{
+"label": "Morrowind-made",
+"text": "A steel battle axe [Greataxe], 4 chitin axes [Handaxes], an Explorer's Pack and 15 gp",
+"gold": 15
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 75
+}
+],
+"Bard": [
+{
+"label": "From home",
+"text": "Leather armour, 2 daggers, a musical instrument of your choice, an Entertainer's Pack and 19 gp",
+"gold": 19
+},
+{
+"label": "Morrowind-made",
+"text": "Netch leather [Leather Armor], 2 chitin daggers, a musical instrument of your choice, an Entertainer's Pack and 19 gp",
+"gold": 19
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 90
+}
+],
+"Cleric": [
+{
+"label": "From home",
+"text": "A chain shirt, a shield, a mace, a holy symbol, a Priest's Pack and 7 gp",
+"gold": 7
+},
+{
+"label": "Morrowind-made",
+"text": "A chain shirt, a chitin shield, a steel mace, a holy symbol, a Priest's Pack and 7 gp",
+"gold": 7
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 110
+}
+],
+"Druid": [
+{
+"label": "From home",
+"text": "Leather armour, a shield, a sickle, a quarterstaff as your Druidic Focus, an Explorer's Pack, an Herbalism Kit and 9 gp",
+"gold": 9
+},
+{
+"label": "Morrowind-made",
+"text": "Netch leather [Leather Armor], a chitin shield, a sickle, a staff [Quarterstaff] as your Druidic Focus, an Explorer's Pack, an Herbalism Kit and 9 gp",
+"gold": 9
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 50
+}
+],
+"Fighter": [
+{
+"label": "From home (first choice)",
+"text": "Chain mail, a greatsword, a flail, 8 javelins, a Dungeoneer's Pack and 4 gp",
+"gold": 4
+},
+{
+"label": "From home (second choice)",
+"text": "Studded leather armour, a scimitar, a shortsword, a longbow, 20 arrows, a quiver, a Dungeoneer's Pack and 11 gp",
+"gold": 11
+},
+{
+"label": "Morrowind-made (first choice)",
+"text": "Iron armour [Chain Mail], a steel claymore [Greatsword], a flail, 8 javelins, a Dungeoneer's Pack and 4 gp",
+"gold": 4
+},
+{
+"label": "Morrowind-made (second choice)",
+"text": "Chitin armour [Studded Leather Armor], a steel saber [Scimitar], a steel shortsword, a chitin long bow [Longbow], 20 chitin arrows, a quiver, a Dungeoneer's Pack and 11 gp",
+"gold": 11
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 155
+}
+],
+"Monk": [
+{
+"label": "From home",
+"text": "A spear, 5 daggers, the Artisan's Tools or musical instrument you chose for your tool proficiency, an Explorer's Pack and 11 gp",
+"gold": 11
+},
+{
+"label": "Morrowind-made",
+"text": "A chitin spear, 5 chitin daggers, the Artisan's Tools or musical instrument you chose, an Explorer's Pack and 11 gp",
+"gold": 11
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 50
+}
+],
+"Paladin": [
+{
+"label": "From home",
+"text": "Chain mail, a shield, a longsword, 6 javelins, a holy symbol, a Priest's Pack and 9 gp",
+"gold": 9
+},
+{
+"label": "Morrowind-made",
+"text": "Iron armour [Chain Mail], an iron shield, a steel broadsword [Longsword], 6 javelins, a holy symbol, a Priest's Pack and 9 gp",
+"gold": 9
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 150
+}
+],
+"Ranger": [
+{
+"label": "From home",
+"text": "Studded leather armour, a scimitar, a shortsword, a longbow, 20 arrows, a quiver, a sprig of mistletoe as your Druidic Focus, an Explorer's Pack and 7 gp",
+"gold": 7
+},
+{
+"label": "Morrowind-made",
+"text": "Chitin armour [Studded Leather Armor], a steel saber [Scimitar], a steel shortsword, a chitin long bow [Longbow], 20 chitin arrows, a quiver, a sprig of heather as your Druidic Focus, an Explorer's Pack and 7 gp",
+"gold": 7
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 150
+}
+],
+"Rogue": [
+{
+"label": "From home",
+"text": "Leather armour, 2 daggers, a shortsword, a shortbow, 20 arrows, a quiver, Thieves' Tools, a Burglar's Pack and 8 gp",
+"gold": 8
+},
+{
+"label": "Morrowind-made",
+"text": "Netch leather [Leather Armor], 2 chitin daggers, a steel shortsword, a chitin short bow [Shortbow], 20 chitin arrows, a quiver, an Apprentice's lockpick and probe [Thieves' Tools], a Burglar's Pack and 8 gp",
+"gold": 8
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 100
+}
+],
+"Sorcerer": [
+{
+"label": "From home",
+"text": "A spear, 2 daggers, a crystal as your Arcane Focus, a Dungeoneer's Pack and 28 gp",
+"gold": 28
+},
+{
+"label": "Morrowind-made",
+"text": "A chitin spear, 2 chitin daggers, a crystal as your Arcane Focus, a Dungeoneer's Pack and 28 gp",
+"gold": 28
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 50
+}
+],
+"Warlock": [
+{
+"label": "From home",
+"text": "Leather armour, a sickle, 2 daggers, an orb as your Arcane Focus, a book of occult lore, a Scholar's Pack and 15 gp",
+"gold": 15
+},
+{
+"label": "Morrowind-made",
+"text": "Netch leather [Leather Armor], a sickle, 2 chitin daggers, an orb as your Arcane Focus, a book of occult lore, a Scholar's Pack and 15 gp",
+"gold": 15
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 100
+}
+],
+"Wizard": [
+{
+"label": "From home",
+"text": "2 daggers, a quarterstaff as your Arcane Focus, a robe, a spellbook, a Scholar's Pack and 5 gp",
+"gold": 5
+},
+{
+"label": "Morrowind-made",
+"text": "2 chitin daggers, a staff [Quarterstaff] as your Arcane Focus, a robe, a spellbook, a Scholar's Pack and 5 gp",
+"gold": 5
+},
+{
+"label": "Gold instead",
+"text": "",
+"gold": 55
+}
+]
+},
+"armour": [
+{
+"name": "Netch leather",
+"cat": "light",
+"base": 11,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Nordic fur",
+"cat": "light",
+"base": 11,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Nordic bearskin",
+"cat": "light",
+"base": 11,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Boiled netch leather",
+"cat": "light",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Chitin",
+"cat": "light",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Imperial studded leather",
+"cat": "light",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Imperial newtscale",
+"cat": "light",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Wolf",
+"cat": "light",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Glass",
+"cat": "light",
+"base": 14,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Bear",
+"cat": "medium",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Nordic ringmail",
+"cat": "medium",
+"base": 13,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Imperial chain",
+"cat": "medium",
+"base": 14,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Bonemold",
+"cat": "medium",
+"base": 14,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Bonemold, ornate",
+"cat": "medium",
+"base": 14,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Imperial dragonscale",
+"cat": "medium",
+"base": 15,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Orcish",
+"cat": "medium",
+"base": 16,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Dreugh",
+"cat": "medium",
+"base": 15,
+"str": 0,
+"stealth": false,
+"src": "Treasures"
+},
+{
+"name": "Adamantium",
+"cat": "medium",
+"base": 16,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Ice (stalhrim)",
+"cat": "medium",
+"base": 16,
+"str": 0,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Iron",
+"cat": "heavy",
+"base": 16,
+"str": 13,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Steel",
+"cat": "heavy",
+"base": 17,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Nordic iron",
+"cat": "heavy",
+"base": 17,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Imperial steel",
+"cat": "heavy",
+"base": 17,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Nordic trollbone",
+"cat": "heavy",
+"base": 17,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Imperial Templar",
+"cat": "heavy",
+"base": 18,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Imperial silver",
+"cat": "heavy",
+"base": 18,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Dwemer",
+"cat": "heavy",
+"base": 18,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Ebony",
+"cat": "heavy",
+"base": 19,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Nordic mail",
+"cat": "heavy",
+"base": 19,
+"str": 15,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Daedric",
+"cat": "heavy",
+"base": 20,
+"str": 17,
+"stealth": true,
+"src": "Treasures"
+},
+{
+"name": "Padded",
+"cat": "light",
+"base": 11,
+"str": 0,
+"stealth": true,
+"src": "Player's Handbook"
+},
+{
+"name": "Leather",
+"cat": "light",
+"base": 11,
+"str": 0,
+"stealth": false,
+"src": "Player's Handbook"
+},
+{
+"name": "Studded leather",
+"cat": "light",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Player's Handbook"
+},
+{
+"name": "Hide",
+"cat": "medium",
+"base": 12,
+"str": 0,
+"stealth": false,
+"src": "Player's Handbook"
+},
+{
+"name": "Chain shirt",
+"cat": "medium",
+"base": 13,
+"str": 0,
+"stealth": false,
+"src": "Player's Handbook"
+},
+{
+"name": "Scale mail",
+"cat": "medium",
+"base": 14,
+"str": 0,
+"stealth": true,
+"src": "Player's Handbook"
+},
+{
+"name": "Breastplate",
+"cat": "medium",
+"base": 14,
+"str": 0,
+"stealth": false,
+"src": "Player's Handbook"
+},
+{
+"name": "Half plate",
+"cat": "medium",
+"base": 15,
+"str": 0,
+"stealth": true,
+"src": "Player's Handbook"
+},
+{
+"name": "Ring mail",
+"cat": "heavy",
+"base": 14,
+"str": 0,
+"stealth": true,
+"src": "Player's Handbook"
+},
+{
+"name": "Chain mail",
+"cat": "heavy",
+"base": 16,
+"str": 13,
+"stealth": true,
+"src": "Player's Handbook"
+},
+{
+"name": "Splint",
+"cat": "heavy",
+"base": 17,
+"str": 15,
+"stealth": true,
+"src": "Player's Handbook"
+},
+{
+"name": "Plate",
+"cat": "heavy",
+"base": 18,
+"str": 15,
+"stealth": true,
+"src": "Player's Handbook"
+}
+],
+"shields": [
+{
+"name": "Netch leather or chitin",
+"bonus": 2
+},
+{
+"name": "Iron, steel or Nordic",
+"bonus": 2
+},
+{
+"name": "Bonemold",
+"bonus": 2
+},
+{
+"name": "Dwemer",
+"bonus": 2
+},
+{
+"name": "Orcish tower",
+"bonus": 3
+},
+{
+"name": "Dreugh",
+"bonus": 3
+},
+{
+"name": "Glass",
+"bonus": 3
+},
+{
+"name": "Ebony",
+"bonus": 3
+},
+{
+"name": "Daedric",
+"bonus": 3
+}
+],
+"weapons": [
+{
+"name": "Axe",
+"cat": "Simple",
+"as": "Handaxe",
+"die": "1d6",
+"type": "Slashing",
+"props": "Light, Thrown (20/60)",
+"mastery": "Vex"
+},
+{
+"name": "Club",
+"cat": "Simple",
+"as": null,
+"die": "1d4",
+"type": "Bludgeoning",
+"props": "Light",
+"mastery": "Slow"
+},
+{
+"name": "Dagger",
+"cat": "Simple",
+"as": null,
+"die": "1d4",
+"type": "Piercing",
+"props": "Finesse, Light, Thrown (20/60)",
+"mastery": "Nick"
+},
+{
+"name": "Mace",
+"cat": "Simple",
+"as": null,
+"die": "1d6",
+"type": "Bludgeoning",
+"props": "—",
+"mastery": "Sap"
+},
+{
+"name": "Miner's pick",
+"cat": "Simple",
+"as": null,
+"die": "1d8",
+"type": "Piercing",
+"props": "Two-Handed",
+"mastery": "Sap"
+},
+{
+"name": "Spear",
+"cat": "Simple",
+"as": null,
+"die": "1d6",
+"type": "Piercing",
+"props": "Thrown (20/60), Versatile (1d8)",
+"mastery": "Sap"
+},
+{
+"name": "Staff",
+"cat": "Simple",
+"as": "Quarterstaff",
+"die": "1d6",
+"type": "Bludgeoning",
+"props": "Versatile (1d8)",
+"mastery": "Topple"
+},
+{
+"name": "Light crossbow",
+"cat": "Simple",
+"as": null,
+"die": "1d8",
+"type": "Piercing",
+"props": "Ammunition (80/320; bolt), Loading, Two-Handed",
+"mastery": "Slow"
+},
+{
+"name": "Short bow",
+"cat": "Simple",
+"as": "Shortbow",
+"die": "1d6",
+"type": "Piercing",
+"props": "Ammunition (80/320; arrow), Two-Handed",
+"mastery": "Vex"
+},
+{
+"name": "Battle axe",
+"cat": "Martial",
+"as": "Greataxe",
+"die": "1d12",
+"type": "Slashing",
+"props": "Heavy, Two-Handed",
+"mastery": "Cleave"
+},
+{
+"name": "Broadsword",
+"cat": "Martial",
+"as": "Longsword",
+"die": "1d8",
+"type": "Slashing",
+"props": "Versatile (1d10)",
+"mastery": "Graze"
+},
+{
+"name": "Claymore",
+"cat": "Martial",
+"as": "Greatsword",
+"die": "2d6",
+"type": "Slashing",
+"props": "Heavy, Two-Handed",
+"mastery": "Graze"
+},
+{
+"name": "Glaive",
+"cat": "Martial",
+"as": null,
+"die": "1d10",
+"type": "Slashing",
+"props": "Heavy, Reach, Two-Handed",
+"mastery": "Graze"
+},
+{
+"name": "Halberd",
+"cat": "Martial",
+"as": null,
+"die": "1d10",
+"type": "Slashing",
+"props": "Heavy, Reach, Two-Handed",
+"mastery": "Cleave"
+},
+{
+"name": "Long spear",
+"cat": "Martial",
+"as": "Pike",
+"die": "1d10",
+"type": "Piercing",
+"props": "Heavy, Reach, Two-Handed",
+"mastery": "Push"
+},
+{
+"name": "Longsword",
+"cat": "Martial",
+"as": null,
+"die": "1d8",
+"type": "Slashing",
+"props": "Versatile (1d10)",
+"mastery": "Sap"
+},
+{
+"name": "Rapier",
+"cat": "Martial",
+"as": null,
+"die": "1d8",
+"type": "Piercing",
+"props": "Finesse",
+"mastery": "Vex"
+},
+{
+"name": "Saber",
+"cat": "Martial",
+"as": "Scimitar",
+"die": "1d6",
+"type": "Slashing",
+"props": "Finesse, Light",
+"mastery": "Nick"
+},
+{
+"name": "Shortsword",
+"cat": "Martial",
+"as": null,
+"die": "1d6",
+"type": "Piercing",
+"props": "Finesse, Light",
+"mastery": "Vex"
+},
+{
+"name": "Spiked club",
+"cat": "Martial",
+"as": "Morningstar",
+"die": "1d8",
+"type": "Piercing",
+"props": "—",
+"mastery": "Sap"
+},
+{
+"name": "Trident",
+"cat": "Martial",
+"as": null,
+"die": "1d8",
+"type": "Piercing",
+"props": "Thrown (20/60), Versatile (1d10)",
+"mastery": "Topple"
+},
+{
+"name": "War axe",
+"cat": "Martial",
+"as": "Battleaxe",
+"die": "1d8",
+"type": "Slashing",
+"props": "Versatile (1d10)",
+"mastery": "Topple"
+},
+{
+"name": "Warhammer",
+"cat": "Martial",
+"as": "Maul",
+"die": "2d6",
+"type": "Bludgeoning",
+"props": "Heavy, Two-Handed",
+"mastery": "Topple"
+},
+{
+"name": "Whip",
+"cat": "Martial",
+"as": null,
+"die": "1d4",
+"type": "Slashing",
+"props": "Finesse, Reach",
+"mastery": "Slow"
+},
+{
+"name": "Crossbow",
+"cat": "Martial",
+"as": "Heavy crossbow",
+"die": "1d10",
+"type": "Piercing",
+"props": "Ammunition (100/400; bolt), Heavy, Loading, Two-Handed",
+"mastery": "Push"
+},
+{
+"name": "Long bow",
+"cat": "Martial",
+"as": "Longbow",
+"die": "1d8",
+"type": "Piercing",
+"props": "Ammunition (150/600; arrow), Heavy, Two-Handed",
+"mastery": "Slow"
+},
+{
+"name": "Dart",
+"cat": "Simple",
+"as": null,
+"die": "1d4",
+"type": "Piercing",
+"props": "Finesse, Thrown (20/60)",
+"mastery": "Vex"
+},
+{
+"name": "Throwing knife",
+"cat": "Simple",
+"as": null,
+"die": "1d4",
+"type": "Piercing",
+"props": "Finesse, Light, Thrown (30/90)",
+"mastery": "Nick"
+},
+{
+"name": "Throwing star",
+"cat": "Martial",
+"as": null,
+"die": "1d4",
+"type": "Slashing",
+"props": "Finesse, Light, Thrown (20/60)",
+"mastery": "Vex"
+},
+{
+"name": "Javelin",
+"cat": "Simple",
+"as": null,
+"die": "1d6",
+"type": "Piercing",
+"props": "Thrown (30/120)",
+"mastery": "Slow",
+"phb": true
+},
+{
+"name": "Sickle",
+"cat": "Simple",
+"as": null,
+"die": "1d4",
+"type": "Slashing",
+"props": "Light",
+"mastery": "Nick",
+"phb": true
+},
+{
+"name": "Flail",
+"cat": "Martial",
+"as": null,
+"die": "1d8",
+"type": "Bludgeoning",
+"props": "—",
+"mastery": "Sap",
+"phb": true
+},
+{
+"name": "Sling",
+"cat": "Simple",
+"as": null,
+"die": "1d4",
+"type": "Bludgeoning",
+"props": "Ammunition (30/120; bullet)",
+"mastery": "Slow",
+"phb": true
+}
+],
+"languages": [
+"Aldmeris",
+"Bosmeris",
+"Daedric",
+"Dunmeris",
+"Jel",
+"Nordic",
+"Orcish",
+"Ta'agra",
+"Yoku"
+],
+"tools": {
+"artisan": [
+"Alchemist's Supplies",
+"Brewer's Supplies",
+"Calligrapher's Supplies",
+"Carpenter's Tools",
+"Cartographer's Tools",
+"Cobbler's Tools",
+"Cook's Utensils",
+"Glassblower's Tools",
+"Jeweler's Tools",
+"Leatherworker's Tools",
+"Mason's Tools",
+"Painter's Supplies",
+"Potter's Tools",
+"Smith's Tools",
+"Tinker's Tools",
+"Weaver's Tools",
+"Woodcarver's Tools"
+],
+"instrument": [
+"Bagpipes",
+"Drum",
+"Dulcimer",
+"Flute",
+"Horn",
+"Lute",
+"Lyre",
+"Pan Flute",
+"Shawm",
+"Viol"
+],
+"gaming": [
+"Dice",
+"Dragonchess",
+"Playing Cards",
+"Three-Dragon Ante"
+]
+}
+}</script>
+<script>
+(() => {
+  const D = JSON.parse(document.getElementById("data").textContent);
+  const CONFIG = /*CONFIG*/{"guide": "index.html", "print": true};
+  // Inside the compendium (as its "Outlander's Papers" section), guide links move the compendium itself
+  // and the papers follow its Day/Night setting.
+  const HOST = (() => { try { return window.parent !== window && typeof window.parent.compendiumGo === "function" ? window.parent : null; } catch (e) { return null; } })();
+  if (HOST) {
+    const root = HOST.document.documentElement;
+    const syncTheme = () => { if (root.dataset.theme) document.documentElement.dataset.theme = root.dataset.theme; else delete document.documentElement.dataset.theme; };
+    syncTheme(); new MutationObserver(syncTheme).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    document.addEventListener("click", (e) => { const a = e.target.closest("a[data-guide]"); if (a) { e.preventDefault(); HOST.compendiumGo(a.dataset.guide); } });
+  }
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const AB = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
+  const ABN = { Str: "Strength", Dex: "Dexterity", Con: "Constitution", Int: "Intelligence", Wis: "Wisdom", Cha: "Charisma" };
+  const STANDARD = [15, 14, 13, 12, 10, 8];
+  const COST = { 8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9 };
+  const PB = 2;
+  const SKILL_AB = Object.fromEntries(D.skills.map((s) => [s.name, s.ab]));
+  const ALL_SKILLS = D.skills.map((s) => s.name);
+  const byId = (list, id) => list.find((x) => x.id === id);
+  const mod = (s) => Math.floor((s - 10) / 2);
+  const sgn = (n) => (n >= 0 ? "+" : "−") + Math.abs(n);
+  const OTHER_TOOLS = ["Disguise Kit", "Forgery Kit", "Herbalism Kit", "Navigator's Tools", "Poisoner's Kit", "Thieves' Tools"];
+  const ANY_TOOL = [...D.tools.artisan, ...D.tools.instrument, ...D.tools.gaming, ...OTHER_TOOLS];
+
+  // ---------- characters ----------
+  const blank = () => ({ id: "c" + Date.now().toString(36), name: "", race: "", raceSkills: [], raceSpell: "", raceAbility: "Int", sword: "",
+    cls: "", clsSkills: [], order: "", style: "", expertise: [], invocation: "", clsTools: [], mastery: [], cantrips: [], prepared: [], spellbook: [],
+    bg: "", bgTool: "", bgDup: {}, bgToolDup: "", asiMode: "21", asi2: "", asi1: "",
+    sign: "", signDup: "", signChoice: "", signAbility: "Int", signCantrips: [], signSpells: [],
+    method: "standard", assign: {}, points: { Str: 8, Dex: 8, Con: 8, Int: 8, Wis: 8, Cha: 8 }, rolls: [], langs: ["", ""], langExtra: "",
+    god: "", subclass: "", alignment: "", classEquip: 0, bgEquip: "package", armour: "", shield: "", weapons: ["", "", "", ""],
+    story: { age: "", appearance: "", reason: "", reasonText: "", tie: "", answers: [] } });
+  let chars = [];
+  try { chars = JSON.parse(store.get("op-chars") || "[]"); } catch (e) { chars = []; }
+  if (!Array.isArray(chars) || !chars.length) chars = [blank()];
+  let C = chars.find((c) => c.id === store.get("op-current")) || chars[0];
+  const save = () => { store.set("op-chars", JSON.stringify(chars)); store.set("op-current", C.id); };
+
+  // ---------- rules ----------
+  function scores() {
+    const base = {};
+    if (C.method === "pointbuy") AB.forEach((a) => (base[a] = C.points[a] || 8));
+    else {
+      const pool = C.method === "dice" ? C.rolls.map(Number) : STANDARD;
+      AB.forEach((a) => { const i = C.assign[a]; base[a] = i === "" || i == null || pool[i] == null || isNaN(pool[i]) ? null : pool[i]; });
+    }
+    const bg = byId(D.backgrounds, C.bg), inc = {};
+    if (bg) {
+      if (C.asiMode === "111") bg.abilities.forEach((a) => (inc[a] = 1));
+      else { if (C.asi2) inc[C.asi2] = 2; if (C.asi1 && C.asi1 !== C.asi2) inc[C.asi1] = (inc[C.asi1] || 0) + 1; }
+    }
+    const fin = {};
+    AB.forEach((a) => (fin[a] = base[a] == null ? null : Math.min(20, base[a] + (inc[a] || 0))));
+    return { base, inc, fin, m: Object.fromEntries(AB.map((a) => [a, fin[a] == null ? 0 : mod(fin[a])])) };
+  }
+
+  // Skills, in order of precedence: people, background, class choices, birthsign.
+  function skillState() {
+    const race = byId(D.races, C.race), cls = byId(D.classes, C.cls), bg = byId(D.backgrounds, C.bg), sign = byId(D.signs, C.sign);
+    const src = {}; const add = (s, from) => { if (s && !src[s]) src[s] = from; };
+    (race?.skills?.fixed || []).forEach((s) => add(s, race.short));
+    C.raceSkills.forEach((s) => add(s, race?.short));
+    const bgDups = [];
+    (bg?.skills || []).forEach((s) => { if (src[s]) { bgDups.push(s); add(C.bgDup[s], bg.name); } else add(s, bg.name); });
+    C.clsSkills.forEach((s) => add(s, cls?.name));
+    let signDup = null;
+    (sign?.skills?.fixed || []).forEach((s) => { if (src[s]) { signDup = s; add(C.signDup, sign.name); } else add(s, sign.name); });
+    if (sign?.skills?.choose) add(C.signChoice, sign.name);
+    return { src, bgDups, signDup };
+  }
+
+  function prof() {
+    const race = byId(D.races, C.race), cls = byId(D.classes, C.cls), bg = byId(D.backgrounds, C.bg), sign = byId(D.signs, C.sign);
+    const armor = new Set([...(cls?.armor || []), ...(race?.armor || [])]);
+    const weapons = new Set(cls?.weapons || []);
+    if (C.order === "protector") { armor.add("Heavy"); weapons.add("Martial"); }
+    if (C.order === "warden") { armor.add("Medium"); weapons.add("Martial"); }
+    // race weapons the class already covers (a dagger for anyone, a shortsword for a rogue) aren't listed twice
+    (race?.weapons || []).forEach((n) => { const w = D.weapons.find((x) => x.name === n); if (!w || !weaponProf(w, { weapons })) weapons.add(n); });
+    const tools = [];
+    const addT = (t, from) => { if (t && !tools.find((x) => x.t === t)) tools.push({ t, from }); };
+    (race?.tools || []).forEach((t) => addT(t, race.short));
+    (sign?.tools || []).forEach((t) => addT(t, sign.name));
+    (cls?.tools || []).forEach((t) => { if (typeof t === "string") addT(t, cls.name); });
+    C.clsTools.forEach((t) => addT(t, cls?.name));
+    const bgTool = bg ? (bg.tool || C.bgTool) : "";
+    let bgToolDup = false;
+    if (bgTool) { if (tools.find((x) => x.t === bgTool)) { bgToolDup = true; addT(C.bgToolDup, bg.name); } else addT(bgTool, bg.name); }
+    const langs = ["Tamrielic", ...C.langs.filter(Boolean)];
+    if (cls?.id === "druid") langs.push("Druidic");
+    if (cls?.extraLanguage) { langs.push("Thieves' Cant"); if (C.langExtra) langs.push(C.langExtra); }
+    return { armor, weapons, tools, bgTool, bgToolDup, langs };
+  }
+  const weaponProf = (w, P) => {
+    if (P.weapons.has(w.cat)) return true;
+    if (P.weapons.has(w.name)) return true;
+    if (w.cat === "Martial" && P.weapons.has("Martial (Light)") && /Light/.test(w.props)) return true;
+    if (w.cat === "Martial" && P.weapons.has("Martial (Finesse or Light)") && /Finesse|Light/.test(w.props)) return true;
+    return false;
+  };
+  const armourProf = (a, P) => P.armor.has(a.cat[0].toUpperCase() + a.cat.slice(1));
+
+  function derive() {
+    const S = scores(), sk = skillState(), P = prof();
+    const race = byId(D.races, C.race), cls = byId(D.classes, C.cls), sign = byId(D.signs, C.sign);
+    const m = S.m;
+    const skills = ALL_SKILLS.map((name) => {
+      const ab = SKILL_AB[name], p = !!sk.src[name], e = p && C.expertise.includes(name);
+      let b = m[ab] + (p ? PB : 0) + (e ? PB : 0);
+      const orderBonus = (C.order === "thaumaturge" && (name === "Arcana" || name === "Religion")) || (C.order === "magician" && (name === "Arcana" || name === "Nature"));
+      if (orderBonus) b += Math.max(1, m.Wis);
+      return { name, ab, p, e, b, from: sk.src[name] };
+    });
+    const saves = AB.map((a) => ({ a, p: !!cls?.saves.includes(a), b: m[a] + (cls?.saves.includes(a) ? PB : 0) }));
+    // Armour Class
+    const arm = D.armour.find((a) => a.name === C.armour), sh = C.shield === "Shield" ? { name: "Shield", bonus: 2 } : D.shields.find((s) => s.name === C.shield);
+    const opts = [];
+    const shieldB = sh ? sh.bonus : 0;
+    if (arm) {
+      const dex = arm.cat === "light" ? m.Dex : arm.cat === "medium" ? Math.min(2, m.Dex) : 0;
+      opts.push({ ac: arm.base + dex + shieldB + (C.style === "Defense" ? 1 : 0), how: `${arm.name}${sh ? " and shield" : ""}${C.style === "Defense" ? ", Defense" : ""}` });
+    } else {
+      opts.push({ ac: 10 + m.Dex + shieldB, how: sh ? "No armour, shield" : "No armour" });
+      if (cls?.unarmored === "Con") opts.push({ ac: 10 + m.Dex + m.Con + shieldB, how: "Unarmored Defense" + (sh ? " and shield" : "") });
+      if (cls?.unarmored === "Wis" && !sh) opts.push({ ac: 10 + m.Dex + m.Wis, how: "Unarmored Defense" });
+      if (race?.natArmor) opts.push({ ac: race.natArmor + m.Dex + shieldB, how: "Scaled Hide" + (sh ? " and shield" : "") });
+    }
+    const best = opts.sort((x, y) => y.ac - x.ac)[0];
+    const warnings = [];
+    if (arm && !armourProf(arm, P)) warnings.push(`You aren't trained in ${arm.cat} armour: Disadvantage on Strength and Dexterity rolls, and no spellcasting while wearing it.`);
+    if (sh && !P.armor.has("Shields")) warnings.push("You aren't trained with shields, so a shield gives you no AC.");
+    if (sh && !P.armor.has("Shields")) best.ac -= shieldB;
+    let speed = (race?.speed || 30) + (sign?.speed || 0);
+    if (arm && arm.str && S.fin.Str != null && S.fin.Str < arm.str) { speed -= 10; warnings.push(`Your Strength is below ${arm.str}, so ${arm.name} armour slows you by 10 feet.`); }
+    const hp = cls ? cls.hitDie + m.Con + (sign?.hpPerLevel || 0) : null;
+    const per = skills.find((s) => s.name === "Perception");
+    // Attacks
+    const attacks = [];
+    const strM = m.Str, dexM = m.Dex;
+    C.weapons.filter(Boolean).forEach((wn) => {
+      const w = D.weapons.find((x) => x.name === wn); if (!w) return;
+      const ranged = /Ammunition/.test(w.props) || ["Dart", "Throwing knife", "Throwing star"].includes(w.name);
+      const fin = /Finesse/.test(w.props);
+      const monkWeapon = cls?.martialArts && !ranged && (w.cat === "Simple" || /Light/.test(w.props));
+      const am = ranged && !fin ? dexM : fin || monkWeapon ? Math.max(strM, dexM) : strM;
+      const p = weaponProf(w, P);
+      const ver = (w.props.match(/Versatile \((\w+)\)/) || [])[1];
+      attacks.push({ name: w.name, hit: am + (p ? PB : 0), dmg: `${w.die}${am ? " " + sgn(am) : ""} ${w.type}${ver ? ` (${ver}${am ? " " + sgn(am) : ""} two-handed)` : ""}`,
+        notes: [w.props !== "—" ? w.props : "", C.mastery.includes(w.name) || C.sword === w.name ? `Mastery: ${w.mastery}` : "", p ? "" : "not proficient"].filter(Boolean).join("; ") });
+    });
+    const ua = race?.unarmed, ma = cls?.martialArts;
+    const uaM = ma ? Math.max(strM, dexM) : strM;
+    attacks.push({ name: ua ? `${ua[2]} (Unarmed Strike)` : "Unarmed Strike", hit: uaM + PB,
+      dmg: ua || ma ? `${ma && (!ua || ma >= ua[0]) ? ma : ua[0]} ${sgn(uaM)} ${ua ? ua[1] : "Bludgeoning"}` : `${Math.max(1, 1 + strM)} Bludgeoning`, notes: "" });
+    // Spellcasting
+    const castAb = cls?.cast?.ability;
+    const spell = castAb ? { ab: castAb, dc: 8 + PB + m[castAb], atk: PB + m[castAb] } : null;
+    const raceSp = race?.spellAbility ? { ab: C.raceAbility, dc: 8 + PB + m[C.raceAbility], atk: PB + m[C.raceAbility] } : null;
+    const signSp = sign ? { ab: C.signAbility, dc: 8 + PB + m[C.signAbility], atk: PB + m[C.signAbility] } : null;
+    return { S, sk, P, skills, saves, ac: best, warnings, speed, hp, per, attacks, spell, raceSp, signSp, race, cls, sign };
+  }
+
+  // ---------- builder UI ----------
+  const opt = (v, label, sel, dis) => `<option value="${esc(v)}"${sel ? " selected" : ""}${dis ? " disabled" : ""}>${esc(label ?? v)}</option>`;
+  const sel = (bind, options, value, placeholder, extra = "") => `<select data-bind="${bind}" ${extra}>${placeholder ? opt("", placeholder, !value) : ""}${options.map((o) =>
+    typeof o === "string" ? opt(o, o, o === value) : o.group ? `<optgroup label="${esc(o.group)}">${o.items.map((i) => opt(i.v, i.l, i.v === value, i.dis)).join("")}</optgroup>` : opt(o.v, o.l, o.v === value, o.dis)).join("")}</select>`;
+  const field = (label, html) => `<label class="f">${esc(label)}${html}</label>`;
+  const guideLink = (anchor, text) => HOST ? `<a class="guide" href="#${anchor}" data-guide="${anchor}">${esc(text)} ›</a>`
+    : CONFIG.guide !== null ? `<a class="guide" href="${esc(CONFIG.guide)}#${anchor}" target="_blank" rel="noopener">${esc(text)} ↗</a>` : "";
+  const guideText = (a, txt) => HOST ? `<a href="#${a}" data-guide="${a}">${txt}</a>` : CONFIG.guide !== null ? `<a href="${esc(CONFIG.guide)}#${a}" target="_blank" rel="noopener">${txt}</a>` : txt;
+  const traitsHtml = (traits) => `<div class="traits">${traits.map((t) => `<details><summary>${esc(t.name)}</summary><div>${t.text}</div></details>`).join("")}</div>`;
+  const openSteps = new Set(JSON.parse(store.get("op-open") || '["1"]'));
+
+  function step(n, title, sub, done, body) {
+    return `<details class="step${done ? " done" : ""}" data-step="${n}"${openSteps.has(String(n)) ? " open" : ""}><summary><span class="sn">${done ? "✓" : n}</span><span class="st">${esc(title)}<small>${esc(sub || " ")}</small></span></summary><div class="body">${body}</div></details>`;
+  }
+
+  function renderBuild() {
+    const X = derive(), { race, cls, sign } = X, bg = byId(D.backgrounds, C.bg);
+    const taken = (except) => Object.keys(X.sk.src).filter((s) => !except.includes(s));
+    const parts = [];
+
+    // 1. People
+    let b1 = `<div class="row">${field("Name", `<input type="text" data-bind="name" value="${esc(C.name)}" placeholder="Your character's name" autocomplete="off">`)}
+      ${field("People", sel("race", D.races.map((r) => ({ v: r.id, l: r.name })), C.race, "Choose a people…"))}</div>`;
+    if (race) {
+      b1 += `<div class="card"><p>${race.intro}</p><p><b>Homeland:</b> ${esc(race.homeland)}. <b>On Vvardenfell:</b> ${esc(race.standing)}.</p><p><b>Size:</b> ${esc(race.sizeText)}. <b>Speed:</b> ${race.speed} feet${race.swim ? `, swim ${race.swim}` : ""}${race.climb ? `, climb ${race.climb}` : ""}.</p></div>`;
+      b1 += traitsHtml(race.traits);
+      (race.skills?.choose || []).forEach((ch) => {
+        let h = "";
+        for (let i = 0; i < ch.n; i++) {
+          const mine = C.raceSkills.filter((_, j) => j !== i);
+          h += sel(`raceSkills.${i}`, ch.from.map((s) => ({ v: s, l: ch.labels?.[s] ? `${s} (${ch.labels[s]})` : s, dis: mine.includes(s) || (race.skills.fixed || []).includes(s) })), C.raceSkills[i], `${ch.label}: choose a skill…`);
+        }
+        b1 += field(`${ch.label} (choose ${ch.n})`, `<div class="row">${h}</div>`);
+      });
+      if (race.spellAbility) {
+        let h = field("Spellcasting ability for racial spells", sel("raceAbility", ["Int", "Wis", "Cha"].map((a) => ({ v: a, l: ABN[a] })), C.raceAbility));
+        (race.spells?.choose || []).forEach((ch) => (h += field(`${ch.label}: a level ${ch.level} spell`, sel("raceSpell", ch.from, C.raceSpell, "Choose a spell…"))));
+        b1 += `<div class="row">${h}</div>`;
+      }
+      if (race.swordMastery) b1 += field("Way of the Sword: a sword you've mastered", sel("sword", race.swordMastery, C.sword, "Choose a sword…"));
+    }
+    b1 += field("Languages: Tamrielic, plus two more", `<div class="row">${[0, 1].map((i) => sel(`langs.${i}`, D.languages.map((l) => ({ v: l, l, dis: C.langs.includes(l) && C.langs[i] !== l })), C.langs[i], "Choose a language…")).join("")}</div>`);
+    b1 += `<p class="note">Dunmeris is the most useful extra language on Vvardenfell. ${guideText("guide-peoples-of-tamriel--languages-of-tamriel", `Who speaks what ${HOST ? "›" : "↗"}`)}</p>`;
+    const d1 = race && (race.skills?.choose || []).every((ch) => C.raceSkills.filter(Boolean).length >= ch.n) && (!race.spells?.choose || C.raceSpell) && (!race.swordMastery || C.sword) && C.langs.every(Boolean);
+    parts.push(step(1, "Your People", race ? race.name : "Race, traits and languages", d1, guideLink("guide-peoples-of-tamriel", "Step One in the guide") + b1));
+
+    // 2. Class
+    let b2 = field("Class", sel("cls", D.classes.map((c) => ({ v: c.id, l: c.name })), C.cls, "Choose a class…"));
+    if (cls) {
+      b2 += `<div class="card"><p><b>On Vvardenfell:</b> ${cls.onVvardenfell}</p><p><b>Who'll want you:</b> ${cls.wanted}</p>
+        <p><b>Hit die:</b> d${cls.hitDie}. <b>Primary ability:</b> ${esc(cls.primary)}. <b>Saving throws:</b> ${cls.saves.map((a) => ABN[a]).join(", ")}.</p>
+        <p><b>Armour:</b> ${cls.armor.length ? esc(cls.armor.join(", ")) : "None"}. <b>Weapons:</b> ${esc(cls.weapons.join(", "))}.</p></div>`;
+      b2 += `<div class="traits">${cls.features.map(([n, t]) => `<details><summary>${esc(n)}</summary><div><p>${esc(t)}</p></div></details>`).join("")}</div>`;
+      const pre = taken(C.clsSkills);
+      let h = "";
+      for (let i = 0; i < cls.skillChoices.n; i++) h += sel(`clsSkills.${i}`, cls.skillChoices.from.map((s) => ({ v: s, l: pre.includes(s) ? `${s} (already proficient)` : s, dis: pre.includes(s) || (C.clsSkills.includes(s) && C.clsSkills[i] !== s) })), C.clsSkills[i], "Choose a skill…");
+      b2 += field(`Class skills (choose ${cls.skillChoices.n})`, `<div class="row">${h}</div>`);
+      (cls.tools || []).filter((t) => typeof t === "object").forEach((t) => {
+        const list = t.of === "instrument" ? D.tools.instrument : [...D.tools.artisan, ...D.tools.instrument];
+        b2 += field(t.choose > 1 ? `Musical instruments (choose ${t.choose})` : "A tool or instrument", `<div class="row">${Array.from({ length: t.choose }, (_, i) => sel(`clsTools.${i}`, list.map((x) => ({ v: x, l: x, dis: C.clsTools.includes(x) && C.clsTools[i] !== x })), C.clsTools[i], "Choose…")).join("")}</div>`);
+      });
+      if (cls.order === "divine") b2 += field("Divine Order", sel("order", [{ v: "protector", l: "Protector: Martial weapons and Heavy armour" }, { v: "thaumaturge", l: "Thaumaturge: an extra cantrip, Wisdom to Arcana and Religion" }], C.order, "Choose…"));
+      if (cls.order === "primal") b2 += field("Primal Order", sel("order", [{ v: "magician", l: "Magician: an extra cantrip, Wisdom to Arcana and Nature" }, { v: "warden", l: "Warden: Martial weapons and Medium armour" }], C.order, "Choose…"));
+      if (cls.style) b2 += field("Fighting Style", sel("style", D.fightingStyles, C.style, "Choose a Fighting Style…"));
+      if (cls.expertise) {
+        const profd = Object.keys(X.sk.src);
+        b2 += field("Expertise (two skills you're proficient in)", `<div class="row">${[0, 1].map((i) => sel(`expertise.${i}`, profd.map((s) => ({ v: s, l: s, dis: C.expertise.includes(s) && C.expertise[i] !== s })), C.expertise[i], "Choose a skill…")).join("")}</div>`);
+      }
+      if (cls.extraLanguage) b2 += field("Thieves' Cant: one more language", sel("langExtra", D.languages.map((l) => ({ v: l, l, dis: C.langs.includes(l) })), C.langExtra, "Choose a language…"));
+      if (cls.invocations) b2 += field("Eldritch Invocation", `<input type="text" data-bind="invocation" value="${esc(C.invocation)}" placeholder="From the Player's Handbook">`);
+      if (cls.mastery) {
+        const ok = D.weapons.filter((w) => weaponProf(w, X.P) && (cls.id !== "barbarian" || !/Ammunition/.test(w.props)));
+        b2 += field(`Weapon Mastery (choose ${cls.mastery} kinds of weapon)`, `<div class="row">${Array.from({ length: cls.mastery }, (_, i) => sel(`mastery.${i}`, ok.map((w) => ({ v: w.name, l: `${w.name} (${w.mastery})`, dis: C.mastery.includes(w.name) && C.mastery[i] !== w.name })), C.mastery[i], "Choose a weapon…")).join("")}</div>`);
+      }
+      if (cls.cast) {
+        const ct = cls.cast.cantrips + (C.order === "thaumaturge" || C.order === "magician" ? 1 : 0);
+        b2 += `<p class="note">${esc(cls.name)} spells at level 1: ${ct ? `${ct} cantrips, ` : ""}${cls.cast.prepared} prepared level 1 spells, ${cls.cast.slots} level 1 spell slot${cls.cast.slots > 1 ? "s" : ""}${cls.cast.spellbook ? `, and a spellbook of ${cls.cast.spellbook} spells` : ""}. Choose them from the ${esc(cls.cast.list)} list in the <i>Player's Handbook</i>.</p>`;
+        const slots = (key, n, ph) => `<div class="row">${Array.from({ length: n }, (_, i) => `<input type="text" data-bind="${key}.${i}" value="${esc(C[key][i] || "")}" placeholder="${ph} ${i + 1}">`).join("")}</div>`;
+        if (ct) b2 += field("Cantrips", slots("cantrips", ct, "Cantrip"));
+        b2 += field("Prepared level 1 spells", slots("prepared", cls.cast.prepared, "Spell"));
+        if (cls.cast.spellbook) b2 += field("Spellbook (level 1 spells)", slots("spellbook", cls.cast.spellbook, "Spell"));
+      }
+    }
+    const d2 = cls && C.clsSkills.filter(Boolean).length >= cls.skillChoices.n && (!cls.order || C.order) && (!cls.style || C.style) && (!cls.mastery || C.mastery.filter(Boolean).length >= cls.mastery);
+    parts.push(step(2, "Your Class", cls ? cls.name : "Class, skills and spells", d2, guideLink("guide-classes-on-vvardenfell", "Step Two in the guide") + b2));
+
+    // 3. Background
+    let b3 = field("Background", sel("bg", [{ group: "From the Player's Handbook", items: D.backgrounds.filter((b) => b.group !== "Morrowind").map((b) => ({ v: b.id, l: b.name })) },
+      { group: "Backgrounds of Morrowind", items: D.backgrounds.filter((b) => b.group === "Morrowind").map((b) => ({ v: b.id, l: b.name })) }], C.bg, "Choose a background…"));
+    if (bg) {
+      b3 += `<div class="card"><p>${bg.desc}</p><p><b>Abilities:</b> ${bg.abilities.map((a) => ABN[a]).join(", ")}. <b>Skills:</b> ${esc(bg.skills.join(", "))}. <b>Tool:</b> ${esc(bg.tool || { artisan: "one type of Artisan's Tools", instrument: "one musical instrument", gaming: "one gaming set" }[bg.toolChoice])}.</p><p><b>Connection:</b> ${bg.connection}</p></div>`;
+      if (bg.toolChoice) b3 += field("Your tool", sel("bgTool", D.tools[bg.toolChoice], C.bgTool, "Choose…"));
+      X.sk.bgDups.forEach((s) => { const pre = taken([C.bgDup[s]]); b3 += field(`You already have ${s}: choose a different skill`, sel(`bgDup.${s}`, ALL_SKILLS.map((x) => ({ v: x, l: x, dis: pre.includes(x) })), C.bgDup[s], "Choose a skill…")); });
+      if (X.P.bgToolDup) b3 += field(`You already have ${X.P.bgTool}: choose a different tool`, sel("bgToolDup", ANY_TOOL.map((t) => ({ v: t, l: t, dis: X.P.tools.some((x) => x.t === t && t !== C.bgToolDup) })), C.bgToolDup, "Choose a tool…"));
+    }
+    const d3 = bg && (!bg.toolChoice || C.bgTool) && X.sk.bgDups.every((s) => C.bgDup[s]) && (!X.P.bgToolDup || C.bgToolDup);
+    parts.push(step(3, "Your Background", bg ? bg.name : "What you did before the voyage", d3, guideLink("guide-backgrounds-of-tamriel", "Step Three in the guide") + b3));
+
+    // 4. Birthsign
+    let b4 = field("Birthsign", sel("sign", D.signs.map((s) => ({ v: s.id, l: `${s.name} · ${s.brief}` })), C.sign, "Choose a birthsign…"));
+    if (sign) {
+      b4 += `<div class="card"><p>${sign.flavour}</p><p><b>Month:</b> ${esc(sign.month)}. <b>Guardian:</b> ${esc(sign.guardian)}.</p></div>` + traitsHtml(sign.traits);
+      b4 += field("Spellcasting ability for your birthsign", sel("signAbility", ["Int", "Wis", "Cha"].map((a) => ({ v: a, l: ABN[a] })), C.signAbility));
+      if (X.sk.signDup) { const pre = taken([C.signDup]); b4 += field(`You already have ${X.sk.signDup}: choose another`, sel("signDup", sign.skills.dupFrom.map((x) => ({ v: x, l: x, dis: pre.includes(x) })), C.signDup, "Choose a skill…")); }
+      if (sign.skills?.choose) { const ch = sign.skills.choose[0]; const pre = taken([C.signChoice]); b4 += field(ch.label, sel("signChoice", ch.from.map((x) => ({ v: x, l: x, dis: pre.includes(x) })), C.signChoice, "Choose a skill…")); }
+      if (sign.cantripChoice) b4 += field("Gift of the Mage: two Wizard cantrips", `<div class="row">${[0, 1].map((i) => `<input type="text" data-bind="signCantrips.${i}" value="${esc(C.signCantrips[i] || "")}" placeholder="Cantrip ${i + 1}">`).join("")}</div>`);
+      if (sign.extraSlots && !cls?.cast) b4 += field(`Without class spellcasting, you gain ${sign.extraSlots} level 1 ${sign.noncasterList} spell${sign.extraSlots > 1 ? "s" : ""}`, `<div class="row">${Array.from({ length: sign.extraSlots }, (_, i) => `<input type="text" data-bind="signSpells.${i}" value="${esc(C.signSpells[i] || "")}" placeholder="${sign.noncasterList} spell ${i + 1}">`).join("")}</div>`);
+    }
+    const d4 = sign && (!X.sk.signDup || C.signDup) && (!sign.skills?.choose || C.signChoice);
+    parts.push(step(4, "Your Birthsign", sign ? sign.name : "The sign you were born under", d4, guideLink("guide-birthsigns-of-tamriel", "Step Four in the guide") + b4));
+
+    // 5. Ability scores
+    const S = X.S;
+    let b5 = `<div class="seg" role="group" aria-label="Method">${[["standard", "Standard array"], ["pointbuy", "Point buy"], ["dice", "Dice"]].map(([v, l]) => `<button type="button" data-method="${v}" aria-pressed="${C.method === v}">${l}</button>`).join("")}</div>`;
+    let pool = null;
+    if (C.method === "standard") { pool = STANDARD; b5 += `<p class="note">Put 15, 14, 13, 12, 10 and 8 in your six abilities, one each.</p>`; }
+    if (C.method === "dice") {
+      pool = C.rolls.map(Number);
+      b5 += `<div class="rolls"><button class="btn primary" type="button" id="rollBtn">Roll 4d6 six times</button>${Array.from({ length: 6 }, (_, i) => `<input type="number" min="3" max="18" data-bind="rolls.${i}" value="${esc(C.rolls[i] ?? "")}" aria-label="Roll ${i + 1}">`).join("")}</div>
+        <p class="note">Roll here, or type in the totals from your own dice: roll four six-sided dice and add the highest three.</p>`;
+    }
+    if (C.method === "pointbuy") {
+      const spent = AB.reduce((t, a) => t + COST[C.points[a] || 8], 0);
+      b5 += `<p class="${spent > 27 ? "warn" : "note"}">Points spent: <b>${spent}</b> of 27. Scores run from 8 to 15.</p>`;
+    }
+    const usedIdx = Object.values(C.assign).filter((v) => v !== "" && v != null).map(String);
+    b5 += `<div class="scores">${AB.map((a) => {
+      let ctrl;
+      if (C.method === "pointbuy") ctrl = `<div class="pb"><button type="button" data-pt="${a}" data-d="-1" aria-label="Lower ${ABN[a]}">−</button><span class="v">${C.points[a] || 8}</span><button type="button" data-pt="${a}" data-d="1" aria-label="Raise ${ABN[a]}">+</button></div>`;
+      else ctrl = `<select data-bind="assign.${a}" aria-label="${ABN[a]}">${opt("", "—", C.assign[a] === "" || C.assign[a] == null)}${pool.map((v, i) => isNaN(v) ? "" : opt(String(i), String(v), String(C.assign[a]) === String(i), usedIdx.includes(String(i)) && String(C.assign[a]) !== String(i))).join("")}</select>`;
+      return `<div class="sc"><span class="ab">${a}</span>${ctrl}<span class="fin">${S.fin[a] == null ? "—" : `${S.fin[a]} (${sgn(S.m[a])})`}${S.inc[a] ? ` <span title="from your background">+${S.inc[a]}</span>` : ""}</span></div>`;
+    }).join("")}</div>`;
+    if (bg) {
+      b5 += `<div class="seg" role="group" aria-label="Background increase">${[["21", "+2 and +1"], ["111", "+1 to all three"]].map(([v, l]) => `<button type="button" data-asi="${v}" aria-pressed="${C.asiMode === v}">${l}</button>`).join("")}</div>`;
+      if (C.asiMode === "21") b5 += `<div class="row">${field("+2 to", sel("asi2", bg.abilities.map((a) => ({ v: a, l: ABN[a], dis: a === C.asi1 })), C.asi2, "Choose…"))}${field("+1 to", sel("asi1", bg.abilities.map((a) => ({ v: a, l: ABN[a], dis: a === C.asi2 })), C.asi1, "Choose…"))}</div>`;
+      else b5 += `<p class="note">+1 to ${bg.abilities.map((a) => ABN[a]).join(", ")}.</p>`;
+    } else b5 += `<p class="note">Choose a background in Step 3 to add its ability increases.</p>`;
+    if (cls) b5 += `<p class="note">${esc(cls.name)}: give one of your best scores to ${esc(cls.primary)}.</p>`;
+    const d5 = AB.every((a) => S.base[a] != null) && bg && (C.asiMode === "111" || (C.asi2 && C.asi1)) && (C.method !== "pointbuy" || AB.reduce((t, a) => t + COST[C.points[a] || 8], 0) <= 27);
+    parts.push(step(5, "Ability Scores", { standard: "Standard array", pointbuy: "Point buy", dice: "Dice" }[C.method], d5, guideLink("guide-ability-scores", "Step Five in the guide") + b5));
+
+    // 6. Equipment
+    let b7 = "";
+    if (cls) {
+      const opts = D.equipment[cls.name] || [];
+      b7 += field(`${cls.name} equipment`, sel("classEquip", opts.map((o, i) => ({ v: String(i), l: o.label })), String(C.classEquip)));
+      const o = opts[C.classEquip];
+      if (o) b7 += `<p class="note">${o.text ? o.text : `${o.gold} gp to spend at <i>Treasures of Morrowind</i> prices.`}</p>`;
+    } else b7 += `<p class="note">Choose a class in Step 2 to see its equipment.</p>`;
+    if (bg) {
+      b7 += field(`${bg.name} equipment`, sel("bgEquip", [{ v: "package", l: "The background's package" }, { v: "gold", l: `${bg.altGold} gp instead` }], C.bgEquip));
+      if (C.bgEquip === "package") b7 += `<p class="note">${bg.equipment}</p>`;
+    }
+    const armOpts = ["light", "medium", "heavy"].flatMap((cat) => ["Player's Handbook", "Treasures"].map((src) => ({ group: `${cat[0].toUpperCase() + cat.slice(1)} armour · ${src === "Treasures" ? "Morrowind-made" : "from home"}`,
+      items: D.armour.filter((a) => a.cat === cat && a.src === src).map((a) => ({ v: a.name, l: `${a.name} · AC ${a.base}${cat === "light" ? " + Dex" : cat === "medium" ? " + Dex (max 2)" : ""}${armourProf(a, X.P) ? "" : " · untrained"}` })) })));
+    b7 += `<div class="row">${field("Armour you wear", sel("armour", armOpts, C.armour, "No armour"))}${field("Shield", sel("shield", [{ v: "Shield", l: "Shield (from home) · +2" }, ...D.shields.map((s) => ({ v: s.name, l: `${s.name} · +${s.bonus}` }))], C.shield, "No shield"))}</div>`;
+    const wOpts = ["Simple", "Martial"].map((cat) => ({ group: `${cat} weapons`, items: D.weapons.filter((w) => w.cat === cat).map((w) => ({ v: w.name, l: `${w.name}${w.as ? ` [${w.as}]` : ""}${weaponProf(w, X.P) ? "" : " · untrained"}` })) }));
+    b7 += field("Weapons you carry", `<div class="row">${[0, 1, 2, 3].map((i) => sel(`weapons.${i}`, wOpts, C.weapons[i], "—")).join("")}</div>`);
+    b7 += `<p class="note">Choosing a gear package fills in your armour and weapons; change them freely. Names in brackets are the <i>Player's Handbook</i> weapon each one counts as.</p>`;
+    parts.push(step(6, "Equipment", cls ? (D.equipment[cls.name] || [])[C.classEquip]?.label || "" : "What you carry off the ship", !!cls && !!bg, guideLink("guide-starting-equipment", "Step Seven in the guide") + b7));
+
+    // Faith (guide Step Six) and Finishing Touches (Step Eight) stay in the guide, not on the papers
+    const gl = guideText;
+    parts.push(`<p class="note">Your faith and your story aren't on these papers. Work through ${gl("guide-your-faith", "Step Six")} and ${gl("guide-finishing-touches", "Step Eight")} in the guide, and share them with your DM.</p>`);
+
+    const active = document.activeElement?.dataset?.bind;
+    $("#build").innerHTML = parts.join("");
+    if (active) { const el = $(`[data-bind="${CSS.escape(active)}"]`); if (el) el.focus({ preventScroll: true }); }
+  }
+
+  // ---------- the sheet ----------
+  function renderSheet() {
+    const X = derive(), { race, cls, sign, S } = X, bg = byId(D.backgrounds, C.bg);
+    const line = [race?.short, cls ? `${cls.name} 1` : "", bg?.name, sign?.name].filter(Boolean).join(" · ");
+    let h = `<h2>${esc(C.name || "Unnamed outlander")}</h2><div class="who">${esc(line || "Work through the six steps, and your papers fill in here.")}</div>`;
+    h += `<div class="stats">${[["AC", X.ac.ac, X.ac.how], ["Hit points", X.hp ?? "—", cls ? `d${cls.hitDie} + Con${sign?.hpPerLevel ? " + Lady's Grace" : ""}` : ""], ["Speed", `${X.speed} ft`, ""],
+      ["Initiative", sgn(S.m.Dex), sign?.initAdv ? "with Advantage" : ""], ["Proficiency", "+2", ""], ["Passive Perception", 10 + X.per.b, ""],
+      ["Darkvision", race?.darkvision ? `${race.darkvision} ft` : "—", ""]].map(([n, v, t]) => `<div class="stat" title="${esc(t)}"><b>${esc(v)}</b><span>${esc(n)}</span></div>`).join("")}</div>`;
+    if (X.warnings.length) h += X.warnings.map((w) => `<p class="warn">${esc(w)}</p>`).join("");
+    h += `<h3>Abilities and saving throws</h3><div class="abil">${AB.map((a) => { const sv = X.saves.find((s) => s.a === a);
+      return `<div class="ab6"><div class="n">${ABN[a]}</div><div class="m">${S.fin[a] == null ? "—" : sgn(S.m[a])}</div><div class="s">${S.fin[a] ?? ""}</div><div class="sv${sv.p ? " p" : ""}">save ${sgn(sv.b)}${sv.p ? " ●" : ""}</div></div>`; }).join("")}</div>`;
+    h += `<div class="two"><div><h3>Skills</h3><ul class="skills">${X.skills.map((s) => `<li title="${esc(s.from ? "From " + s.from : "")}"><span class="dot${s.e ? " e" : s.p ? " p" : ""}"></span><span class="b">${sgn(s.b)}</span><span>${esc(s.name)}</span><span class="a">${s.ab}</span></li>`).join("")}</ul></div><div>`;
+    h += `<h3>Proficiencies</h3><p class="kv"><b>Armour</b>${esc([...X.P.armor].join(", ") || "None")}</p><p class="kv"><b>Weapons</b>${esc([...X.P.weapons].join(", ") || "None")}</p>
+      <p class="kv"><b>Tools</b>${esc(X.P.tools.map((t) => t.t).join(", ") || "None")}</p><p class="kv"><b>Languages</b>${esc(X.P.langs.join(", "))}</p>`;
+    const res = [...(race?.resist || [])], adv = [...(race?.adv || [])];
+    if (res.length) h += `<p class="kv"><b>Resistance</b>${esc(res.join(", "))} damage</p>`;
+    if (adv.length) h += `<p class="kv"><b>Advantage</b>on ${esc(adv.join("; "))}</p>`;
+    if (sign?.id === "lord") h += `<p class="kv"><b>Weakness</b>Disadvantage on saves against effects that deal Fire damage</p>`;
+    if (sign?.id === "apprentice") h += `<p class="kv"><b>Weakness</b>Spells deal +2 damage to you (Arcane Frailty)</p>`;
+    h += `</div></div>`;
+    h += `<h3>Attacks</h3><table class="atk"><thead><tr><th>Weapon</th><th>Hit</th><th>Damage</th><th>Notes</th></tr></thead><tbody>${X.attacks.map((a) => `<tr><td>${esc(a.name)}</td><td>${sgn(a.hit)}</td><td>${esc(a.dmg)}</td><td>${esc(a.notes)}</td></tr>`).join("")}</tbody></table>`;
+    // Spells
+    const sp = [];
+    if (cls?.cast) {
+      const c = cls.cast, ct = c.cantrips + (C.order === "thaumaturge" || C.order === "magician" ? 1 : 0);
+      sp.push(`<p class="kv"><b>${esc(cls.name)}</b>${ABN[c.ability]} · save DC ${X.spell.dc} · attack ${sgn(X.spell.atk)} · ${c.slots} level 1 slot${c.slots > 1 ? "s" : ""}${c.pact ? " (Pact Magic)" : ""}</p>`);
+      const list = (arr, n) => Array.from({ length: n }, (_, i) => arr[i] || "").map((x) => x ? esc(x) : `<span class="empty">blank</span>`).join(", ");
+      if (ct) sp.push(`<p class="kv"><b>Cantrips</b>${list(C.cantrips, ct)}</p>`);
+      sp.push(`<p class="kv"><b>Prepared</b>${list(C.prepared, c.prepared)}${c.always ? `; always prepared: ${esc(c.always.join(", "))}` : ""}</p>`);
+      if (c.spellbook) sp.push(`<p class="kv"><b>Spellbook</b>${list(C.spellbook, c.spellbook)}</p>`);
+    }
+    if (race?.spells) {
+      const now = [...race.spells.cantrips, ...(C.raceSpell ? [C.raceSpell] : [])];
+      sp.push(`<p class="kv"><b>${esc(race.short)}</b>${esc(now.join(", ") || "—")} · ${ABN[C.raceAbility]} · DC ${X.raceSp.dc} · attack ${sgn(X.raceSp.atk)}${race.spells.later?.length ? ` <span class="src">· later: ${esc(race.spells.later.map(([n, l]) => `${n} (level ${l})`).join(", "))}</span>` : ""}</p>`);
+    }
+    if (sign) {
+      const ss = [...(sign.spells || []).map((s) => s[0]), ...C.signCantrips.filter(Boolean), ...C.signSpells.filter(Boolean)];
+      if (ss.length || sign.extraSlots) sp.push(`<p class="kv"><b>${esc(sign.name)}</b>${esc(ss.join(", ") || "")}${sign.extraSlots ? `${ss.length ? " · " : ""}${sign.extraSlots} extra level 1 slot${sign.extraSlots > 1 ? "s" : ""}` : ""} · ${ABN[C.signAbility]} · DC ${X.signSp.dc} · attack ${sgn(X.signSp.atk)}</p>`);
+      else if (/save DC/.test(sign.traits.map((t) => t.text).join(" "))) sp.push(`<p class="kv"><b>Birthsign save DC</b>${X.signSp.dc} (${ABN[C.signAbility]})</p>`);
+    }
+    if (race?.id === "nord") sp.push(`<p class="kv"><b>Battle Cry DC</b>${8 + PB + S.m.Con}</p>`);
+    if (sp.length) h += `<h3>Spells</h3>` + sp.join("");
+    // Features
+    const feats = [];
+    if (race) feats.push(...race.traits.map((t) => [t.name, race.short]));
+    if (cls) feats.push(...cls.features.map(([n]) => [n, cls.name]));
+    if (C.order) feats.push([{ protector: "Divine Order: Protector", thaumaturge: "Divine Order: Thaumaturge", magician: "Primal Order: Magician", warden: "Primal Order: Warden" }[C.order], cls?.name]);
+    if (C.style) feats.push([`Fighting Style: ${C.style}`, "Fighter"]);
+    if (C.invocation) feats.push([`Invocation: ${C.invocation}`, "Warlock"]);
+    if (C.mastery.filter(Boolean).length || C.sword) feats.push([`Weapon Mastery: ${[...C.mastery.filter(Boolean), C.sword].filter(Boolean).join(", ")}`, ""]);
+    if (C.expertise.filter(Boolean).length) feats.push([`Expertise: ${C.expertise.filter(Boolean).join(", ")}`, "Rogue"]);
+    if (sign) feats.push(...sign.traits.map((t) => [t.name, sign.name]));
+    if (feats.length) h += `<h3>Features and traits</h3>` + feats.map(([n, f]) => `<p class="feat"><b>${esc(n)}</b> <span class="src">${esc(f || "")}</span></p>`).join("");
+    // Equipment
+    const eq = [];
+    let gold = 0;
+    if (cls) { const o = (D.equipment[cls.name] || [])[C.classEquip]; if (o) { if (o.text) eq.push(o.text); gold += o.gold; } }
+    if (bg) { if (C.bgEquip === "package") { eq.push(bg.equipment); gold += bg.gold; } else gold += bg.altGold; }
+    if (eq.length || gold) h += `<h3>Equipment</h3>${eq.map((e) => `<p class="feat">${e.replace(/ and \d+ gp$/, "").replace(/,? and \d+ gp/, "")}</p>`).join("")}<p class="kv"><b>Gold</b>${gold} gp</p>`;
+    // Story
+    if (bg) h += `<h3>Story</h3><p class="kv"><b>Connection</b>${bg.connection}</p>`;
+    $("#sheet").innerHTML = h;
+  }
+
+  function sheetText() {
+    const X = derive(), { race, cls, sign, S } = X, bg = byId(D.backgrounds, C.bg);
+    const L = [];
+    L.push(`${C.name || "Unnamed outlander"}: ${[race?.short, cls ? cls.name + " 1" : "", bg?.name, sign?.name].filter(Boolean).join(", ")}`);
+    L.push(`AC ${X.ac.ac} (${X.ac.how}) | HP ${X.hp ?? "-"} | Speed ${X.speed} ft | Initiative ${sgn(S.m.Dex)} | Passive Perception ${10 + X.per.b}${race?.darkvision ? ` | Darkvision ${race.darkvision} ft` : ""}`);
+    L.push(AB.map((a) => `${a} ${S.fin[a] ?? "-"} (${sgn(S.m[a])})`).join("  "));
+    L.push("Saves: " + X.saves.filter((s) => s.p).map((s) => `${s.a} ${sgn(s.b)}`).join(", "));
+    L.push("Skills: " + X.skills.filter((s) => s.p).map((s) => `${s.name} ${sgn(s.b)}${s.e ? " (expertise)" : ""}`).join(", "));
+    L.push(`Armour: ${[...X.P.armor].join(", ") || "None"} | Weapons: ${[...X.P.weapons].join(", ")} | Tools: ${X.P.tools.map((t) => t.t).join(", ") || "None"}`);
+    L.push(`Languages: ${X.P.langs.join(", ")}`);
+    L.push("Attacks: " + X.attacks.map((a) => `${a.name} ${sgn(a.hit)} (${a.dmg})`).join("; "));
+    if (cls?.cast) L.push(`Spells (${cls.name}, DC ${X.spell.dc}, attack ${sgn(X.spell.atk)}): cantrips ${C.cantrips.filter(Boolean).join(", ") || "-"}; prepared ${C.prepared.filter(Boolean).join(", ") || "-"}`);
+    if (race?.spells) L.push(`${race.short} spells: ${[...race.spells.cantrips, C.raceSpell].filter(Boolean).join(", ")} (DC ${X.raceSp.dc})`);
+    if (sign) L.push(`${sign.name}: ${sign.traits.map((t) => t.name).join(", ")}`);
+    return L.join("\n");
+  }
+
+  // ---------- package parsing: armour and weapons from the chosen gear ----------
+  const WEAPON_WORDS = [["greataxe", "Battle axe"], ["battle axe", "Battle axe"], ["handaxe", "Axe"], ["chitin axe", "Axe"], ["greatsword", "Claymore"], ["claymore", "Claymore"],
+    ["scimitar", "Saber"], ["saber", "Saber"], ["shortsword", "Shortsword"], ["longsword", "Longsword"], ["broadsword", "Broadsword"], ["longbow", "Long bow"], ["long bow", "Long bow"],
+    ["shortbow", "Short bow"], ["short bow", "Short bow"], ["quarterstaff", "Staff"], ["staff", "Staff"], ["dagger", "Dagger"], ["mace", "Mace"], ["sickle", "Sickle"], ["flail", "Flail"],
+    ["javelin", "Javelin"], ["spear", "Spear"]];
+  function applyPackage() {
+    const cls = byId(D.classes, C.cls); if (!cls) return;
+    const o = (D.equipment[cls.name] || [])[C.classEquip]; if (!o) return;
+    const t = (o.text || "").toLowerCase().replace(/\[[^\]]*\]/g, "");
+    C.armour = /netch leather/.test(t) ? "Netch leather" : /chitin armour/.test(t) ? "Chitin" : /iron armour/.test(t) ? "Iron" : /studded leather/.test(t) ? "Studded leather"
+      : /chain shirt/.test(t) ? "Chain shirt" : /chain mail/.test(t) ? "Chain mail" : /leather armour/.test(t) ? "Leather" : "";
+    C.shield = /chitin shield/.test(t) ? "Netch leather or chitin" : /iron shield/.test(t) ? "Iron, steel or Nordic" : /\bshield\b/.test(t) ? "Shield" : "";
+    const found = [];
+    WEAPON_WORDS.forEach(([w, n]) => { const i = t.indexOf(w); if (i >= 0 && !found.some((f) => f.n === n) && !(w === "staff" && t.includes("quarterstaff"))) found.push({ n, i }); });
+    found.sort((a, b) => a.i - b.i);
+    C.weapons = [0, 1, 2, 3].map((i) => found[i]?.n || "");
+  }
+
+  // ---------- events ----------
+  const getPath = (o, p) => p.split(".").reduce((a, k) => (a == null ? a : a[k]), o);
+  function setPath(o, p, v) {
+    const ks = p.split("."); let a = o;
+    ks.slice(0, -1).forEach((k, i) => { if (a[k] == null) a[k] = /^\d+$/.test(ks[i + 1]) ? [] : {}; a = a[k]; });
+    a[ks.at(-1)] = v;
+  }
+  const RESETS = { race: () => { C.raceSkills = []; C.raceSpell = ""; C.sword = ""; },
+    cls: () => { C.clsSkills = []; C.order = ""; C.style = ""; C.expertise = []; C.clsTools = []; C.mastery = []; C.cantrips = []; C.prepared = []; C.spellbook = []; C.invocation = ""; C.subclass = ""; C.classEquip = 0; applyPackage(); },
+    bg: () => { C.bgTool = ""; C.bgDup = {}; C.bgToolDup = ""; C.asi2 = ""; C.asi1 = ""; },
+    sign: () => { C.signDup = ""; C.signChoice = ""; C.signCantrips = []; C.signSpells = []; },
+    classEquip: () => applyPackage() };
+  const build = $("#build");
+  build.addEventListener("change", (e) => {
+    const b = e.target.dataset.bind; if (!b) return;
+    let v = e.target.value;
+    if (b === "classEquip") v = +v;
+    setPath(C, b, v);
+    if (RESETS[b]) RESETS[b]();
+    refresh(true);
+  });
+  build.addEventListener("input", (e) => {
+    const b = e.target.dataset.bind; if (!b || e.target.tagName === "SELECT") return;
+    setPath(C, b, e.target.value);
+    refresh(b.startsWith("rolls"));
+  });
+  build.addEventListener("click", (e) => {
+    const t = e.target.closest("button"); if (!t) return;
+    if (t.dataset.method) { C.method = t.dataset.method; refresh(true); }
+    if (t.dataset.asi) { C.asiMode = t.dataset.asi; refresh(true); }
+    if (t.dataset.pt) { const a = t.dataset.pt, v = Math.min(15, Math.max(8, (C.points[a] || 8) + +t.dataset.d)); C.points[a] = v; refresh(true); }
+    if (t.id === "rollBtn") {
+      const d6 = () => 1 + Math.floor(Math.random() * 6);
+      C.rolls = Array.from({ length: 6 }, () => { const r = [d6(), d6(), d6(), d6()].sort((x, y) => y - x); return r[0] + r[1] + r[2]; });
+      C.assign = {}; refresh(true);
+    }
+  });
+  build.addEventListener("toggle", (e) => {
+    const d = e.target; if (!d.dataset?.step) return;
+    d.open ? openSteps.add(d.dataset.step) : openSteps.delete(d.dataset.step);
+    store.set("op-open", JSON.stringify([...openSteps]));
+  }, true);
+
+  // Clear picks that a later choice has made impossible, so the player chooses again.
+  function sanitize() {
+    const race = byId(D.races, C.race), bg = byId(D.backgrounds, C.bg), cls = byId(D.classes, C.cls);
+    const early = new Set([...(race?.skills?.fixed || []), ...C.raceSkills.filter(Boolean)]);
+    (bg?.skills || []).forEach((s) => early.add(early.has(s) ? C.bgDup[s] : s));
+    C.clsSkills = C.clsSkills.map((s) => (s && (early.has(s) || !cls?.skillChoices.from.includes(s)) ? "" : s));
+    C.langs = C.langs.map((l) => (l && !D.languages.includes(l) ? "" : l));  // e.g. Dwemeris, now learned in play
+    if (C.langExtra && !D.languages.includes(C.langExtra)) C.langExtra = "";
+    const sk = skillState().src;
+    C.expertise = C.expertise.map((s) => (s && !sk[s] ? "" : s));
+    const P = prof();
+    C.mastery = C.mastery.map((w) => { const x = D.weapons.find((y) => y.name === w); return w && (!x || !weaponProf(x, P)) ? "" : w; });
+  }
+  function refresh(rebuild) { if (rebuild) sanitize(); if (rebuild) renderBuild(); renderSheet(); renderWho(); save(); }
+  function renderWho() {
+    $("#who").innerHTML = chars.map((c) => opt(c.id, c.name || "Unnamed outlander", c.id === C.id)).join("");
+  }
+  $("#who").addEventListener("change", (e) => { C = chars.find((c) => c.id === e.target.value) || C; refresh(true); });
+  $("#newBtn").addEventListener("click", () => { C = blank(); chars.push(C); refresh(true); window.scrollTo(0, 0); });
+  let delArmed = false;
+  $("#delBtn").addEventListener("click", (e) => {
+    if (!delArmed) { delArmed = true; e.target.textContent = "Delete? Tap again"; setTimeout(() => { delArmed = false; e.target.textContent = "Delete"; }, 3500); return; }
+    delArmed = false; e.target.textContent = "Delete";
+    chars = chars.filter((c) => c !== C); if (!chars.length) chars = [blank()]; C = chars[0]; refresh(true); toast("Deleted");
+  });
+  const toast = (m) => { const t = $("#toast"); t.textContent = m; clearTimeout(toast.t); toast.t = setTimeout(() => (t.textContent = ""), 2500); };
+  async function copy(text, done) {
+    try { await navigator.clipboard.writeText(text); toast(done); }
+    catch (e) { openDialog("Copy this text:", text, false); }
+  }
+  $("#copyBtn").addEventListener("click", () => copy(sheetText(), "Sheet copied"));
+  $("#codeBtn").addEventListener("click", () => {
+    const code = "OP1:" + btoa(unescape(encodeURIComponent(JSON.stringify(C))));
+    openDialog("This code holds your whole character. Keep it somewhere safe, or send it to your DM. Paste it into Load code on any device to bring the character back.", code, false);
+    copy(code, "Code copied");
+  });
+  $("#loadBtn").addEventListener("click", () => openDialog("Paste a save code here.", "", true));
+  const dlg = $("#dlg");
+  function openDialog(text, value, loading) {
+    $("#dlgText").textContent = text; $("#dlgArea").value = value; $("#dlgOk").hidden = !loading;
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    if (!loading) $("#dlgArea").select();
+  }
+  $("#dlgForm").addEventListener("submit", (e) => {
+    const v = e.submitter?.value;
+    if (v === "ok") {
+      try {
+        const raw = $("#dlgArea").value.trim().replace(/^OP1:/, "");
+        const c = Object.assign(blank(), JSON.parse(decodeURIComponent(escape(atob(raw)))));
+        c.id = "c" + Date.now().toString(36); chars.push(c); C = c; refresh(true); toast("Character loaded");
+      } catch (err) { e.preventDefault(); $("#dlgText").textContent = "That code didn't work. Check you copied all of it, starting with OP1:"; return; }
+    }
+    dlg.close?.(); dlg.removeAttribute("open");
+  });
+  if (CONFIG.print) { $("#printBtn").hidden = false; $("#printBtn").addEventListener("click", () => window.print()); }
+  document.querySelectorAll(".tabs button").forEach((b) => b.addEventListener("click", () => {
+    $("#grid").dataset.tab = b.dataset.tab;
+    document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    window.scrollTo(0, 0);
+  }));
+
+  refresh(true);
+})();
+</script>
+
+</body>
+</html>
