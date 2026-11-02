@@ -162,6 +162,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   <label class="sr" for="who">Character</label>
   <select id="who"></select>
   <button class="btn" type="button" id="newBtn">New</button>
+  <button class="btn primary" type="button" id="lvlBtn">Level up</button>
   <button class="btn" type="button" id="copyBtn">Copy sheet</button>
   <button class="btn" type="button" id="codeBtn">Save code</button>
   <button class="btn" type="button" id="loadBtn">Load code</button>
@@ -867,7 +868,72 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "mastery": 2,
 "unarmored": "Con",
 "onVvardenfell": "Nords from Skyrim and Orcs from the mountains of Orsinium bring their fury with them. House Redoran respects it; everyone else keeps their distance.",
-"wanted": "The Fighters Guild, House Redoran"
+"wanted": "The Fighters Guild, House Redoran",
+"prog": {
+"features": {
+"2": [
+[
+"Danger Sense",
+"Advantage on Dexterity saving throws unless you're Incapacitated."
+],
+[
+"Reckless Attack",
+"Advantage on Strength attacks this turn; attacks against you have Advantage until your next turn."
+]
+],
+"3": [
+[
+"Barbarian Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+],
+[
+"Primal Knowledge",
+"One more skill from the Barbarian list; while raging, some skill checks can use Strength."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Extra Attack",
+"Attack twice, instead of once, when you take the Attack action."
+],
+[
+"Fast Movement",
+"+10 feet of Speed while you aren't wearing Heavy armour."
+]
+]
+},
+"counters": {
+"Rages": [
+2,
+2,
+3,
+3,
+3
+],
+"Rage damage": [
+"+2",
+"+2",
+"+2",
+"+2",
+"+2"
+]
+},
+"mastery": [
+2,
+2,
+2,
+3,
+3
+],
+"extraAttack": 5,
+"fastMovement": 5
+}
 },
 {
 "id": "bard",
@@ -931,7 +997,92 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "list": "Bard"
 },
 "onVvardenfell": "Imperial courtiers, Breton minstrels and Khajiit storytellers. On an island that runs on favours, a silver tongue is worth more than a sword.",
-"wanted": "House Hlaalu, the Thieves Guild"
+"wanted": "House Hlaalu, the Thieves Guild",
+"prog": {
+"features": {
+"2": [
+[
+"Expertise",
+"Expertise in two skills you're proficient in."
+],
+[
+"Jack of All Trades",
+"Add half your Proficiency Bonus to ability checks with skills you aren't proficient in."
+]
+],
+"3": [
+[
+"Bard Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Font of Inspiration",
+"Regain all Bardic Inspiration on a Short or Long Rest; spend a spell slot to regain one use."
+]
+]
+},
+"counters": {
+"Bardic Inspiration": [
+"d6",
+"d6",
+"d6",
+"d6",
+"d8"
+]
+},
+"expertise": [
+0,
+2,
+2,
+2,
+2
+],
+"jack": 2,
+"cantrips": [
+2,
+2,
+2,
+3,
+3
+],
+"prepared": [
+4,
+5,
+6,
+7,
+9
+],
+"slots": "full",
+"slotTable": [
+[
+2
+],
+[
+3
+],
+[
+4,
+2
+],
+[
+4,
+3
+],
+[
+4,
+3,
+2
+]
+]
+}
 },
 {
 "id": "cleric",
@@ -981,7 +1132,80 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "order": "divine",
 "faith": "domains",
 "onVvardenfell": "A priest of the Imperial Cult, the Tribunal Temple or a Daedric shrine. You choose your god in Step Six.",
-"wanted": "The Temple, the Imperial Cult"
+"wanted": "The Temple, the Imperial Cult",
+"prog": {
+"features": {
+"2": [
+[
+"Channel Divinity",
+"Divine Spark (heal or harm) and Turn Undead; 2 uses, regained on a Short or Long Rest."
+]
+],
+"3": [
+[
+"Cleric Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Sear Undead",
+"Turn Undead also deals Radiant damage to the undead it affects."
+]
+]
+},
+"counters": {
+"Channel Divinity": [
+0,
+2,
+2,
+2,
+2
+]
+},
+"cantrips": [
+3,
+3,
+3,
+4,
+4
+],
+"prepared": [
+4,
+5,
+6,
+7,
+9
+],
+"slots": "full",
+"slotTable": [
+[
+2
+],
+[
+3
+],
+[
+4,
+2
+],
+[
+4,
+3
+],
+[
+4,
+3,
+2
+]
+]
+}
 },
 {
 "id": "druid",
@@ -1038,7 +1262,84 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 "order": "primal",
 "onVvardenfell": "Bosmer of the Green Pact and followers of Kyne. Vvardenfell's wilds are ash and giant fungus, and its spirits are strange.",
-"wanted": "The Mages Guild, which will want to study you; the Ashlanders, who might respect you"
+"wanted": "The Mages Guild, which will want to study you; the Ashlanders, who might respect you",
+"prog": {
+"features": {
+"2": [
+[
+"Wild Shape",
+"Turn into a beast you've seen; 2 uses, one regained on a Short Rest, all on a Long Rest."
+],
+[
+"Wild Companion",
+"Spend a Wild Shape use or a spell slot to cast Find Familiar as a fey spirit."
+]
+],
+"3": [
+[
+"Druid Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Wild Resurgence",
+"Trade a spell slot for a Wild Shape use, or a Wild Shape use for a level 1 slot once per Long Rest."
+]
+]
+},
+"counters": {
+"Wild Shape": [
+0,
+2,
+2,
+2,
+2
+]
+},
+"cantrips": [
+2,
+2,
+2,
+3,
+3
+],
+"prepared": [
+4,
+5,
+6,
+7,
+9
+],
+"slots": "full",
+"slotTable": [
+[
+2
+],
+[
+3
+],
+[
+4,
+2
+],
+[
+4,
+3
+],
+[
+4,
+3,
+2
+]
+]
+}
 },
 {
 "id": "fighter",
@@ -1092,7 +1393,67 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "mastery": 3,
 "style": true,
 "onVvardenfell": "Legion veterans, caravan guards and Redguard swords for hire. There is always work on Vvardenfell for someone who can fight.",
-"wanted": "The Fighters Guild, the Imperial Legion, House Redoran"
+"wanted": "The Fighters Guild, the Imperial Legion, House Redoran",
+"prog": {
+"features": {
+"2": [
+[
+"Action Surge",
+"Take one extra action on your turn; 1 use per Short or Long Rest."
+],
+[
+"Tactical Mind",
+"Spend a Second Wind use to add 1d10 to a failed ability check."
+]
+],
+"3": [
+[
+"Fighter Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Extra Attack",
+"Attack twice, instead of once, when you take the Attack action."
+],
+[
+"Tactical Shift",
+"When you use Second Wind, move up to half your Speed without provoking Opportunity Attacks."
+]
+]
+},
+"counters": {
+"Second Wind": [
+2,
+2,
+2,
+3,
+3
+],
+"Action Surge": [
+0,
+1,
+1,
+1,
+1
+]
+},
+"mastery": [
+3,
+3,
+3,
+4,
+4
+],
+"extraAttack": 5
+}
 },
 {
 "id": "monk",
@@ -1139,7 +1500,80 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "unarmored": "Wis",
 "martialArts": "1d6",
 "onVvardenfell": "Pilgrims, ascetics and students of the old unarmed schools. Vivec's own warriors, the Buoyant Armigers, prize that kind of discipline.",
-"wanted": "The Temple, the Morag Tong"
+"wanted": "The Temple, the Morag Tong",
+"prog": {
+"features": {
+"2": [
+[
+"Monk's Focus",
+"Focus Points for Flurry of Blows, Patient Defense and Step of the Wind."
+],
+[
+"Unarmored Movement",
+"+10 feet of Speed without armour or a Shield."
+],
+[
+"Uncanny Metabolism",
+"When you roll Initiative, regain all Focus Points and heal; once per Long Rest."
+]
+],
+"3": [
+[
+"Monk Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+],
+[
+"Deflect Attacks",
+"Reduce the damage of an attack that hits you, and possibly redirect it."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+],
+[
+"Slow Fall",
+"Reduce falling damage by five times your Monk level."
+]
+],
+"5": [
+[
+"Extra Attack",
+"Attack twice, instead of once, when you take the Attack action."
+],
+[
+"Stunning Strike",
+"Spend a Focus Point when you hit to try to Stun the target."
+]
+]
+},
+"counters": {
+"Martial Arts die": [
+"d6",
+"d6",
+"d6",
+"d6",
+"d8"
+],
+"Focus Points": [
+0,
+2,
+3,
+4,
+5
+]
+},
+"martialDie": [
+"1d6",
+"1d6",
+"1d6",
+"1d6",
+"1d8"
+],
+"unarmoredMovement": 2,
+"extraAttack": 5
+}
 },
 {
 "id": "paladin",
@@ -1196,7 +1630,106 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "mastery": 2,
 "faith": "oaths",
 "onVvardenfell": "A holy knight of the Nine Divines, or the sworn servant of another power. The Temple's Ordinators dislike competition. You choose your god in Step Six.",
-"wanted": "The Imperial Cult, the Imperial Legion"
+"wanted": "The Imperial Cult, the Imperial Legion",
+"prog": {
+"features": {
+"2": [
+[
+"Fighting Style",
+"Choose a Fighting Style feat."
+],
+[
+"Paladin's Smite",
+"Divine Smite is always prepared; cast it once without a slot each Long Rest."
+]
+],
+"3": [
+[
+"Paladin Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+],
+[
+"Channel Divinity",
+"Divine Sense and your oath's options; 2 uses, one regained on a Short Rest."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Extra Attack",
+"Attack twice, instead of once, when you take the Attack action."
+],
+[
+"Faithful Steed",
+"Find Steed is always prepared; cast it once without a slot each Long Rest."
+]
+]
+},
+"counters": {
+"Lay on Hands pool": [
+5,
+10,
+15,
+20,
+25
+],
+"Channel Divinity": [
+0,
+0,
+2,
+2,
+2
+]
+},
+"mastery": [
+2,
+2,
+2,
+2,
+2
+],
+"style": 2,
+"extraAttack": 5,
+"always": {
+"2": [
+"Divine Smite"
+],
+"5": [
+"Find Steed"
+]
+},
+"prepared": [
+2,
+3,
+4,
+5,
+6
+],
+"slots": "half",
+"slotTable": [
+[
+2
+],
+[
+2
+],
+[
+3
+],
+[
+3
+],
+[
+4,
+2
+]
+]
+}
 },
 {
 "id": "ranger",
@@ -1256,7 +1789,91 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 "mastery": 2,
 "onVvardenfell": "Bosmer hunters, Redguard trackers and Nord woodsmen. The island needs guides through country that wants you dead.",
-"wanted": "The Fighters Guild, the East Empire Company"
+"wanted": "The Fighters Guild, the East Empire Company",
+"prog": {
+"features": {
+"2": [
+[
+"Deft Explorer",
+"Expertise in one skill you're proficient in, and two more languages."
+],
+[
+"Fighting Style",
+"Choose a Fighting Style feat."
+]
+],
+"3": [
+[
+"Ranger Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Extra Attack",
+"Attack twice, instead of once, when you take the Attack action."
+]
+]
+},
+"counters": {
+"Favored Enemy (free Hunter's Mark)": [
+2,
+2,
+2,
+2,
+3
+]
+},
+"mastery": [
+2,
+2,
+2,
+2,
+2
+],
+"style": 2,
+"expertise": [
+0,
+1,
+1,
+1,
+1
+],
+"deftLangs": 2,
+"extraAttack": 5,
+"prepared": [
+2,
+3,
+4,
+5,
+6
+],
+"slots": "half",
+"slotTable": [
+[
+2
+],
+[
+2
+],
+[
+3
+],
+[
+3
+],
+[
+4,
+2
+]
+]
+}
 },
 {
 "id": "rogue",
@@ -1315,7 +1932,66 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "expertise": 2,
 "extraLanguage": true,
 "onVvardenfell": "Thieves, spies and cutpurses. The Thieves Guild has followed the Empire to the island, and the Camonna Tong would like it gone.",
-"wanted": "The Thieves Guild, House Hlaalu"
+"wanted": "The Thieves Guild, House Hlaalu",
+"prog": {
+"features": {
+"2": [
+[
+"Cunning Action",
+"Dash, Disengage or Hide as a Bonus Action."
+]
+],
+"3": [
+[
+"Rogue Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+],
+[
+"Steady Aim",
+"If you haven't moved, give yourself Advantage on your next attack this turn; your Speed becomes 0."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Cunning Strike",
+"Trade Sneak Attack dice for effects such as Poison, Trip or Withdraw."
+],
+[
+"Uncanny Dodge",
+"Halve the damage of an attack that hits you, using your Reaction."
+]
+]
+},
+"counters": {
+"Sneak Attack": [
+"1d6",
+"1d6",
+"2d6",
+"2d6",
+"3d6"
+]
+},
+"mastery": [
+2,
+2,
+2,
+2,
+2
+],
+"expertise": [
+2,
+2,
+2,
+2,
+2
+]
+}
 },
 {
 "id": "sorcerer",
@@ -1360,7 +2036,85 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "list": "Sorcerer"
 },
 "onVvardenfell": "Bretons with Direnni blood, Altmer born with a gift, or stranger heritage still. The Mages Guild is wary of untrained power; the Telvanni admire it.",
-"wanted": "The Mages Guild, House Telvanni"
+"wanted": "The Mages Guild, House Telvanni",
+"prog": {
+"features": {
+"2": [
+[
+"Font of Magic",
+"Sorcery Points, which you can trade for spell slots and back."
+],
+[
+"Metamagic",
+"Two Metamagic options to change how your spells work."
+]
+],
+"3": [
+[
+"Sorcerer Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Sorcerous Restoration",
+"On a Short Rest, regain Sorcery Points up to half your level; once per Long Rest."
+]
+]
+},
+"counters": {
+"Sorcery Points": [
+0,
+2,
+3,
+4,
+5
+]
+},
+"metamagic": 2,
+"cantrips": [
+4,
+4,
+4,
+5,
+5
+],
+"prepared": [
+2,
+4,
+6,
+7,
+9
+],
+"slots": "full",
+"slotTable": [
+[
+2
+],
+[
+3
+],
+[
+4,
+2
+],
+[
+4,
+3
+],
+[
+4,
+3,
+2
+]
+]
+}
 },
 {
 "id": "warlock",
@@ -1411,7 +2165,69 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "faith": "patrons",
 "invocations": 1,
 "onVvardenfell": "You made a bargain with a Daedric Prince. Serving one of the Good Daedra is accepted; serving any other Prince is heresy. You choose your patron in Step Six.",
-"wanted": "Your patron's cult, if you can find it"
+"wanted": "Your patron's cult, if you can find it",
+"prog": {
+"features": {
+"2": [
+[
+"Magical Cunning",
+"Once per Long Rest, spend 1 minute to regain half your Pact Magic slots."
+]
+],
+"3": [
+[
+"Warlock Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": []
+},
+"counters": {},
+"invocations": [
+1,
+3,
+3,
+3,
+5
+],
+"cantrips": [
+2,
+2,
+2,
+3,
+3
+],
+"prepared": [
+2,
+3,
+4,
+5,
+6
+],
+"slots": "pact",
+"pact": {
+"count": [
+1,
+2,
+2,
+2,
+2
+],
+"level": [
+1,
+1,
+2,
+2,
+3
+]
+}
+}
 },
 {
 "id": "wizard",
@@ -1462,7 +2278,94 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "spellbook": 6
 },
 "onVvardenfell": "A scholar trained by the Mages Guild in Cyrodiil, or in the towers of the Summerset Isles. The Telvanni wizard-lords think Guild mages are amateurs.",
-"wanted": "The Mages Guild, House Telvanni"
+"wanted": "The Mages Guild, House Telvanni",
+"prog": {
+"features": {
+"2": [
+[
+"Scholar",
+"Expertise in Arcana, History, Investigation, Medicine, Nature or Religion (one you're proficient in)."
+]
+],
+"3": [
+[
+"Wizard Subclass",
+"Choose your subclass. Its level 3 features are in the book it comes from."
+]
+],
+"4": [
+[
+"Ability Score Improvement",
+"Raise your ability scores, or take a feat."
+]
+],
+"5": [
+[
+"Memorize Spell",
+"On a Short Rest, swap one prepared spell for another in your spellbook."
+]
+]
+},
+"counters": {},
+"expertise": [
+0,
+1,
+1,
+1,
+1
+],
+"scholar": [
+"Arcana",
+"History",
+"Investigation",
+"Medicine",
+"Nature",
+"Religion"
+],
+"cantrips": [
+3,
+3,
+3,
+4,
+4
+],
+"prepared": [
+4,
+5,
+6,
+7,
+9
+],
+"spellbook": [
+6,
+8,
+10,
+12,
+14
+],
+"slots": "full",
+"slotTable": [
+[
+2
+],
+[
+3
+],
+[
+4,
+2
+],
+[
+4,
+3
+],
+[
+4,
+3,
+2
+]
+]
+}
 }
 ],
 "fightingStyles": [
@@ -2324,6 +3227,1684 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 }
 ]
 }
+],
+"spells": {
+"Bard": {
+"cantrips": [
+"Blade Ward",
+"Dancing Lights",
+"Friends",
+"Light",
+"Mage Hand",
+"Mending",
+"Message",
+"Minor Illusion",
+"Prestidigitation",
+"Starry Wisp",
+"Thunderclap",
+"True Strike",
+"Vicious Mockery"
+],
+"1": [
+"Animal Friendship",
+"Bane",
+"Charm Person",
+"Colour Spray",
+"Command",
+"Comprehend Languages",
+"Cure Wounds",
+"Detect Magic",
+"Disguise Self",
+"Dissonant Whispers",
+"Faerie Fire",
+"Feather Fall",
+"Healing Word",
+"Heroism",
+"Identify",
+"Illusory Script",
+"Longstrider",
+"Silent Image",
+"Sleep",
+"Speak with Animals",
+"Tasha's Hideous Laughter",
+"Thunderwave",
+"Unseen Servant"
+],
+"2": [
+"Aid",
+"Animal Messenger",
+"Blindness/Deafness",
+"Calm Emotions",
+"Cloud of Daggers",
+"Crown of Madness",
+"Detect Thoughts",
+"Enhance Ability",
+"Enlarge/Reduce",
+"Enthrall",
+"Heat Metal",
+"Hold Person",
+"Invisibility",
+"Knock",
+"Lesser Restoration",
+"Locate Animals or Plants",
+"Locate Object",
+"Magic Mouth",
+"Mirror Image",
+"Phantasmal Force",
+"Pyrotechnics",
+"See Invisibility",
+"Shatter",
+"Silence",
+"Suggestion",
+"Zone of Truth"
+],
+"3": [
+"Bestow Curse",
+"Clairvoyance",
+"Dispel Magic",
+"Fear",
+"Feign Death",
+"Glyph of Warding",
+"Hypnotic Pattern",
+"Leomund's Tiny Hut",
+"Major Image",
+"Mass Healing Word",
+"Nondetection",
+"Plant Growth",
+"Sending",
+"Slow",
+"Speak with Dead",
+"Speak with Plants",
+"Stinking Cloud",
+"Tongues"
+]
+},
+"Cleric": {
+"cantrips": [
+"Guidance",
+"Light",
+"Mending",
+"Resistance",
+"Sacred Flame",
+"Spare the Dying",
+"Thaumaturgy",
+"Toll the Dead",
+"Word of Radiance"
+],
+"1": [
+"Bane",
+"Bless",
+"Command",
+"Create or Destroy Water",
+"Cure Wounds",
+"Detect Evil and Good",
+"Detect Magic",
+"Detect Poison and Disease",
+"Guiding Bolt",
+"Healing Word",
+"Inflict Wounds",
+"Protection from Evil and Good",
+"Purify Food and Drink",
+"Sanctuary",
+"Shield of Faith"
+],
+"2": [
+"Aid",
+"Augury",
+"Blindness/Deafness",
+"Calm Emotions",
+"Continual Flame",
+"Enhance Ability",
+"Find Traps",
+"Gentle Repose",
+"Hold Person",
+"Lesser Restoration",
+"Locate Object",
+"Prayer of Healing",
+"Protection from Poison",
+"Silence",
+"Spiritual Weapon",
+"Warding Bond",
+"Zone of Truth"
+],
+"3": [
+"Animate Dead",
+"Aura of Vitality",
+"Beacon of Hope",
+"Bestow Curse",
+"Clairvoyance",
+"Create Food and Water",
+"Daylight",
+"Dispel Magic",
+"Feign Death",
+"Glyph of Warding",
+"Magic Circle",
+"Mass Healing Word",
+"Meld into Stone",
+"Protection from Energy",
+"Remove Curse",
+"Revivify",
+"Sending",
+"Speak with Dead",
+"Spirit Guardians",
+"Tongues",
+"Water Walk"
+]
+},
+"Druid": {
+"cantrips": [
+"Druidcraft",
+"Elementalism",
+"Guidance",
+"Mending",
+"Message",
+"Poison Spray",
+"Produce Flame",
+"Resistance",
+"Shillelagh",
+"Spare the Dying",
+"Starry Wisp",
+"Thorn Whip",
+"Thunderclap"
+],
+"1": [
+"Animal Friendship",
+"Charm Person",
+"Create or Destroy Water",
+"Cure Wounds",
+"Detect Magic",
+"Detect Poison and Disease",
+"Entangle",
+"Faerie Fire",
+"Fog Cloud",
+"Goodberry",
+"Healing Word",
+"Ice Knife",
+"Jump",
+"Longstrider",
+"Protection from Evil and Good",
+"Purify Food and Drink",
+"Speak with Animals",
+"Thunderwave"
+],
+"2": [
+"Aid",
+"Animal Messenger",
+"Augury",
+"Barkskin",
+"Beast Sense",
+"Continual Flame",
+"Darkvision",
+"Enhance Ability",
+"Enlarge/Reduce",
+"Find Traps",
+"Flame Blade",
+"Flaming Sphere",
+"Gust of Wind",
+"Heat Metal",
+"Hold Person",
+"Lesser Restoration",
+"Locate Animals or Plants",
+"Locate Object",
+"Moonbeam",
+"Pass without Trace",
+"Protection from Poison",
+"Spike Growth",
+"Summon Beast"
+],
+"3": [
+"Aura of Vitality",
+"Call Lightning",
+"Conjure Animals",
+"Daylight",
+"Dispel Magic",
+"Elemental Weapon",
+"Feign Death",
+"Meld into Stone",
+"Plant Growth",
+"Protection from Energy",
+"Revivify",
+"Sleet Storm",
+"Speak with Plants",
+"Summon Fey",
+"Water Breathing",
+"Water Walk",
+"Wind Wall"
+]
+},
+"Paladin": {
+"cantrips": [],
+"1": [
+"Bless",
+"Command",
+"Compelled Duel",
+"Cure Wounds",
+"Detect Evil and Good",
+"Detect Magic",
+"Detect Poison and Disease",
+"Divine Favor",
+"Divine Smite",
+"Heroism",
+"Protection from Evil and Good",
+"Purify Food and Drink",
+"Searing Smite",
+"Shield of Faith",
+"Thunderous Smite",
+"Wrathful Smite"
+],
+"2": [
+"Aid",
+"Find Steed",
+"Gentle Repose",
+"Lesser Restoration",
+"Locate Object",
+"Magic Weapon",
+"Prayer of Healing",
+"Protection from Poison",
+"Shining Smite",
+"Warding Bond",
+"Zone of Truth"
+],
+"3": []
+},
+"Ranger": {
+"cantrips": [],
+"1": [
+"Alarm",
+"Animal Friendship",
+"Cure Wounds",
+"Detect Magic",
+"Detect Poison and Disease",
+"Ensnaring Strike",
+"Entangle",
+"Fog Cloud",
+"Goodberry",
+"Hail of Thorns",
+"Hunter's Mark",
+"Jump",
+"Longstrider",
+"Speak with Animals"
+],
+"2": [
+"Aid",
+"Animal Messenger",
+"Barkskin",
+"Beast Sense",
+"Cordon of Arrows",
+"Darkvision",
+"Enhance Ability",
+"Find Traps",
+"Gust of Wind",
+"Lesser Restoration",
+"Locate Animals or Plants",
+"Locate Object",
+"Magic Weapon",
+"Pass without Trace",
+"Protection from Poison",
+"Silence",
+"Spike Growth",
+"Summon Beast"
+],
+"3": []
+},
+"Sorcerer": {
+"cantrips": [
+"Acid Splash",
+"Blade Ward",
+"Chill Touch",
+"Dancing Lights",
+"Elementalism",
+"Fire Bolt",
+"Friends",
+"Light",
+"Mage Hand",
+"Mending",
+"Message",
+"Mind Sliver",
+"Minor Illusion",
+"Poison Spray",
+"Prestidigitation",
+"Ray of Frost",
+"Shocking Grasp",
+"Sorcerous Burst",
+"Thunderclap",
+"True Strike"
+],
+"1": [
+"Burning Hands",
+"Charm Person",
+"Chromatic Orb",
+"Colour Spray",
+"Comprehend Languages",
+"Detect Magic",
+"Disguise Self",
+"Expeditious Retreat",
+"False Life",
+"Feather Fall",
+"Fog Cloud",
+"Grease",
+"Ice Knife",
+"Jump",
+"Mage Armor",
+"Magic Missile",
+"Ray of Sickness",
+"Shield",
+"Silent Image",
+"Sleep",
+"Soul Trap",
+"Thunderwave",
+"Witch Bolt"
+],
+"2": [
+"Alter Self",
+"Arcane Vigor",
+"Blindness/Deafness",
+"Blur",
+"Cloud of Daggers",
+"Crown of Madness",
+"Darkness",
+"Darkvision",
+"Detect Thoughts",
+"Dragon's Breath",
+"Enhance Ability",
+"Enlarge/Reduce",
+"Flame Blade",
+"Flaming Sphere",
+"Gust of Wind",
+"Hold Person",
+"Invisibility",
+"Knock",
+"Levitate",
+"Magic Weapon",
+"Mind Spike",
+"Mirror Image",
+"Misty Step",
+"Phantasmal Force",
+"Scorching Ray",
+"See Invisibility",
+"Shatter",
+"Spider Climb",
+"Suggestion",
+"Web"
+],
+"3": [
+"Blink",
+"Clairvoyance",
+"Counterspell",
+"Daylight",
+"Dispel Magic",
+"Fear",
+"Fireball",
+"Fly",
+"Gaseous Form",
+"Haste",
+"Hypnotic Pattern",
+"Lightning Bolt",
+"Major Image",
+"Protection from Energy",
+"Sleet Storm",
+"Slow",
+"Stinking Cloud",
+"Tongues",
+"Vampiric Touch",
+"Water Breathing",
+"Water Walk"
+]
+},
+"Warlock": {
+"cantrips": [
+"Blade Ward",
+"Chill Touch",
+"Eldritch Blast",
+"Friends",
+"Mage Hand",
+"Mind Sliver",
+"Minor Illusion",
+"Poison Spray",
+"Prestidigitation",
+"Thunderclap",
+"Toll the Dead",
+"True Strike"
+],
+"1": [
+"Armor of Agathys",
+"Arms of Hadar",
+"Bane",
+"Charm Person",
+"Comprehend Languages",
+"Detect Magic",
+"Expeditious Retreat",
+"Hellish Rebuke",
+"Hex",
+"Illusory Script",
+"Protection from Evil and Good",
+"Soul Trap",
+"Speak with Animals",
+"Tasha's Hideous Laughter",
+"Unseen Servant",
+"Witch Bolt"
+],
+"2": [
+"Cloud of Daggers",
+"Crown of Madness",
+"Darkness",
+"Enthrall",
+"Hold Person",
+"Invisibility",
+"Mind Spike",
+"Mirror Image",
+"Misty Step",
+"Ray of Enfeeblement",
+"Spider Climb",
+"Suggestion"
+],
+"3": [
+"Counterspell",
+"Dispel Magic",
+"Fear",
+"Fly",
+"Gaseous Form",
+"Hunger of Hadar",
+"Hypnotic Pattern",
+"Magic Circle",
+"Major Image",
+"Remove Curse",
+"Summon Fey",
+"Summon Undead",
+"Tongues",
+"Vampiric Touch"
+]
+},
+"Wizard": {
+"cantrips": [
+"Acid Splash",
+"Blade Ward",
+"Chill Touch",
+"Dancing Lights",
+"Elementalism",
+"Fire Bolt",
+"Friends",
+"Light",
+"Mage Hand",
+"Mending",
+"Message",
+"Mind Sliver",
+"Minor Illusion",
+"Poison Spray",
+"Prestidigitation",
+"Ray of Frost",
+"Shocking Grasp",
+"Thunderclap",
+"Toll the Dead",
+"True Strike"
+],
+"1": [
+"Alarm",
+"Burning Hands",
+"Charm Person",
+"Chromatic Orb",
+"Colour Spray",
+"Comprehend Languages",
+"Detect Magic",
+"Disguise Self",
+"Expeditious Retreat",
+"False Life",
+"Feather Fall",
+"Find Familiar",
+"Fog Cloud",
+"Grease",
+"Ice Knife",
+"Identify",
+"Illusory Script",
+"Jump",
+"Longstrider",
+"Mage Armor",
+"Magic Missile",
+"Protection from Evil and Good",
+"Ray of Sickness",
+"Shield",
+"Silent Image",
+"Sleep",
+"Soul Trap",
+"Tasha's Hideous Laughter",
+"Tenser's Floating Disk",
+"Thunderwave",
+"Unseen Servant",
+"Witch Bolt"
+],
+"2": [
+"Alter Self",
+"Arcane Lock",
+"Arcane Vigor",
+"Augury",
+"Blindness/Deafness",
+"Blur",
+"Cloud of Daggers",
+"Continual Flame",
+"Crown of Madness",
+"Darkness",
+"Darkvision",
+"Detect Thoughts",
+"Dragon's Breath",
+"Enhance Ability",
+"Enlarge/Reduce",
+"Flaming Sphere",
+"Gentle Repose",
+"Gust of Wind",
+"Hold Person",
+"Invisibility",
+"Knock",
+"Levitate",
+"Locate Object",
+"Magic Mouth",
+"Magic Weapon",
+"Melf's Acid Arrow",
+"Mind Spike",
+"Mirror Image",
+"Misty Step",
+"Nystul's Magic Aura",
+"Phantasmal Force",
+"Pyrotechnics",
+"Ray of Enfeeblement",
+"Rope Trick",
+"Scorching Ray",
+"See Invisibility",
+"Shatter",
+"Spider Climb",
+"Suggestion",
+"Web"
+],
+"3": [
+"Animate Dead",
+"Bestow Curse",
+"Blink",
+"Clairvoyance",
+"Counterspell",
+"Dispel Magic",
+"Fear",
+"Feign Death",
+"Fireball",
+"Fly",
+"Gaseous Form",
+"Glyph of Warding",
+"Haste",
+"Hypnotic Pattern",
+"Leomund's Tiny Hut",
+"Lightning Bolt",
+"Magic Circle",
+"Major Image",
+"Nondetection",
+"Phantom Steed",
+"Protection from Energy",
+"Remove Curse",
+"Sending",
+"Sleet Storm",
+"Slow",
+"Stinking Cloud",
+"Summon Fey",
+"Summon Undead",
+"Tongues",
+"Vampiric Touch",
+"Water Breathing"
+]
+}
+},
+"spellSource": {
+"Soul Trap": {
+"book": "Treasures",
+"anchor": "items-soul-gems-and-enchanting--soul-trap"
+}
+},
+"subclasses": {
+"Barbarian": [
+{
+"name": "Path of the Berserker",
+"old": false
+},
+{
+"name": "Path of the Wild Heart",
+"old": false
+},
+{
+"name": "Path of the World Tree",
+"old": false
+},
+{
+"name": "Path of the Zealot",
+"old": false
+},
+{
+"name": "Path of the Ancestral Guardian",
+"old": true
+},
+{
+"name": "Path of the Battlerager",
+"old": true
+},
+{
+"name": "Path of the Beast",
+"old": true
+},
+{
+"name": "Path of the Giant",
+"old": true
+},
+{
+"name": "Path of the Storm Herald",
+"old": true
+},
+{
+"name": "Path of the Totem Warrior",
+"old": true
+},
+{
+"name": "Path of Wild Magic",
+"old": true
+}
+],
+"Bard": [
+{
+"name": "College of Dance",
+"old": false
+},
+{
+"name": "College of Glamour",
+"old": false
+},
+{
+"name": "College of Lore",
+"old": false
+},
+{
+"name": "College of Valor",
+"old": false
+},
+{
+"name": "College of Creation",
+"old": true
+},
+{
+"name": "College of Eloquence",
+"old": true
+},
+{
+"name": "College of Spirits",
+"old": true
+},
+{
+"name": "College of Swords",
+"old": true
+},
+{
+"name": "College of Whispers",
+"old": true
+}
+],
+"Cleric": [
+{
+"name": "Life Domain",
+"old": false
+},
+{
+"name": "Light Domain",
+"old": false
+},
+{
+"name": "Trickery Domain",
+"old": false
+},
+{
+"name": "War Domain",
+"old": false
+},
+{
+"name": "Arcana Domain",
+"old": true
+},
+{
+"name": "Death Domain",
+"old": true
+},
+{
+"name": "Forge Domain",
+"old": true
+},
+{
+"name": "Grave Domain",
+"old": true
+},
+{
+"name": "Knowledge Domain",
+"old": true
+},
+{
+"name": "Nature Domain",
+"old": true
+},
+{
+"name": "Order Domain",
+"old": true
+},
+{
+"name": "Peace Domain",
+"old": true
+},
+{
+"name": "Tempest Domain",
+"old": true
+},
+{
+"name": "Twilight Domain",
+"old": true
+}
+],
+"Druid": [
+{
+"name": "Circle of the Land",
+"old": false
+},
+{
+"name": "Circle of the Moon",
+"old": false
+},
+{
+"name": "Circle of the Sea",
+"old": false
+},
+{
+"name": "Circle of the Stars",
+"old": false
+},
+{
+"name": "Circle of Dreams",
+"old": true
+},
+{
+"name": "Circle of the Shepherd",
+"old": true
+},
+{
+"name": "Circle of Spores",
+"old": true
+},
+{
+"name": "Circle of Wildfire",
+"old": true
+}
+],
+"Fighter": [
+{
+"name": "Battle Master",
+"old": false
+},
+{
+"name": "Champion",
+"old": false
+},
+{
+"name": "Eldritch Knight",
+"old": false
+},
+{
+"name": "Psi Warrior",
+"old": false
+},
+{
+"name": "Arcane Archer",
+"old": true
+},
+{
+"name": "Banneret",
+"old": true
+},
+{
+"name": "Cavalier",
+"old": true
+},
+{
+"name": "Echo Knight",
+"old": true
+},
+{
+"name": "Rune Knight",
+"old": true
+},
+{
+"name": "Samurai",
+"old": true
+}
+],
+"Monk": [
+{
+"name": "Warrior of Mercy",
+"old": false
+},
+{
+"name": "Warrior of Shadow",
+"old": false
+},
+{
+"name": "Warrior of the Elements",
+"old": false
+},
+{
+"name": "Warrior of the Open Hand",
+"old": false
+},
+{
+"name": "Way of the Ascendant Dragon",
+"old": true
+},
+{
+"name": "Way of the Astral Self",
+"old": true
+},
+{
+"name": "Way of the Drunken Master",
+"old": true
+},
+{
+"name": "Way of the Kensei",
+"old": true
+},
+{
+"name": "Way of the Long Death",
+"old": true
+},
+{
+"name": "Way of the Sun Soul",
+"old": true
+}
+],
+"Paladin": [
+{
+"name": "Oath of Devotion",
+"old": false
+},
+{
+"name": "Oath of Glory",
+"old": false
+},
+{
+"name": "Oath of the Ancients",
+"old": false
+},
+{
+"name": "Oath of Vengeance",
+"old": false
+},
+{
+"name": "Oath of Conquest",
+"old": true
+},
+{
+"name": "Oath of Redemption",
+"old": true
+},
+{
+"name": "Oath of the Crown",
+"old": true
+},
+{
+"name": "Oath of the Watchers",
+"old": true
+},
+{
+"name": "Oathbreaker",
+"old": true
+}
+],
+"Ranger": [
+{
+"name": "Beast Master",
+"old": false
+},
+{
+"name": "Fey Wanderer",
+"old": false
+},
+{
+"name": "Gloom Stalker",
+"old": false
+},
+{
+"name": "Hunter",
+"old": false
+},
+{
+"name": "Drakewarden",
+"old": true
+},
+{
+"name": "Horizon Walker",
+"old": true
+},
+{
+"name": "Monster Slayer",
+"old": true
+},
+{
+"name": "Swarmkeeper",
+"old": true
+}
+],
+"Rogue": [
+{
+"name": "Arcane Trickster",
+"old": false
+},
+{
+"name": "Assassin",
+"old": false
+},
+{
+"name": "Soulknife",
+"old": false
+},
+{
+"name": "Thief",
+"old": false
+},
+{
+"name": "Inquisitive",
+"old": true
+},
+{
+"name": "Mastermind",
+"old": true
+},
+{
+"name": "Phantom",
+"old": true
+},
+{
+"name": "Scout",
+"old": true
+},
+{
+"name": "Swashbuckler",
+"old": true
+}
+],
+"Sorcerer": [
+{
+"name": "Aberrant Sorcery",
+"old": false
+},
+{
+"name": "Clockwork Sorcery",
+"old": false
+},
+{
+"name": "Draconic Sorcery",
+"old": false
+},
+{
+"name": "Wild Magic Sorcery",
+"old": false
+},
+{
+"name": "Divine Soul",
+"old": true
+},
+{
+"name": "Lunar Sorcery",
+"old": true
+},
+{
+"name": "Shadow Magic",
+"old": true
+},
+{
+"name": "Storm Sorcery",
+"old": true
+}
+],
+"Warlock": [
+{
+"name": "Archfey Patron",
+"old": false
+},
+{
+"name": "Celestial Patron",
+"old": false
+},
+{
+"name": "Fiend Patron",
+"old": false
+},
+{
+"name": "Great Old One Patron",
+"old": false
+},
+{
+"name": "The Fathomless",
+"old": true
+},
+{
+"name": "The Genie",
+"old": true
+},
+{
+"name": "The Hexblade",
+"old": true
+},
+{
+"name": "The Undead",
+"old": true
+},
+{
+"name": "The Undying",
+"old": true
+}
+],
+"Wizard": [
+{
+"name": "Abjurer",
+"old": false
+},
+{
+"name": "Diviner",
+"old": false
+},
+{
+"name": "Evoker",
+"old": false
+},
+{
+"name": "Illusionist",
+"old": false
+},
+{
+"name": "Bladesinging",
+"old": true
+},
+{
+"name": "Chronurgy Magic",
+"old": true
+},
+{
+"name": "Graviturgy Magic",
+"old": true
+},
+{
+"name": "Order of Scribes",
+"old": true
+},
+{
+"name": "School of Conjuration",
+"old": true
+},
+{
+"name": "School of Enchantment",
+"old": true
+},
+{
+"name": "School of Necromancy",
+"old": true
+},
+{
+"name": "School of Transmutation",
+"old": true
+},
+{
+"name": "War Magic",
+"old": true
+}
+]
+},
+"subclassMech": {
+"College of Valor": {
+"armor": [
+"Medium",
+"Shields"
+],
+"weapons": [
+"Martial"
+],
+"note": "Martial Training: Martial weapons, Medium armour and Shields."
+},
+"College of Dance": {
+"unarmoredAC": "Cha",
+"note": "Dazzling Footwork: AC 10 + Dex + Cha without armour or a Shield."
+},
+"Draconic Sorcery": {
+"unarmoredAC": "Cha",
+"unarmoredNoShieldOK": true,
+"hpPerLevel": 1,
+"note": "Draconic Resilience: +1 HP per Sorcerer level; AC 10 + Dex + Cha without armour."
+},
+"Gloom Stalker": {
+"initWis": true,
+"darkvision": 60,
+"note": "Dread Ambusher adds Wisdom to Initiative; Umbral Sight gives Darkvision 60 feet (or +60)."
+},
+"Champion": {
+"crit": 19,
+"note": "Improved Critical: your weapon and Unarmed Strike attacks score a Critical Hit on 19 or 20."
+}
+},
+"feats": [
+{
+"name": "Alert",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Crafter",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Healer",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Lucky",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Magic Initiate",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Musician",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Savage Attacker",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Skilled",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Tavern Brawler",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Tough",
+"cat": "Origin",
+"ab": []
+},
+{
+"name": "Actor",
+"cat": "General",
+"ab": [
+"Cha"
+],
+"pre": ""
+},
+{
+"name": "Athlete",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Str or Dex 13"
+},
+{
+"name": "Charger",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Str or Dex 13"
+},
+{
+"name": "Chef",
+"cat": "General",
+"ab": [
+"Con",
+"Wis"
+],
+"pre": ""
+},
+{
+"name": "Crossbow Expert",
+"cat": "General",
+"ab": [
+"Dex"
+],
+"pre": "Dex 13"
+},
+{
+"name": "Crusher",
+"cat": "General",
+"ab": [
+"Str",
+"Con"
+],
+"pre": "Str or Con 13"
+},
+{
+"name": "Defensive Duelist",
+"cat": "General",
+"ab": [
+"Dex"
+],
+"pre": "Dex 13"
+},
+{
+"name": "Dual Wielder",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Str or Dex 13"
+},
+{
+"name": "Durable",
+"cat": "General",
+"ab": [
+"Con"
+],
+"pre": ""
+},
+{
+"name": "Elemental Adept",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": "Spellcasting"
+},
+{
+"name": "Fey-Touched",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": ""
+},
+{
+"name": "Grappler",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Str or Dex 13"
+},
+{
+"name": "Great Weapon Master",
+"cat": "General",
+"ab": [
+"Str"
+],
+"pre": "Str 13"
+},
+{
+"name": "Heavily Armored",
+"cat": "General",
+"ab": [
+"Con",
+"Str"
+],
+"pre": "Medium armour training"
+},
+{
+"name": "Heavy Armor Master",
+"cat": "General",
+"ab": [
+"Con",
+"Str"
+],
+"pre": "Heavy armour training"
+},
+{
+"name": "Inspiring Leader",
+"cat": "General",
+"ab": [
+"Wis",
+"Cha"
+],
+"pre": "Wis or Cha 13"
+},
+{
+"name": "Keen Mind",
+"cat": "General",
+"ab": [
+"Int"
+],
+"pre": "Int 13"
+},
+{
+"name": "Lightly Armored",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": ""
+},
+{
+"name": "Mage Slayer",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": ""
+},
+{
+"name": "Martial Weapon Training",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": ""
+},
+{
+"name": "Medium Armor Master",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Medium armour training"
+},
+{
+"name": "Moderately Armored",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Light armour training"
+},
+{
+"name": "Mounted Combatant",
+"cat": "General",
+"ab": [
+"Str",
+"Dex",
+"Wis"
+],
+"pre": ""
+},
+{
+"name": "Observant",
+"cat": "General",
+"ab": [
+"Int",
+"Wis"
+],
+"pre": "Int or Wis 13"
+},
+{
+"name": "Piercer",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": ""
+},
+{
+"name": "Poisoner",
+"cat": "General",
+"ab": [
+"Dex",
+"Int"
+],
+"pre": ""
+},
+{
+"name": "Polearm Master",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Str or Dex 13"
+},
+{
+"name": "Resilient",
+"cat": "General",
+"ab": "any",
+"pre": ""
+},
+{
+"name": "Ritual Caster",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": "Int, Wis or Cha 13"
+},
+{
+"name": "Sentinel",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": "Str or Dex 13"
+},
+{
+"name": "Shadow-Touched",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": ""
+},
+{
+"name": "Sharpshooter",
+"cat": "General",
+"ab": [
+"Dex"
+],
+"pre": "Dex 13"
+},
+{
+"name": "Shield Master",
+"cat": "General",
+"ab": [
+"Str"
+],
+"pre": "Shield training"
+},
+{
+"name": "Skill Expert",
+"cat": "General",
+"ab": "any",
+"pre": ""
+},
+{
+"name": "Skulker",
+"cat": "General",
+"ab": [
+"Dex"
+],
+"pre": "Dex 13"
+},
+{
+"name": "Slasher",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": ""
+},
+{
+"name": "Speedy",
+"cat": "General",
+"ab": [
+"Dex",
+"Con"
+],
+"pre": "Dex or Con 13"
+},
+{
+"name": "Spell Sniper",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": "Spellcasting"
+},
+{
+"name": "Telekinetic",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": ""
+},
+{
+"name": "Telepathic",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": ""
+},
+{
+"name": "War Caster",
+"cat": "General",
+"ab": [
+"Int",
+"Wis",
+"Cha"
+],
+"pre": "Spellcasting"
+},
+{
+"name": "Weapon Master",
+"cat": "General",
+"ab": [
+"Str",
+"Dex"
+],
+"pre": ""
+},
+{
+"name": "Archery",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Blind Fighting",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Defense",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Dueling",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Great Weapon Fighting",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Interception",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Protection",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Thrown Weapon Fighting",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Two-Weapon Fighting",
+"cat": "Fighting Style",
+"ab": []
+},
+{
+"name": "Unarmed Fighting",
+"cat": "Fighting Style",
+"ab": []
+}
+],
+"featMech": {
+"Tough": {
+"hpPerLevel": 2
+},
+"Alert": {
+"initPB": true
+},
+"Resilient": {
+"saveFromAb": true
+},
+"Speedy": {
+"speed": 10
+},
+"Lightly Armored": {
+"armor": [
+"Light",
+"Shields"
+]
+},
+"Moderately Armored": {
+"armor": [
+"Medium",
+"Shields"
+]
+},
+"Heavily Armored": {
+"armor": [
+"Heavy"
+]
+},
+"Martial Weapon Training": {
+"weapons": [
+"Martial"
+]
+}
+},
+"metamagic": [
+"Careful Spell",
+"Distant Spell",
+"Empowered Spell",
+"Extended Spell",
+"Heightened Spell",
+"Quickened Spell",
+"Seeking Spell",
+"Subtle Spell",
+"Transmuted Spell",
+"Twinned Spell"
 ],
 "equipment": {
 "Barbarian": [
@@ -3291,7 +5872,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   const ABN = { Str: "Strength", Dex: "Dexterity", Con: "Constitution", Int: "Intelligence", Wis: "Wisdom", Cha: "Charisma" };
   const STANDARD = [15, 14, 13, 12, 10, 8];
   const COST = { 8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9 };
-  const PB = 2;
+  let PB = 2;  // set from the character's level at the start of each calculation
+  const MAX_LEVEL = 5;
   const SKILL_AB = Object.fromEntries(D.skills.map((s) => [s.name, s.ab]));
   const ALL_SKILLS = D.skills.map((s) => s.name);
   const byId = (list, id) => list.find((x) => x.id === id);
@@ -3306,13 +5888,31 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     bg: "", bgTool: "", bgDup: {}, bgToolDup: "", asiMode: "21", asi2: "", asi1: "",
     sign: "", signDup: "", signChoice: "", signAbility: "Int", signCantrips: [], signSpells: [],
     method: "standard", assign: {}, points: { Str: 8, Dex: 8, Con: 8, Int: 8, Wis: 8, Cha: 8 }, rolls: [], langs: ["", ""], langExtra: "",
+    level: 1, lv: [], primal: "", deftLangs: [], metamagic: [], invocations: [],
     god: "", subclass: "", alignment: "", classEquip: 0, bgEquip: "package", armour: "", shield: "", weapons: ["", "", "", ""],
     story: { age: "", appearance: "", reason: "", reasonText: "", tie: "", answers: [] } });
   let chars = [];
   try { chars = JSON.parse(store.get("op-chars") || "[]"); } catch (e) { chars = []; }
   if (!Array.isArray(chars) || !chars.length) chars = [blank()];
+  chars = chars.map((c) => Object.assign(blank(), c));  // older saves get the newer fields
   let C = chars.find((c) => c.id === store.get("op-current")) || chars[0];
   const save = () => { store.set("op-chars", JSON.stringify(chars)); store.set("op-current", C.id); };
+
+  // ---------- levels ----------
+  const LV = () => Math.min(MAX_LEVEL, Math.max(1, +C.level || 1));
+  const pbOf = (l) => 2 + Math.floor((l - 1) / 4);
+  const at = (arr, l) => (Array.isArray(arr) ? arr[Math.min(arr.length, l) - 1] : arr);
+  const lvData = (n) => (C.lv && C.lv[n]) || {};
+  const asiLevels = () => [4, 8, 12, 16, 19].filter((n) => n <= LV());
+  const featAt = (n) => { const d = lvData(n); return d.asi && d.asi !== "asi" ? D.feats.find((f) => f.name === d.asi) || null : null; };
+  const featsTaken = () => asiLevels().map((n) => ({ n, f: featAt(n), d: lvData(n) })).filter((x) => x.f);
+  const featMechs = () => featsTaken().map((x) => ({ ...x, m: D.featMech[x.f.name] || {} }));
+  const subMech = () => (LV() >= 3 && D.subclassMech[C.subclass]) || {};
+  const hasFeat = (name) => featsTaken().some((x) => x.f.name === name);
+  const alwaysNow = (cls) => [...(cls?.cast?.always || []), ...Object.entries(cls?.prog?.always || {}).filter(([l]) => +l <= LV()).flatMap(([, s]) => s)];
+  const slotRow = (cls) => { const pr = cls?.prog || {}; return pr.slots === "pact" ? null : (pr.slotTable ? at(pr.slotTable, LV()) : [cls?.cast?.slots || 0]); };
+  const maxSpellLevel = (cls) => { const pr = cls?.prog || {}; return pr.slots === "pact" ? at(pr.pact.level, LV()) : (slotRow(cls) || [1]).length; };
+  const hasStyleFeature = (cls) => !!cls && (cls.style || (cls.prog?.style && LV() >= cls.prog.style));
 
   // ---------- rules ----------
   function scores() {
@@ -3327,9 +5927,13 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
       if (C.asiMode === "111") bg.abilities.forEach((a) => (inc[a] = 1));
       else { if (C.asi2) inc[C.asi2] = 2; if (C.asi1 && C.asi1 !== C.asi2) inc[C.asi1] = (inc[C.asi1] || 0) + 1; }
     }
+    const lvInc = {};  // Ability Score Improvements and feats from levels 4, 8...
+    asiLevels().forEach((n) => { const d = lvData(n); if (!d.asi) return;
+      if (d.asi === "asi") { if (d.asiMode === "11") [d.a1, d.a2].forEach((a) => { if (a) lvInc[a] = (lvInc[a] || 0) + 1; }); else if (d.a1) lvInc[d.a1] = (lvInc[d.a1] || 0) + 2; }
+      else if (d.featAb) lvInc[d.featAb] = (lvInc[d.featAb] || 0) + 1; });
     const fin = {};
-    AB.forEach((a) => (fin[a] = base[a] == null ? null : Math.min(20, base[a] + (inc[a] || 0))));
-    return { base, inc, fin, m: Object.fromEntries(AB.map((a) => [a, fin[a] == null ? 0 : mod(fin[a])])) };
+    AB.forEach((a) => (fin[a] = base[a] == null ? null : Math.min(20, base[a] + (inc[a] || 0) + (lvInc[a] || 0))));
+    return { base, inc, lvInc, fin, m: Object.fromEntries(AB.map((a) => [a, fin[a] == null ? 0 : mod(fin[a])])) };
   }
 
   // Skills, in order of precedence: people, background, class choices, birthsign.
@@ -3341,6 +5945,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const bgDups = [];
     (bg?.skills || []).forEach((s) => { if (src[s]) { bgDups.push(s); add(C.bgDup[s], bg.name); } else add(s, bg.name); });
     C.clsSkills.forEach((s) => add(s, cls?.name));
+    if (cls?.id === "barbarian" && LV() >= 3) add(C.primal, "Primal Knowledge");
     let signDup = null;
     (sign?.skills?.fixed || []).forEach((s) => { if (src[s]) { signDup = s; add(C.signDup, sign.name); } else add(s, sign.name); });
     if (sign?.skills?.choose) add(C.signChoice, sign.name);
@@ -3353,6 +5958,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const weapons = new Set(cls?.weapons || []);
     if (C.order === "protector") { armor.add("Heavy"); weapons.add("Martial"); }
     if (C.order === "warden") { armor.add("Medium"); weapons.add("Martial"); }
+    const sm = subMech(); (sm.armor || []).forEach((a) => armor.add(a)); (sm.weapons || []).forEach((w) => weapons.add(w));
+    featMechs().forEach(({ m }) => { (m.armor || []).forEach((a) => armor.add(a)); (m.weapons || []).forEach((w) => weapons.add(w)); });
     // race weapons the class already covers (a dagger for anyone, a shortsword for a rogue) aren't listed twice
     (race?.weapons || []).forEach((n) => { const w = D.weapons.find((x) => x.name === n); if (!w || !weaponProf(w, { weapons })) weapons.add(n); });
     const tools = [];
@@ -3367,6 +5974,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const langs = ["Tamrielic", ...C.langs.filter(Boolean)];
     if (cls?.id === "druid") langs.push("Druidic");
     if (cls?.extraLanguage) { langs.push("Thieves' Cant"); if (C.langExtra) langs.push(C.langExtra); }
+    if (cls?.prog?.deftLangs && LV() >= 2) C.deftLangs.filter(Boolean).forEach((l) => langs.push(l));
     return { armor, weapons, tools, bgTool, bgToolDup, langs };
   }
   const weaponProf = (w, P) => {
@@ -3379,42 +5987,59 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   const armourProf = (a, P) => P.armor.has(a.cat[0].toUpperCase() + a.cat.slice(1));
 
   function derive() {
+    PB = pbOf(LV());
     const S = scores(), sk = skillState(), P = prof();
     const race = byId(D.races, C.race), cls = byId(D.classes, C.cls), sign = byId(D.signs, C.sign);
-    const m = S.m;
+    const m = S.m, pr = cls?.prog || {}, L = LV(), sm = subMech();
+    const exp = C.expertise.slice(0, at(pr.expertise, L) || 0);
+    const jack = pr.jack && L >= pr.jack;
     const skills = ALL_SKILLS.map((name) => {
-      const ab = SKILL_AB[name], p = !!sk.src[name], e = p && C.expertise.includes(name);
-      let b = m[ab] + (p ? PB : 0) + (e ? PB : 0);
+      const ab = SKILL_AB[name], p = !!sk.src[name], e = p && exp.includes(name);
+      let b = m[ab] + (p ? PB : 0) + (e ? PB : 0) + (!p && jack ? Math.floor(PB / 2) : 0);
       const orderBonus = (C.order === "thaumaturge" && (name === "Arcana" || name === "Religion")) || (C.order === "magician" && (name === "Arcana" || name === "Nature"));
       if (orderBonus) b += Math.max(1, m.Wis);
       return { name, ab, p, e, b, from: sk.src[name] };
     });
-    const saves = AB.map((a) => ({ a, p: !!cls?.saves.includes(a), b: m[a] + (cls?.saves.includes(a) ? PB : 0) }));
+    const resilient = featsTaken().filter((x) => x.f.name === "Resilient").map((x) => x.d.featAb).filter(Boolean);
+    const saves = AB.map((a) => { const p = !!cls?.saves.includes(a) || resilient.includes(a); return { a, p, b: m[a] + (p ? PB : 0) }; });
     // Armour Class
     const arm = D.armour.find((a) => a.name === C.armour), sh = C.shield === "Shield" ? { name: "Shield", bonus: 2 } : D.shields.find((s) => s.name === C.shield);
     const opts = [];
     const shieldB = sh ? sh.bonus : 0;
+    const defense = C.style === "Defense" || hasFeat("Defense");
     if (arm) {
       const dex = arm.cat === "light" ? m.Dex : arm.cat === "medium" ? Math.min(2, m.Dex) : 0;
-      opts.push({ ac: arm.base + dex + shieldB + (C.style === "Defense" ? 1 : 0), how: `${arm.name}${sh ? " and shield" : ""}${C.style === "Defense" ? ", Defense" : ""}` });
+      opts.push({ ac: arm.base + dex + shieldB + (defense ? 1 : 0), how: `${arm.name}${sh ? " and shield" : ""}${defense ? ", Defense" : ""}` });
     } else {
       opts.push({ ac: 10 + m.Dex + shieldB, how: sh ? "No armour, shield" : "No armour" });
       if (cls?.unarmored === "Con") opts.push({ ac: 10 + m.Dex + m.Con + shieldB, how: "Unarmored Defense" + (sh ? " and shield" : "") });
       if (cls?.unarmored === "Wis" && !sh) opts.push({ ac: 10 + m.Dex + m.Wis, how: "Unarmored Defense" });
       if (race?.natArmor) opts.push({ ac: race.natArmor + m.Dex + shieldB, how: "Scaled Hide" + (sh ? " and shield" : "") });
+      if (sm.unarmoredAC && (!sh || sm.unarmoredNoShieldOK)) opts.push({ ac: 10 + m.Dex + m[sm.unarmoredAC] + (sh ? shieldB : 0), how: C.subclass + (sh ? " and shield" : "") });
     }
     const best = opts.sort((x, y) => y.ac - x.ac)[0];
     const warnings = [];
     if (arm && !armourProf(arm, P)) warnings.push(`You aren't trained in ${arm.cat} armour: Disadvantage on Strength and Dexterity rolls, and no spellcasting while wearing it.`);
     if (sh && !P.armor.has("Shields")) warnings.push("You aren't trained with shields, so a shield gives you no AC.");
     if (sh && !P.armor.has("Shields")) best.ac -= shieldB;
-    let speed = (race?.speed || 30) + (sign?.speed || 0);
+    let speed = (race?.speed || 30) + (sign?.speed || 0) + featMechs().reduce((s, x) => s + (x.m.speed || 0), 0);
+    if (pr.unarmoredMovement && L >= pr.unarmoredMovement && !arm && !sh) speed += 10;
+    if (pr.fastMovement && L >= pr.fastMovement && arm?.cat !== "heavy") speed += 10;
     if (arm && arm.str && S.fin.Str != null && S.fin.Str < arm.str) { speed -= 10; warnings.push(`Your Strength is below ${arm.str}, so ${arm.name} armour slows you by 10 feet.`); }
-    const hp = cls ? cls.hitDie + m.Con + (sign?.hpPerLevel || 0) : null;
+    let hp = null;
+    if (cls) {  // level 1: the full hit die; later levels: the average or the player's roll, plus Constitution
+      hp = cls.hitDie + m.Con + (sign?.hpPerLevel || 0);
+      for (let n = 2; n <= L; n++) { const d = lvData(n), r = d.hpMode === "roll" && +d.hpRoll ? Math.min(cls.hitDie, Math.max(1, +d.hpRoll)) : cls.hitDie / 2 + 1; hp += Math.max(1, r + m.Con) + (sign?.hpPerLevel || 0); }
+      hp += L * (featMechs().reduce((s, x) => s + (x.m.hpPerLevel || 0), 0) + (sm.hpPerLevel || 0));
+    }
+    const init = m.Dex + (hasFeat("Alert") ? PB : 0) + (sm.initWis ? m.Wis : 0);
+    const darkvision = sm.darkvision ? (race?.darkvision || 0) + sm.darkvision : race?.darkvision || 0;
     const per = skills.find((s) => s.name === "Perception");
     // Attacks
     const attacks = [];
     const strM = m.Str, dexM = m.Dex;
+    const maDie = cls?.martialArts ? at(pr.martialDie, L) || cls.martialArts : null;  // monks use it for monk weapons when it's bigger
+    const sides = (d) => +String(d).split("d")[1] || 0;
     C.weapons.filter(Boolean).forEach((wn) => {
       const w = D.weapons.find((x) => x.name === wn); if (!w) return;
       const ranged = /Ammunition/.test(w.props) || ["Dart", "Throwing knife", "Throwing star"].includes(w.name);
@@ -3423,10 +6048,11 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
       const am = ranged && !fin ? dexM : fin || monkWeapon ? Math.max(strM, dexM) : strM;
       const p = weaponProf(w, P);
       const ver = (w.props.match(/Versatile \((\w+)\)/) || [])[1];
-      attacks.push({ name: w.name, hit: am + (p ? PB : 0), dmg: `${w.die}${am ? " " + sgn(am) : ""} ${w.type}${ver ? ` (${ver}${am ? " " + sgn(am) : ""} two-handed)` : ""}`,
-        notes: [w.props !== "—" ? w.props : "", C.mastery.includes(w.name) || C.sword === w.name ? `Mastery: ${w.mastery}` : "", p ? "" : "not proficient"].filter(Boolean).join("; ") });
+      const die = monkWeapon && maDie && sides(maDie) > sides(w.die) ? maDie : w.die;
+      attacks.push({ name: w.name, hit: am + (p ? PB : 0), dmg: `${die}${am ? " " + sgn(am) : ""} ${w.type}${ver ? ` (${ver}${am ? " " + sgn(am) : ""} two-handed)` : ""}`,
+        notes: [w.props !== "—" ? w.props : "", C.mastery.slice(0, at(pr.mastery, L) || cls?.mastery || 0).includes(w.name) || C.sword === w.name ? `Mastery: ${w.mastery}` : "", sm.crit ? `crit on ${sm.crit}–20` : "", p ? "" : "not proficient"].filter(Boolean).join("; ") });
     });
-    const ua = race?.unarmed, ma = cls?.martialArts;
+    const ua = race?.unarmed, ma = cls?.martialArts ? at(pr.martialDie, L) || cls.martialArts : null;
     const uaM = ma ? Math.max(strM, dexM) : strM;
     attacks.push({ name: ua ? `${ua[2]} (Unarmed Strike)` : "Unarmed Strike", hit: uaM + PB,
       dmg: ua || ma ? `${ma && (!ua || ma >= ua[0]) ? ma : ua[0]} ${sgn(uaM)} ${ua ? ua[1] : "Bludgeoning"}` : `${Math.max(1, 1 + strM)} Bludgeoning`, notes: "" });
@@ -3435,7 +6061,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const spell = castAb ? { ab: castAb, dc: 8 + PB + m[castAb], atk: PB + m[castAb] } : null;
     const raceSp = race?.spellAbility ? { ab: C.raceAbility, dc: 8 + PB + m[C.raceAbility], atk: PB + m[C.raceAbility] } : null;
     const signSp = sign ? { ab: C.signAbility, dc: 8 + PB + m[C.signAbility], atk: PB + m[C.signAbility] } : null;
-    return { S, sk, P, skills, saves, ac: best, warnings, speed, hp, per, attacks, spell, raceSp, signSp, race, cls, sign };
+    const extraAttack = !!(pr.extraAttack && L >= pr.extraAttack);
+    return { S, sk, P, skills, saves, ac: best, warnings, speed, hp, per, attacks, spell, raceSp, signSp, race, cls, sign, init, darkvision, extraAttack, exp };
   }
 
   // ---------- builder UI ----------
@@ -3445,6 +6072,17 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   const field = (label, html) => `<label class="f">${esc(label)}${html}</label>`;
   const guideLink = (anchor, text) => HOST ? `<a class="guide" href="#${anchor}" data-guide="${anchor}">${esc(text)} ›</a>`
     : CONFIG.guide !== null ? `<a class="guide" href="${esc(CONFIG.guide)}#${anchor}" target="_blank" rel="noopener">${esc(text)} ↗</a>` : "";
+  // spells: names come from the class lists in data.json; campaign spells (Soul Trap) carry their book
+  const spellLabel = (s) => D.spellSource[s] ? `${s} · ${D.spellSource[s].book}` : s;
+  const spellList = (list, lvl) => (D.spells[list] || {})[lvl] || [];
+  const castCantrips = (cls) => cls?.cast ? (at(cls.prog?.cantrips, LV()) ?? cls.cast.cantrips) + (C.order === "thaumaturge" || C.order === "magician" ? 1 : 0) : 0;
+  const castPrepared = (cls) => at(cls?.prog?.prepared, LV()) ?? cls?.cast?.prepared ?? 0;
+  const castSpellbook = (cls) => at(cls?.prog?.spellbook, LV()) ?? cls?.cast?.spellbook ?? 0;
+  // levelled spells the class can cast now, grouped by spell level
+  const castable = (list, maxL, exclude = []) => Array.from({ length: maxL }, (_, i) => ({ group: `Level ${i + 1}`, items: spellList(list, String(i + 1)).filter((s) => !exclude.includes(s)) })).filter((g) => g.items.length);
+  const flatNames = (opts) => opts.flatMap((o) => (typeof o === "string" ? [o] : o.items));
+  const spellPick = (key, n, opts, ph, blocked = []) => { const mk = (s, i) => ({ v: s, l: spellLabel(s), dis: blocked.includes(s) || (C[key].includes(s) && C[key][i] !== s) });
+    return `<div class="row">${Array.from({ length: n }, (_, i) => sel(`${key}.${i}`, opts.map((o) => (typeof o === "string" ? mk(o, i) : { group: o.group, items: o.items.map((s) => mk(s, i)) })), C[key][i], ph)).join("")}</div>`; };
   const guideText = (a, txt) => HOST ? `<a href="#${a}" data-guide="${a}">${txt}</a>` : CONFIG.guide !== null ? `<a href="${esc(CONFIG.guide)}#${a}" target="_blank" rel="noopener">${txt}</a>` : txt;
   const traitsHtml = (traits) => `<div class="traits">${traits.map((t) => `<details><summary>${esc(t.name)}</summary><div>${t.text}</div></details>`).join("")}</div>`;
   const openSteps = new Set(JSON.parse(store.get("op-open") || '["1"]'));
@@ -3485,7 +6123,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     parts.push(step(1, "Your People", race ? race.name : "Race, traits and languages", d1, guideLink("guide-peoples-of-tamriel", "Step One in the guide") + b1));
 
     // 2. Class
-    let b2 = field("Class", sel("cls", D.classes.map((c) => ({ v: c.id, l: c.name })), C.cls, "Choose a class…"));
+    let b2 = `<div class="row">${field("Class", sel("cls", D.classes.map((c) => ({ v: c.id, l: c.name })), C.cls, "Choose a class…"))}${field(`Level (1 to ${MAX_LEVEL} for now)`, sel("level", Array.from({ length: MAX_LEVEL }, (_, i) => ({ v: String(i + 1), l: `Level ${i + 1}` })), String(LV())))}</div>`;
+    if (LV() > 1) b2 += `<p class="note">Each level above 1 has its own card below the six steps.</p>`;
     if (cls) {
       b2 += `<div class="card"><p><b>On Vvardenfell:</b> ${cls.onVvardenfell}</p><p><b>Who'll want you:</b> ${cls.wanted}</p>
         <p><b>Hit die:</b> d${cls.hitDie}. <b>Primary ability:</b> ${esc(cls.primary)}. <b>Saving throws:</b> ${cls.saves.map((a) => ABN[a]).join(", ")}.</p>
@@ -3507,21 +6146,30 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
         b2 += field("Expertise (two skills you're proficient in)", `<div class="row">${[0, 1].map((i) => sel(`expertise.${i}`, profd.map((s) => ({ v: s, l: s, dis: C.expertise.includes(s) && C.expertise[i] !== s })), C.expertise[i], "Choose a skill…")).join("")}</div>`);
       }
       if (cls.extraLanguage) b2 += field("Thieves' Cant: one more language", sel("langExtra", D.languages.map((l) => ({ v: l, l, dis: C.langs.includes(l) })), C.langExtra, "Choose a language…"));
-      if (cls.invocations) b2 += field("Eldritch Invocation", `<input type="text" data-bind="invocation" value="${esc(C.invocation)}" placeholder="From the Player's Handbook">`);
-      if (cls.mastery) {
+      const invN = at(cls.prog?.invocations, LV()) || 0;
+      if (invN) b2 += field(`Eldritch Invocations (${invN})`, `<div class="row">${Array.from({ length: invN }, (_, i) => `<input type="text" data-bind="invocations.${i}" value="${esc(C.invocations[i] || "")}" placeholder="From the Player's Handbook">`).join("")}</div>`);
+      const masteryN = at(cls.prog?.mastery, LV()) || cls.mastery;
+      if (masteryN) {
         const ok = D.weapons.filter((w) => weaponProf(w, X.P) && (cls.id !== "barbarian" || !/Ammunition/.test(w.props)));
-        b2 += field(`Weapon Mastery (choose ${cls.mastery} kinds of weapon)`, `<div class="row">${Array.from({ length: cls.mastery }, (_, i) => sel(`mastery.${i}`, ok.map((w) => ({ v: w.name, l: `${w.name} (${w.mastery})`, dis: C.mastery.includes(w.name) && C.mastery[i] !== w.name })), C.mastery[i], "Choose a weapon…")).join("")}</div>`);
+        b2 += field(`Weapon Mastery (choose ${masteryN} kinds of weapon)`, `<div class="row">${Array.from({ length: masteryN }, (_, i) => sel(`mastery.${i}`, ok.map((w) => ({ v: w.name, l: `${w.name} (${w.mastery})`, dis: C.mastery.includes(w.name) && C.mastery[i] !== w.name })), C.mastery[i], "Choose a weapon…")).join("")}</div>`);
       }
       if (cls.cast) {
-        const ct = cls.cast.cantrips + (C.order === "thaumaturge" || C.order === "magician" ? 1 : 0);
-        b2 += `<p class="note">${esc(cls.name)} spells at level 1: ${ct ? `${ct} cantrips, ` : ""}${cls.cast.prepared} prepared level 1 spells, ${cls.cast.slots} level 1 spell slot${cls.cast.slots > 1 ? "s" : ""}${cls.cast.spellbook ? `, and a spellbook of ${cls.cast.spellbook} spells` : ""}. Choose them from the ${esc(cls.cast.list)} list in the <i>Player's Handbook</i>.</p>`;
-        const slots = (key, n, ph) => `<div class="row">${Array.from({ length: n }, (_, i) => `<input type="text" data-bind="${key}.${i}" value="${esc(C[key][i] || "")}" placeholder="${ph} ${i + 1}">`).join("")}</div>`;
-        if (ct) b2 += field("Cantrips", slots("cantrips", ct, "Cantrip"));
-        b2 += field("Prepared level 1 spells", slots("prepared", cls.cast.prepared, "Spell"));
-        if (cls.cast.spellbook) b2 += field("Spellbook (level 1 spells)", slots("spellbook", cls.cast.spellbook, "Spell"));
+        const c = cls.cast, ct = castCantrips(cls), np = castPrepared(cls), nb = castSpellbook(cls), maxL = maxSpellLevel(cls), always = alwaysNow(cls);
+        const levelled = castable(c.list, maxL, always), upTo = maxL > 1 ? `level 1 to ${maxL}` : "level 1";
+        b2 += `<p class="note">${esc(cls.name)} spells at level ${LV()}: ${ct ? `${ct} cantrips, ` : ""}${np} prepared spells (${upTo})${always.length ? ` plus ${esc(always.join(", "))}, always prepared` : ""}, ${esc(slotsText(cls))}${nb ? `, and a spellbook of ${nb} spells` : ""}. Choose them from the ${esc(c.list)} spell list below.</p>`;
+        if (ct) b2 += field(`Cantrips (choose ${ct})`, spellPick("cantrips", ct, spellList(c.list, "cantrips"), "Choose a cantrip…", race?.spells?.cantrips || []));
+        if (nb) b2 += field(`Spellbook (choose ${nb} spells, ${upTo})`, spellPick("spellbook", nb, levelled, "Choose a spell…"));
+        const prepOpts = nb ? C.spellbook.slice(0, nb).filter(Boolean) : levelled;
+        b2 += field(`Prepared spells (choose ${np})`, nb && !prepOpts.length ? `<p class="note">Fill your spellbook first: a wizard prepares spells from it.</p>`
+          : spellPick("prepared", np, prepOpts, "Choose a spell…", [C.raceSpell, ...(sign?.spells || []).map((s) => s[0])].filter(Boolean)));
+        const own = [...spellList(c.list, "cantrips"), ...flatNames(levelled)].filter((s) => D.spellSource[s]);
+        if (own.length) b2 += `<p class="note">${own.map((s) => `${guideText(D.spellSource[s].anchor, `${esc(s)} ${HOST ? "›" : "↗"}`)} is a campaign spell from <i>${esc(D.spellSource[s].book)}</i>.`).join(" ")}</p>`;
       }
     }
-    const d2 = cls && C.clsSkills.filter(Boolean).length >= cls.skillChoices.n && (!cls.order || C.order) && (!cls.style || C.style) && (!cls.mastery || C.mastery.filter(Boolean).length >= cls.mastery);
+    const filled = (arr, n) => arr.slice(0, n).filter(Boolean).length >= n;
+    const spellsDone = !cls?.cast || (filled(C.cantrips, castCantrips(cls)) && filled(C.prepared, castPrepared(cls)) && filled(C.spellbook, castSpellbook(cls)));
+    const masteryNeed = cls ? at(cls.prog?.mastery, LV()) || cls.mastery || 0 : 0;
+    const d2 = cls && C.clsSkills.filter(Boolean).length >= cls.skillChoices.n && (!cls.order || C.order) && (!cls.style || C.style) && filled(C.mastery, masteryNeed) && spellsDone;
     parts.push(step(2, "Your Class", cls ? cls.name : "Class, skills and spells", d2, guideLink("guide-classes-on-vvardenfell", "Step Two in the guide") + b2));
 
     // 3. Background
@@ -3543,10 +6191,13 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
       b4 += field("Spellcasting ability for your birthsign", sel("signAbility", ["Int", "Wis", "Cha"].map((a) => ({ v: a, l: ABN[a] })), C.signAbility));
       if (X.sk.signDup) { const pre = taken([C.signDup]); b4 += field(`You already have ${X.sk.signDup}: choose another`, sel("signDup", sign.skills.dupFrom.map((x) => ({ v: x, l: x, dis: pre.includes(x) })), C.signDup, "Choose a skill…")); }
       if (sign.skills?.choose) { const ch = sign.skills.choose[0]; const pre = taken([C.signChoice]); b4 += field(ch.label, sel("signChoice", ch.from.map((x) => ({ v: x, l: x, dis: pre.includes(x) })), C.signChoice, "Choose a skill…")); }
-      if (sign.cantripChoice) b4 += field("Gift of the Mage: two Wizard cantrips", `<div class="row">${[0, 1].map((i) => `<input type="text" data-bind="signCantrips.${i}" value="${esc(C.signCantrips[i] || "")}" placeholder="Cantrip ${i + 1}">`).join("")}</div>`);
-      if (sign.extraSlots && !cls?.cast) b4 += field(`Without class spellcasting, you gain ${sign.extraSlots} level 1 ${sign.noncasterList} spell${sign.extraSlots > 1 ? "s" : ""}`, `<div class="row">${Array.from({ length: sign.extraSlots }, (_, i) => `<input type="text" data-bind="signSpells.${i}" value="${esc(C.signSpells[i] || "")}" placeholder="${sign.noncasterList} spell ${i + 1}">`).join("")}</div>`);
+      if (sign.cantripChoice) { const ch = sign.cantripChoice;
+        b4 += field(`Gift of the Mage: ${ch.n} ${ch.list} cantrips`, spellPick("signCantrips", ch.n, spellList(ch.list, "cantrips"), "Choose a cantrip…", [...(race?.spells?.cantrips || []), ...C.cantrips.filter(Boolean)])); }
+      if (sign.extraSlots && !cls?.cast) b4 += field(`Without class spellcasting, you gain ${sign.extraSlots} level 1 ${sign.noncasterList} spell${sign.extraSlots > 1 ? "s" : ""}`,
+        spellPick("signSpells", sign.extraSlots, spellList(sign.noncasterList, "1"), "Choose a spell…", [C.raceSpell, ...(sign.spells || []).map((s) => s[0])].filter(Boolean)));
     }
-    const d4 = sign && (!X.sk.signDup || C.signDup) && (!sign.skills?.choose || C.signChoice);
+    const d4 = sign && (!X.sk.signDup || C.signDup) && (!sign.skills?.choose || C.signChoice) && (!sign.cantripChoice || C.signCantrips.filter(Boolean).length >= sign.cantripChoice.n)
+      && (!(sign.extraSlots && !cls?.cast) || C.signSpells.filter(Boolean).length >= sign.extraSlots);
     parts.push(step(4, "Your Birthsign", sign ? sign.name : "The sign you were born under", d4, guideLink("guide-birthsigns-of-tamriel", "Step Four in the guide") + b4));
 
     // 5. Ability scores
@@ -3568,7 +6219,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
       let ctrl;
       if (C.method === "pointbuy") ctrl = `<div class="pb"><button type="button" data-pt="${a}" data-d="-1" aria-label="Lower ${ABN[a]}">−</button><span class="v">${C.points[a] || 8}</span><button type="button" data-pt="${a}" data-d="1" aria-label="Raise ${ABN[a]}">+</button></div>`;
       else ctrl = `<select data-bind="assign.${a}" aria-label="${ABN[a]}">${opt("", "—", C.assign[a] === "" || C.assign[a] == null)}${pool.map((v, i) => isNaN(v) ? "" : opt(String(i), String(v), String(C.assign[a]) === String(i), usedIdx.includes(String(i)) && String(C.assign[a]) !== String(i))).join("")}</select>`;
-      return `<div class="sc"><span class="ab">${a}</span>${ctrl}<span class="fin">${S.fin[a] == null ? "—" : `${S.fin[a]} (${sgn(S.m[a])})`}${S.inc[a] ? ` <span title="from your background">+${S.inc[a]}</span>` : ""}</span></div>`;
+      return `<div class="sc"><span class="ab">${a}</span>${ctrl}<span class="fin">${S.fin[a] == null ? "—" : `${S.fin[a]} (${sgn(S.m[a])})`}${S.inc[a] ? ` <span title="from your background">+${S.inc[a]}</span>` : ""}${S.lvInc[a] ? ` <span title="from Ability Score Improvements and feats">+${S.lvInc[a]}</span>` : ""}</span></div>`;
     }).join("")}</div>`;
     if (bg) {
       b5 += `<div class="seg" role="group" aria-label="Background increase">${[["21", "+2 and +1"], ["111", "+1 to all three"]].map(([v, l]) => `<button type="button" data-asi="${v}" aria-pressed="${C.asiMode === v}">${l}</button>`).join("")}</div>`;
@@ -3599,6 +6250,9 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     b7 += `<p class="note">Choosing a gear package fills in your armour and weapons; change them freely. Names in brackets are the <i>Player's Handbook</i> weapon each one counts as.</p>`;
     parts.push(step(6, "Equipment", cls ? (D.equipment[cls.name] || [])[C.classEquip]?.label || "" : "What you carry off the ship", !!cls && !!bg, guideLink("guide-starting-equipment", "Step Seven in the guide") + b7));
 
+    // Levels 2 and up: one card each, asking only that level's choices
+    for (let n = 2; cls && n <= LV(); n++) parts.push(levelCard(n, X));
+
     // Faith (guide Step Six) and Finishing Touches (Step Eight) stay in the guide, not on the papers
     const gl = guideText;
     parts.push(`<p class="note">Your faith and your story aren't on these papers. Work through ${gl("guide-your-faith", "Step Six")} and ${gl("guide-finishing-touches", "Step Eight")} in the guide, and share them with your DM.</p>`);
@@ -3608,14 +6262,99 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     if (active) { const el = $(`[data-bind="${CSS.escape(active)}"]`); if (el) el.focus({ preventScroll: true }); }
   }
 
+  function slotsText(cls) {
+    const pr = cls?.prog || {};
+    if (pr.slots === "pact") { const n = at(pr.pact.count, LV()); return `${n} Pact Magic slot${n > 1 ? "s" : ""} (level ${at(pr.pact.level, LV())})`; }
+    const row = slotRow(cls) || [];
+    return row.map((k, i) => `${k} level ${i + 1}`).join(", ") + ` spell slot${row.reduce((a, b) => a + b, 0) > 1 ? "s" : ""}`;
+  }
+
+  function levelCard(n, X) {
+    const cls = X.cls, pr = cls.prog, d = lvData(n), feats = pr.features[n] || [], bind = (k) => `lv.${n}.${k}`;
+    const changes = Object.entries(pr.counters || {}).filter(([, v]) => at(v, n) !== at(v, n - 1) && at(v, n)).map(([k, v]) => `${k}: ${at(v, n)}`);
+    const grow = [];
+    const prev = (fn) => { const keep = C.level; C.level = n - 1; const r = fn(); C.level = keep; return r; };
+    if (cls.cast) {
+      const nowL = (() => { const keep = C.level; C.level = n; const r = [castCantrips(cls), castPrepared(cls), castSpellbook(cls), maxSpellLevel(cls), slotsText(cls)]; C.level = keep; return r; })();
+      const was = prev(() => [castCantrips(cls), castPrepared(cls), castSpellbook(cls), maxSpellLevel(cls)]);
+      if (nowL[0] > was[0]) grow.push(`+${nowL[0] - was[0]} cantrip`);
+      if (nowL[1] > was[1]) grow.push(`+${nowL[1] - was[1]} prepared spell${nowL[1] - was[1] > 1 ? "s" : ""}`);
+      if (nowL[2] > was[2]) grow.push(`+${nowL[2] - was[2]} spellbook spells`);
+      if (nowL[3] > was[3]) grow.push(`level ${nowL[3]} spells`);
+      grow.push(nowL[4]);
+    }
+    const mN = at(pr.mastery, n), mP = at(pr.mastery, n - 1); if (mN > mP) grow.push(`+${mN - mP} Weapon Mastery`);
+    const iN = at(pr.invocations, n), iP = at(pr.invocations, n - 1); if (iN > iP) grow.push(`+${iN - iP} Eldritch Invocation${iN - iP > 1 ? "s" : ""}`);
+    if (pbOf(n) > pbOf(n - 1)) grow.unshift(`Proficiency Bonus +${pbOf(n)}`);
+    let b = `<div class="card">${feats.map(([f, txt]) => `<p><b>${esc(f)}.</b> ${esc(txt)}</p>`).join("") || "<p>No new class features at this level.</p>"}
+      ${changes.length ? `<p><b>Now:</b> ${esc(changes.join(" · "))}</p>` : ""}${grow.length ? `<p><b>Also:</b> ${esc(grow.join(" · "))}${grow.some((g) => /spell|cantrip|Mastery|Invocation/.test(g)) ? ". Choose new spells, masteries and invocations in Step 2." : ""}</p>` : ""}</div>`;
+    // hit points
+    const avg = cls.hitDie / 2 + 1;
+    b += field(`Hit points: d${cls.hitDie} + Constitution`, `<div class="row">${sel(bind("hpMode"), [{ v: "avg", l: `Take the average (${avg})` }, { v: "roll", l: `Roll a d${cls.hitDie}` }], d.hpMode || "avg")}${d.hpMode === "roll"
+      ? `<div class="row" style="grid-template-columns:minmax(0,1fr) auto"><input type="number" min="1" max="${cls.hitDie}" data-bind="${bind("hpRoll")}" value="${esc(d.hpRoll ?? "")}" placeholder="Your roll" aria-label="Your roll"><button class="btn" type="button" data-hproll="${n}">Roll</button></div>` : ""}</div>`);
+    let done = d.hpMode !== "roll" || +d.hpRoll > 0;
+    // subclass
+    if (n === 3) {
+      const subs = D.subclasses[cls.name] || [];
+      b += field(`${cls.name} subclass`, sel("subclass", [{ group: "2024 Player's Handbook", items: subs.filter((s) => !s.old).map((s) => ({ v: s.name, l: s.name })) },
+        { group: "Older books (*)", items: subs.filter((s) => s.old).map((s) => ({ v: s.name, l: `${s.name} *` })) }], C.subclass, "Choose a subclass…"));
+      const sm = D.subclassMech[C.subclass];
+      b += `<p class="note">${sm ? `On your sheet: ${esc(sm.note)} ` : ""}Read your subclass's features in its book. An older-book subclass (*) also starts at level 3 here.${["Cleric", "Paladin", "Warlock"].includes(cls.name) ? " Your god's suggestions are in the guide, but any subclass is fine." : ""}</p>`;
+      done = done && !!C.subclass;
+    }
+    // Ability Score Improvement or a feat
+    if ([4, 8, 12, 16].includes(n)) {
+      const byCat = (cat) => D.feats.filter((f) => f.cat === cat).map((f) => ({ v: f.name, l: f.pre ? `${f.name} (needs ${f.pre})` : f.name }));
+      const opts = [{ v: "asi", l: "Ability Score Improvement" }, { group: "Origin feats", items: byCat("Origin") }, { group: "General feats (+1 to an ability)", items: byCat("General") }];
+      if (hasStyleFeature(cls)) opts.push({ group: "Fighting Style feats", items: byCat("Fighting Style") });
+      b += field("Ability Score Improvement, or a feat", sel(bind("asi"), opts, d.asi, "Choose…"));
+      const abOpt = (list) => list.map((a) => ({ v: a, l: ABN[a] }));
+      if (d.asi === "asi") {
+        b += `<div class="row">${field("How", sel(bind("asiMode"), [{ v: "2", l: "+2 to one ability" }, { v: "11", l: "+1 to two abilities" }], d.asiMode || "2"))}${field(d.asiMode === "11" ? "First ability" : "Ability", sel(bind("a1"), abOpt(AB), d.a1, "Choose…"))}${d.asiMode === "11" ? field("Second ability", sel(bind("a2"), AB.map((a) => ({ v: a, l: ABN[a], dis: a === d.a1 })), d.a2, "Choose…")) : ""}</div><p class="note">No score can go above 20.</p>`;
+        done = done && !!d.a1 && (d.asiMode !== "11" || !!d.a2);
+      } else if (d.asi) {
+        const f = D.feats.find((x) => x.name === d.asi);
+        if (f && f.ab && f.ab.length) { b += field(`${f.name}: +1 to`, sel(bind("featAb"), abOpt(f.ab === "any" ? AB : f.ab), d.featAb, "Choose an ability…")); done = done && !!d.featAb; }
+        const fm = D.featMech[d.asi];
+        b += `<p class="note">${fm ? "Its main effect is on your sheet. " : ""}Read the feat in the <i>Player's Handbook</i> and add anything else it gives you by hand.</p>`;
+      } else done = false;
+    }
+    // class picks at this level
+    const exNow = at(pr.expertise, n) || 0, exPrev = at(pr.expertise, n - 1) || 0;
+    if (exNow > exPrev) {
+      const profd = Object.keys(X.sk.src).filter((s) => !pr.scholar || pr.scholar.includes(s));
+      b += field(pr.scholar ? "Scholar: Expertise in one of these skills you're proficient in" : `Expertise (${exNow - exPrev} skill${exNow - exPrev > 1 ? "s" : ""} you're proficient in)`,
+        `<div class="row">${Array.from({ length: exNow - exPrev }, (_, k) => { const i = exPrev + k; return sel(`expertise.${i}`, profd.map((s) => ({ v: s, l: s, dis: C.expertise.includes(s) && C.expertise[i] !== s })), C.expertise[i], "Choose a skill…"); }).join("")}</div>`);
+      if (pr.scholar && !profd.length) b += `<p class="warn">You aren't proficient in any of Scholar's skills yet.</p>`;
+      done = done && C.expertise.slice(exPrev, exNow).filter(Boolean).length >= exNow - exPrev;
+    }
+    if (pr.style === n) { b += field("Fighting Style", sel("style", D.fightingStyles, C.style, "Choose a Fighting Style…")); done = done && !!C.style; }
+    if (pr.deftLangs && n === 2) {
+      const known = X.P.langs;
+      b += field("Deft Explorer: two more languages", `<div class="row">${[0, 1].map((i) => sel(`deftLangs.${i}`, D.languages.map((l) => ({ v: l, l, dis: (known.includes(l) && C.deftLangs[i] !== l) })), C.deftLangs[i], "Choose a language…")).join("")}</div>`);
+      done = done && C.deftLangs.filter(Boolean).length >= 2;
+    }
+    if (pr.metamagic && n === 2) {
+      b += field("Metamagic (choose two)", `<div class="row">${[0, 1].map((i) => sel(`metamagic.${i}`, D.metamagic.map((x) => ({ v: x, l: x, dis: C.metamagic.includes(x) && C.metamagic[i] !== x })), C.metamagic[i], "Choose…")).join("")}</div>`);
+      done = done && C.metamagic.filter(Boolean).length >= 2;
+    }
+    if (cls.id === "barbarian" && n === 3) {
+      const have = Object.keys(X.sk.src).filter((s) => X.sk.src[s] !== "Primal Knowledge");
+      b += field("Primal Knowledge: one more Barbarian skill", sel("primal", cls.skillChoices.from.map((s) => ({ v: s, l: s, dis: have.includes(s) })), C.primal, "Choose a skill…"));
+      done = done && !!C.primal;
+    }
+    const sub = n === 3 && C.subclass ? C.subclass : n === 4 && d.asi ? (d.asi === "asi" ? "Ability Score Improvement" : d.asi) : feats.filter((f) => !/Subclass|Ability Score/.test(f[0])).map((f) => f[0]).slice(0, 2).join(", ") || "Hit points";
+    return step(`L${n}`, `Level ${n}`, sub, done, b);
+  }
+
   // ---------- the sheet ----------
   function renderSheet() {
     const X = derive(), { race, cls, sign, S } = X, bg = byId(D.backgrounds, C.bg);
-    const line = [race?.short, cls ? `${cls.name} 1` : "", bg?.name, sign?.name].filter(Boolean).join(" · ");
+    const line = [race?.short, cls ? `${cls.name} ${LV()}${LV() >= 3 && C.subclass ? ` (${C.subclass})` : ""}` : "", bg?.name, sign?.name].filter(Boolean).join(" · ");
     let h = `<h2>${esc(C.name || "Unnamed outlander")}</h2><div class="who">${esc(line || "Work through the six steps, and your papers fill in here.")}</div>`;
-    h += `<div class="stats">${[["AC", X.ac.ac, X.ac.how], ["Hit points", X.hp ?? "—", cls ? `d${cls.hitDie} + Con${sign?.hpPerLevel ? " + Lady's Grace" : ""}` : ""], ["Speed", `${X.speed} ft`, ""],
-      ["Initiative", sgn(S.m.Dex), sign?.initAdv ? "with Advantage" : ""], ["Proficiency", "+2", ""], ["Passive Perception", 10 + X.per.b, ""],
-      ["Darkvision", race?.darkvision ? `${race.darkvision} ft` : "—", ""]].map(([n, v, t]) => `<div class="stat" title="${esc(t)}"><b>${esc(v)}</b><span>${esc(n)}</span></div>`).join("")}</div>`;
+    h += `<div class="stats">${[["AC", X.ac.ac, X.ac.how], ["Hit points", X.hp ?? "—", cls ? `d${cls.hitDie} + Con per level${sign?.hpPerLevel ? " + Lady's Grace" : ""}` : ""], ["Speed", `${X.speed} ft`, ""],
+      ["Initiative", sgn(X.init), sign?.initAdv ? "with Advantage" : ""], ["Proficiency", sgn(PB), ""], ["Passive Perception", 10 + X.per.b, ""],
+      ["Darkvision", X.darkvision ? `${X.darkvision} ft` : "—", ""]].map(([n, v, t]) => `<div class="stat" title="${esc(t)}"><b>${esc(v)}</b><span>${esc(n)}</span></div>`).join("")}</div>`;
     if (X.warnings.length) h += X.warnings.map((w) => `<p class="warn">${esc(w)}</p>`).join("");
     h += `<h3>Abilities and saving throws</h3><div class="abil">${AB.map((a) => { const sv = X.saves.find((s) => s.a === a);
       return `<div class="ab6"><div class="n">${ABN[a]}</div><div class="m">${S.fin[a] == null ? "—" : sgn(S.m[a])}</div><div class="s">${S.fin[a] ?? ""}</div><div class="sv${sv.p ? " p" : ""}">save ${sgn(sv.b)}${sv.p ? " ●" : ""}</div></div>`; }).join("")}</div>`;
@@ -3628,20 +6367,21 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     if (sign?.id === "lord") h += `<p class="kv"><b>Weakness</b>Disadvantage on saves against effects that deal Fire damage</p>`;
     if (sign?.id === "apprentice") h += `<p class="kv"><b>Weakness</b>Spells deal +2 damage to you (Arcane Frailty)</p>`;
     h += `</div></div>`;
-    h += `<h3>Attacks</h3><table class="atk"><thead><tr><th>Weapon</th><th>Hit</th><th>Damage</th><th>Notes</th></tr></thead><tbody>${X.attacks.map((a) => `<tr><td>${esc(a.name)}</td><td>${sgn(a.hit)}</td><td>${esc(a.dmg)}</td><td>${esc(a.notes)}</td></tr>`).join("")}</tbody></table>`;
+    h += `<h3>Attacks${X.extraAttack ? " · two per Attack action" : ""}</h3><table class="atk"><thead><tr><th>Weapon</th><th>Hit</th><th>Damage</th><th>Notes</th></tr></thead><tbody>${X.attacks.map((a) => `<tr><td>${esc(a.name)}</td><td>${sgn(a.hit)}</td><td>${esc(a.dmg)}</td><td>${esc(a.notes)}</td></tr>`).join("")}</tbody></table>`;
     // Spells
     const sp = [];
     if (cls?.cast) {
-      const c = cls.cast, ct = c.cantrips + (C.order === "thaumaturge" || C.order === "magician" ? 1 : 0);
-      sp.push(`<p class="kv"><b>${esc(cls.name)}</b>${ABN[c.ability]} · save DC ${X.spell.dc} · attack ${sgn(X.spell.atk)} · ${c.slots} level 1 slot${c.slots > 1 ? "s" : ""}${c.pact ? " (Pact Magic)" : ""}</p>`);
+      const c = cls.cast, ct = castCantrips(cls), al = alwaysNow(cls);
+      sp.push(`<p class="kv"><b>${esc(cls.name)}</b>${ABN[c.ability]} · save DC ${X.spell.dc} · attack ${sgn(X.spell.atk)} · ${esc(slotsText(cls))}</p>`);
       const list = (arr, n) => Array.from({ length: n }, (_, i) => arr[i] || "").map((x) => x ? esc(x) : `<span class="empty">blank</span>`).join(", ");
       if (ct) sp.push(`<p class="kv"><b>Cantrips</b>${list(C.cantrips, ct)}</p>`);
-      sp.push(`<p class="kv"><b>Prepared</b>${list(C.prepared, c.prepared)}${c.always ? `; always prepared: ${esc(c.always.join(", "))}` : ""}</p>`);
-      if (c.spellbook) sp.push(`<p class="kv"><b>Spellbook</b>${list(C.spellbook, c.spellbook)}</p>`);
+      sp.push(`<p class="kv"><b>Prepared</b>${list(C.prepared, castPrepared(cls))}${al.length ? `; always prepared: ${esc(al.join(", "))}` : ""}</p>`);
+      if (castSpellbook(cls)) sp.push(`<p class="kv"><b>Spellbook</b>${list(C.spellbook, castSpellbook(cls))}</p>`);
     }
     if (race?.spells) {
-      const now = [...race.spells.cantrips, ...(C.raceSpell ? [C.raceSpell] : [])];
-      sp.push(`<p class="kv"><b>${esc(race.short)}</b>${esc(now.join(", ") || "—")} · ${ABN[C.raceAbility]} · DC ${X.raceSp.dc} · attack ${sgn(X.raceSp.atk)}${race.spells.later?.length ? ` <span class="src">· later: ${esc(race.spells.later.map(([n, l]) => `${n} (level ${l})`).join(", "))}</span>` : ""}</p>`);
+      const later = (race.spells.later || []).filter(([, l]) => l > LV());
+      const now = [...race.spells.cantrips, ...(C.raceSpell ? [C.raceSpell] : []), ...(race.spells.later || []).filter(([, l]) => l <= LV()).map(([s]) => s)];
+      sp.push(`<p class="kv"><b>${esc(race.short)}</b>${esc(now.join(", ") || "—")} · ${ABN[C.raceAbility]} · DC ${X.raceSp.dc} · attack ${sgn(X.raceSp.atk)}${later.length ? ` <span class="src">· later: ${esc(later.map(([n, l]) => `${n} (level ${l})`).join(", "))}</span>` : ""}</p>`);
     }
     if (sign) {
       const ss = [...(sign.spells || []).map((s) => s[0]), ...C.signCantrips.filter(Boolean), ...C.signSpells.filter(Boolean)];
@@ -3653,14 +6393,25 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     // Features
     const feats = [];
     if (race) feats.push(...race.traits.map((t) => [t.name, race.short]));
-    if (cls) feats.push(...cls.features.map(([n]) => [n, cls.name]));
+    if (cls) {
+      feats.push(...cls.features.map(([n]) => [n, cls.name]));
+      for (let n = 2; n <= LV(); n++) (cls.prog.features[n] || []).filter(([f]) => !/Subclass$|^Ability Score Improvement$/.test(f)).forEach(([f]) => feats.push([f, `${cls.name} ${n}`]));
+      if (LV() >= 3 && C.subclass) feats.push([`Subclass: ${C.subclass}${D.subclasses[cls.name]?.find((s) => s.name === C.subclass)?.old ? " *" : ""}`, D.subclassMech[C.subclass]?.note || "features in its book"]);
+      asiLevels().forEach((n) => { const d = lvData(n); if (!d.asi) return;
+        feats.push([d.asi === "asi" ? `Ability Score Improvement: ${d.asiMode === "11" ? [d.a1, d.a2].filter(Boolean).map((a) => `+1 ${a}`).join(", ") : d.a1 ? `+2 ${d.a1}` : ""}` : `Feat: ${d.asi}${d.featAb ? ` (+1 ${d.featAb})` : ""}`, `level ${n}`]); });
+      if (cls.id === "barbarian" && LV() >= 3 && C.primal) feats.push([`Primal Knowledge: ${C.primal}`, "Barbarian 3"]);
+      if (cls.prog.metamagic && LV() >= 2 && C.metamagic.filter(Boolean).length) feats.push([`Metamagic: ${C.metamagic.filter(Boolean).join(", ")}`, "Sorcerer 2"]);
+    }
     if (C.order) feats.push([{ protector: "Divine Order: Protector", thaumaturge: "Divine Order: Thaumaturge", magician: "Primal Order: Magician", warden: "Primal Order: Warden" }[C.order], cls?.name]);
     if (C.style) feats.push([`Fighting Style: ${C.style}`, "Fighter"]);
-    if (C.invocation) feats.push([`Invocation: ${C.invocation}`, "Warlock"]);
+    const invs = C.invocations.slice(0, at(cls?.prog?.invocations, LV()) || 0).filter(Boolean);
+    if (invs.length) feats.push([`Invocations: ${invs.join(", ")}`, "Warlock"]);
     if (C.mastery.filter(Boolean).length || C.sword) feats.push([`Weapon Mastery: ${[...C.mastery.filter(Boolean), C.sword].filter(Boolean).join(", ")}`, ""]);
-    if (C.expertise.filter(Boolean).length) feats.push([`Expertise: ${C.expertise.filter(Boolean).join(", ")}`, "Rogue"]);
+    if (X.exp.filter(Boolean).length) feats.push([`Expertise: ${X.exp.filter(Boolean).join(", ")}`, cls?.name]);
     if (sign) feats.push(...sign.traits.map((t) => [t.name, sign.name]));
-    if (feats.length) h += `<h3>Features and traits</h3>` + feats.map(([n, f]) => `<p class="feat"><b>${esc(n)}</b> <span class="src">${esc(f || "")}</span></p>`).join("");
+    const counters = cls ? Object.entries(cls.prog.counters || {}).map(([k, v]) => [k, at(v, LV())]).filter(([, v]) => v) : [];
+    if (cls?.id === "bard") counters.push(["Bardic Inspiration uses", Math.max(1, S.m.Cha)]);
+    if (feats.length) h += `<h3>Features and traits</h3>` + (counters.length ? `<p class="kv">${counters.map(([k, v]) => `<b>${esc(k)}</b>${esc(String(v))}`).join(" · ")}</p>` : "") + feats.map(([n, f]) => `<p class="feat"><b>${esc(n)}</b> <span class="src">${esc(f || "")}</span></p>`).join("");
     // Equipment
     const eq = [];
     let gold = 0;
@@ -3675,15 +6426,15 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   function sheetText() {
     const X = derive(), { race, cls, sign, S } = X, bg = byId(D.backgrounds, C.bg);
     const L = [];
-    L.push(`${C.name || "Unnamed outlander"}: ${[race?.short, cls ? cls.name + " 1" : "", bg?.name, sign?.name].filter(Boolean).join(", ")}`);
-    L.push(`AC ${X.ac.ac} (${X.ac.how}) | HP ${X.hp ?? "-"} | Speed ${X.speed} ft | Initiative ${sgn(S.m.Dex)} | Passive Perception ${10 + X.per.b}${race?.darkvision ? ` | Darkvision ${race.darkvision} ft` : ""}`);
+    L.push(`${C.name || "Unnamed outlander"}: ${[race?.short, cls ? `${cls.name} ${LV()}${LV() >= 3 && C.subclass ? ` (${C.subclass})` : ""}` : "", bg?.name, sign?.name].filter(Boolean).join(", ")}`);
+    L.push(`AC ${X.ac.ac} (${X.ac.how}) | HP ${X.hp ?? "-"} | Speed ${X.speed} ft | Initiative ${sgn(X.init)} | Proficiency ${sgn(PB)} | Passive Perception ${10 + X.per.b}${X.darkvision ? ` | Darkvision ${X.darkvision} ft` : ""}`);
     L.push(AB.map((a) => `${a} ${S.fin[a] ?? "-"} (${sgn(S.m[a])})`).join("  "));
     L.push("Saves: " + X.saves.filter((s) => s.p).map((s) => `${s.a} ${sgn(s.b)}`).join(", "));
     L.push("Skills: " + X.skills.filter((s) => s.p).map((s) => `${s.name} ${sgn(s.b)}${s.e ? " (expertise)" : ""}`).join(", "));
     L.push(`Armour: ${[...X.P.armor].join(", ") || "None"} | Weapons: ${[...X.P.weapons].join(", ")} | Tools: ${X.P.tools.map((t) => t.t).join(", ") || "None"}`);
     L.push(`Languages: ${X.P.langs.join(", ")}`);
     L.push("Attacks: " + X.attacks.map((a) => `${a.name} ${sgn(a.hit)} (${a.dmg})`).join("; "));
-    if (cls?.cast) L.push(`Spells (${cls.name}, DC ${X.spell.dc}, attack ${sgn(X.spell.atk)}): cantrips ${C.cantrips.filter(Boolean).join(", ") || "-"}; prepared ${C.prepared.filter(Boolean).join(", ") || "-"}`);
+    if (cls?.cast) L.push(`Spells (${cls.name}, DC ${X.spell.dc}, attack ${sgn(X.spell.atk)}, ${slotsText(cls)}): cantrips ${C.cantrips.filter(Boolean).join(", ") || "-"}; prepared ${C.prepared.filter(Boolean).join(", ") || "-"}${cls.cast.spellbook ? `; spellbook ${C.spellbook.filter(Boolean).join(", ") || "-"}` : ""}`);
     if (race?.spells) L.push(`${race.short} spells: ${[...race.spells.cantrips, C.raceSpell].filter(Boolean).join(", ")} (DC ${X.raceSp.dc})`);
     if (sign) L.push(`${sign.name}: ${sign.traits.map((t) => t.name).join(", ")}`);
     return L.join("\n");
@@ -3715,7 +6466,9 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     a[ks.at(-1)] = v;
   }
   const RESETS = { race: () => { C.raceSkills = []; C.raceSpell = ""; C.sword = ""; },
-    cls: () => { C.clsSkills = []; C.order = ""; C.style = ""; C.expertise = []; C.clsTools = []; C.mastery = []; C.cantrips = []; C.prepared = []; C.spellbook = []; C.invocation = ""; C.subclass = ""; C.classEquip = 0; applyPackage(); },
+    cls: () => { C.clsSkills = []; C.order = ""; C.style = ""; C.expertise = []; C.clsTools = []; C.mastery = []; C.cantrips = []; C.prepared = []; C.spellbook = []; C.invocation = ""; C.invocations = []; C.subclass = ""; C.classEquip = 0;
+      C.lv = []; C.primal = ""; C.deftLangs = []; C.metamagic = []; applyPackage(); },
+    level: () => { C.level = Math.min(MAX_LEVEL, Math.max(1, +C.level || 1)); for (let n = 2; n <= C.level; n++) openSteps.add(`L${n}`); },
     bg: () => { C.bgTool = ""; C.bgDup = {}; C.bgToolDup = ""; C.asi2 = ""; C.asi1 = ""; },
     sign: () => { C.signDup = ""; C.signChoice = ""; C.signCantrips = []; C.signSpells = []; },
     classEquip: () => applyPackage() };
@@ -3738,6 +6491,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     if (t.dataset.method) { C.method = t.dataset.method; refresh(true); }
     if (t.dataset.asi) { C.asiMode = t.dataset.asi; refresh(true); }
     if (t.dataset.pt) { const a = t.dataset.pt, v = Math.min(15, Math.max(8, (C.points[a] || 8) + +t.dataset.d)); C.points[a] = v; refresh(true); }
+    if (t.dataset.hproll) { const cls = byId(D.classes, C.cls), n = +t.dataset.hproll; if (cls) { setPath(C, `lv.${n}.hpRoll`, 1 + Math.floor(Math.random() * cls.hitDie)); refresh(true); } }
     if (t.id === "rollBtn") {
       const d6 = () => 1 + Math.floor(Math.random() * 6);
       C.rolls = Array.from({ length: 6 }, () => { const r = [d6(), d6(), d6(), d6()].sort((x, y) => y - x); return r[0] + r[1] + r[2]; });
@@ -3752,13 +6506,32 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 
   // Clear picks that a later choice has made impossible, so the player chooses again.
   function sanitize() {
-    const race = byId(D.races, C.race), bg = byId(D.backgrounds, C.bg), cls = byId(D.classes, C.cls);
+    const race = byId(D.races, C.race), bg = byId(D.backgrounds, C.bg), cls = byId(D.classes, C.cls), sign = byId(D.signs, C.sign);
+    const nm = (s) => s.toLowerCase().replace(/\bcolor\b/, "colour").replace(/[^a-z]/g, "");
+    const fit = (arr, list, blocked = []) => { const seen = new Set(blocked); return arr.map((s) => { const m = s && list.find((x) => nm(x) === nm(s)); if (!m || seen.has(m)) return ""; seen.add(m); return m; }); };
+    C.level = LV();
+    if (C.invocation && !C.invocations.filter(Boolean).length) { C.invocations = [C.invocation]; C.invocation = ""; }  // older saves had one typed invocation
+    if (cls?.cast) {
+      const levelled = flatNames(castable(cls.cast.list, maxSpellLevel(cls), alwaysNow(cls)));
+      C.cantrips = fit(C.cantrips, spellList(cls.cast.list, "cantrips"), race?.spells?.cantrips || []);
+      C.spellbook = fit(C.spellbook, levelled);
+      C.prepared = fit(C.prepared, castSpellbook(cls) ? C.spellbook.slice(0, castSpellbook(cls)).filter(Boolean) : levelled, [C.raceSpell, ...(sign?.spells || []).map((s) => s[0])].filter(Boolean));
+    }
+    if (C.subclass && cls && !(D.subclasses[cls.name] || []).some((s) => s.name === C.subclass)) C.subclass = "";
+    (C.lv || []).forEach((d) => { if (!d) return; const f = D.feats.find((x) => x.name === d.asi);
+      if (d.asi && d.asi !== "asi" && (!f || (f.cat === "Fighting Style" && !hasStyleFeature(cls)))) { d.asi = ""; d.featAb = ""; }
+      if (f && d.featAb && f.ab !== "any" && !(f.ab || []).includes(d.featAb)) d.featAb = "";
+      if (d.a2 && d.a2 === d.a1) d.a2 = ""; });
+    C.metamagic = C.metamagic.map((x, i) => (x && C.metamagic.indexOf(x) !== i ? "" : x));
+    if (sign?.cantripChoice) C.signCantrips = fit(C.signCantrips, spellList(sign.cantripChoice.list, "cantrips"), [...(race?.spells?.cantrips || []), ...C.cantrips.filter(Boolean)]);
+    if (sign?.extraSlots && !cls?.cast) C.signSpells = fit(C.signSpells, spellList(sign.noncasterList, "1"), [C.raceSpell, ...(sign.spells || []).map((s) => s[0])].filter(Boolean));
     const early = new Set([...(race?.skills?.fixed || []), ...C.raceSkills.filter(Boolean)]);
     (bg?.skills || []).forEach((s) => early.add(early.has(s) ? C.bgDup[s] : s));
     C.clsSkills = C.clsSkills.map((s) => (s && (early.has(s) || !cls?.skillChoices.from.includes(s)) ? "" : s));
     C.langs = C.langs.map((l) => (l && !D.languages.includes(l) ? "" : l));  // e.g. Dwemeris, now learned in play
     if (C.langExtra && !D.languages.includes(C.langExtra)) C.langExtra = "";
     const sk = skillState().src;
+    if (C.primal && Object.entries(sk).some(([s, from]) => s === C.primal && from !== "Primal Knowledge")) C.primal = "";
     C.expertise = C.expertise.map((s) => (s && !sk[s] ? "" : s));
     const P = prof();
     C.mastery = C.mastery.map((w) => { const x = D.weapons.find((y) => y.name === w); return w && (!x || !weaponProf(x, P)) ? "" : w; });
@@ -3769,6 +6542,13 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   }
   $("#who").addEventListener("change", (e) => { C = chars.find((c) => c.id === e.target.value) || C; refresh(true); });
   $("#newBtn").addEventListener("click", () => { C = blank(); chars.push(C); refresh(true); window.scrollTo(0, 0); });
+  $("#lvlBtn").addEventListener("click", () => {
+    if (!C.cls) return toast("Choose a class first");
+    if (LV() >= MAX_LEVEL) return toast(`Levels above ${MAX_LEVEL} aren't in the builder yet`);
+    C.level = LV() + 1; openSteps.add(`L${C.level}`); store.set("op-open", JSON.stringify([...openSteps])); refresh(true);
+    const card = $(`[data-step="L${C.level}"]`); if (card) card.scrollIntoView({ block: "start", behavior: "smooth" });
+    toast(`Level ${C.level}`);
+  });
   let delArmed = false;
   $("#delBtn").addEventListener("click", (e) => {
     if (!delArmed) { delArmed = true; e.target.textContent = "Delete? Tap again"; setTimeout(() => { delArmed = false; e.target.textContent = "Delete"; }, 3500); return; }
