@@ -189,6 +189,12 @@ table.atk td { padding: 0.25rem 0.4rem; border-top: 1px solid var(--rule); verti
 .cs-slots .ex { font-size: 0.6rem; letter-spacing: 0.08em; color: var(--ink-2); min-height: 0.8rem; }
 .cs-slots .off { opacity: 0.4; }
 .cs-lines { min-height: 3.4rem; background: repeating-linear-gradient(to bottom, transparent 0 1.25rem, var(--rule) 1.25rem calc(1.25rem + 1px)); }
+.cs-meter { height: 0.45rem; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; margin: 0.1rem 0 0.45rem; background: var(--paper-3); }
+.cs-meter span { display: block; height: 100%; background: var(--gold); }
+.cs-meter.over span { background: var(--warn); }
+ul.carry { list-style: none; margin: 0.4rem 0 0; padding: 0; font-size: 0.86rem; }
+ul.carry li { display: flex; justify-content: space-between; gap: 0.6rem; border-bottom: 1px dotted var(--rule); padding: 0.05rem 0; }
+.warnc { color: var(--warn); }
 .cs-coins { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.25rem; text-align: center; }
 .cs-coins div { border: 1px solid var(--rule); border-radius: 6px; }
 .cs-pagehead { font-family: var(--f-sc); font-size: 0.7rem; color: var(--ink-2); letter-spacing: 0.06em; text-align: right; margin: 0 0 -0.2rem; }
@@ -4980,6 +4986,286 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "Transmuted Spell",
 "Twinned Spell"
 ],
+"gear": [
+[
+"explorer's pack",
+55,
+"Explorer's Pack"
+],
+[
+"dungeoneer's pack",
+55,
+"Dungeoneer's Pack"
+],
+[
+"burglar's pack",
+42,
+"Burglar's Pack"
+],
+[
+"priest's pack",
+29,
+"Priest's Pack"
+],
+[
+"scholar's pack",
+22,
+"Scholar's Pack"
+],
+[
+"entertainer's pack",
+58.5,
+"Entertainer's Pack"
+],
+[
+"diplomat's pack",
+39,
+"Diplomat's Pack"
+],
+[
+"pilgrim's pack",
+15,
+"Pilgrim's pack"
+],
+[
+"thieves' tools",
+1,
+"Thieves' Tools"
+],
+[
+"lockpick",
+0.5,
+"Lockpick"
+],
+[
+"probe",
+0.5,
+"Probe"
+],
+[
+"forgery kit",
+5,
+"Forgery Kit"
+],
+[
+"disguise kit",
+3,
+"Disguise Kit"
+],
+[
+"herbalism kit",
+3,
+"Herbalism Kit"
+],
+[
+"poisoner's kit",
+2,
+"Poisoner's Kit"
+],
+[
+"healer's kit",
+3,
+"Healer's kit"
+],
+[
+"armourer's hammer",
+2,
+"Armourer's hammer"
+],
+[
+"mortar and pestle",
+2,
+"Mortar and pestle"
+],
+[
+"spellbook",
+3,
+"Spellbook"
+],
+[
+"holy symbol",
+1,
+"Holy symbol"
+],
+[
+"crystal",
+1,
+"Crystal (focus)"
+],
+[
+"\\borb\\b",
+3,
+"Orb (focus)"
+],
+[
+"sprig of",
+0,
+"Sprig (focus)"
+],
+[
+"fine clothes",
+6,
+"Fine clothes"
+],
+[
+"traveller's clothes",
+4,
+"Traveller's clothes"
+],
+[
+"costumes?",
+4,
+"Costume"
+],
+[
+"\\brobe\\b",
+4,
+"Robe"
+],
+[
+"sheets? of parchment",
+0,
+"Parchment"
+],
+[
+"\\bbooks?\\b",
+5,
+"Book"
+],
+[
+"\\bmap\\b",
+0,
+"Map"
+],
+[
+"bedroll",
+7,
+"Bedroll"
+],
+[
+"\\btent\\b",
+20,
+"Tent"
+],
+[
+"crowbar",
+5,
+"Crowbar"
+],
+[
+"shovel",
+5,
+"Shovel"
+],
+[
+"iron pot",
+10,
+"Iron pot"
+],
+[
+"\\brope\\b",
+5,
+"Rope"
+],
+[
+"manacles",
+6,
+"Manacles"
+],
+[
+"mirror",
+0.5,
+"Mirror"
+],
+[
+"perfume",
+0,
+"Perfume"
+],
+[
+"pouch(?:es)?",
+1,
+"Pouch"
+],
+[
+"quiver",
+1,
+"Quiver"
+],
+[
+"hooded lantern",
+2,
+"Hooded lantern"
+],
+[
+"\\blamp\\b",
+1,
+"Lamp"
+],
+[
+"tinderbox",
+1,
+"Tinderbox"
+],
+[
+"flasks? of oil",
+1,
+"Flask of oil"
+],
+[
+"chitin arrows",
+0.025,
+"Chitin arrow"
+],
+[
+"(?<!chitin )arrows",
+0.05,
+"Arrow"
+],
+[
+"bolts",
+0.075,
+"Bolt"
+],
+[
+"navigator's tools",
+2,
+"Navigator's Tools"
+]
+],
+"toolWt": {
+"Alchemist's Supplies": 8,
+"Brewer's Supplies": 9,
+"Calligrapher's Supplies": 5,
+"Carpenter's Tools": 6,
+"Cartographer's Tools": 6,
+"Cobbler's Tools": 5,
+"Cook's Utensils": 8,
+"Glassblower's Tools": 5,
+"Jeweler's Tools": 2,
+"Leatherworker's Tools": 5,
+"Mason's Tools": 8,
+"Painter's Supplies": 5,
+"Potter's Tools": 3,
+"Smith's Tools": 8,
+"Tinker's Tools": 10,
+"Weaver's Tools": 5,
+"Woodcarver's Tools": 5,
+"Bagpipes": 6,
+"Drum": 3,
+"Dulcimer": 10,
+"Flute": 1,
+"Horn": 2,
+"Lute": 2,
+"Lyre": 2,
+"Pan Flute": 2,
+"Shawm": 1,
+"Viol": 1,
+"Dice": 0,
+"Dragonchess": 0.5,
+"Playing Cards": 0,
+"Three-Dragon Ante": 0
+},
 "equipment": {
 "Barbarian": [
 {
@@ -5203,7 +5489,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 11,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 10.0
 },
 {
 "name": "Nordic fur",
@@ -5211,7 +5498,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 11,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 12.0
 },
 {
 "name": "Nordic bearskin",
@@ -5219,7 +5507,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 11,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 12.0
 },
 {
 "name": "Boiled netch leather",
@@ -5227,7 +5516,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 12.0
 },
 {
 "name": "Chitin",
@@ -5235,7 +5525,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 8.0
 },
 {
 "name": "Imperial studded leather",
@@ -5243,7 +5534,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 13.0
 },
 {
 "name": "Imperial newtscale",
@@ -5251,7 +5543,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 12.0
 },
 {
 "name": "Wolf",
@@ -5259,7 +5552,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 12.0
 },
 {
 "name": "Glass",
@@ -5267,7 +5561,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 12.0
 },
 {
 "name": "Bear",
@@ -5275,7 +5570,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 15.0
 },
 {
 "name": "Nordic ringmail",
@@ -5283,7 +5579,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 13,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 20.0
 },
 {
 "name": "Imperial chain",
@@ -5291,7 +5588,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 45.0
 },
 {
 "name": "Bonemold",
@@ -5299,7 +5597,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 20.0
 },
 {
 "name": "Bonemold, ornate",
@@ -5307,7 +5606,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 20.0
 },
 {
 "name": "Imperial dragonscale",
@@ -5315,7 +5615,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 15,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 40.0
 },
 {
 "name": "Orcish",
@@ -5323,7 +5624,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 16,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 25.0
 },
 {
 "name": "Dreugh",
@@ -5331,7 +5633,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 15,
 "str": 0,
 "stealth": false,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 25.0
 },
 {
 "name": "Adamantium",
@@ -5339,7 +5642,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 16,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 25.0
 },
 {
 "name": "Ice (stalhrim)",
@@ -5347,7 +5651,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 16,
 "str": 0,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 25.0
 },
 {
 "name": "Iron",
@@ -5355,7 +5660,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 16,
 "str": 13,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 55.0
 },
 {
 "name": "Steel",
@@ -5363,7 +5669,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 17,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 60.0
 },
 {
 "name": "Nordic iron",
@@ -5371,7 +5678,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 17,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 65.0
 },
 {
 "name": "Imperial steel",
@@ -5379,7 +5687,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 17,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 60.0
 },
 {
 "name": "Nordic trollbone",
@@ -5387,7 +5696,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 17,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 60.0
 },
 {
 "name": "Imperial Templar",
@@ -5395,7 +5705,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 18,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 65.0
 },
 {
 "name": "Imperial silver",
@@ -5403,7 +5714,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 18,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 65.0
 },
 {
 "name": "Dwemer",
@@ -5411,7 +5723,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 18,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 65.0
 },
 {
 "name": "Ebony",
@@ -5419,7 +5732,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 19,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 70.0
 },
 {
 "name": "Nordic mail",
@@ -5427,7 +5741,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 19,
 "str": 15,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 65.0
 },
 {
 "name": "Daedric",
@@ -5435,7 +5750,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 20,
 "str": 17,
 "stealth": true,
-"src": "Treasures"
+"src": "Treasures",
+"wt": 80.0
 },
 {
 "name": "Padded",
@@ -5443,7 +5759,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 11,
 "str": 0,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 8
 },
 {
 "name": "Leather",
@@ -5451,7 +5768,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 11,
 "str": 0,
 "stealth": false,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 10
 },
 {
 "name": "Studded leather",
@@ -5459,7 +5777,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 13
 },
 {
 "name": "Hide",
@@ -5467,7 +5786,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 12,
 "str": 0,
 "stealth": false,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 12
 },
 {
 "name": "Chain shirt",
@@ -5475,7 +5795,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 13,
 "str": 0,
 "stealth": false,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 20
 },
 {
 "name": "Scale mail",
@@ -5483,7 +5804,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 45
 },
 {
 "name": "Breastplate",
@@ -5491,7 +5813,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": false,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 20
 },
 {
 "name": "Half plate",
@@ -5499,7 +5822,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 15,
 "str": 0,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 40
 },
 {
 "name": "Ring mail",
@@ -5507,7 +5831,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 14,
 "str": 0,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 40
 },
 {
 "name": "Chain mail",
@@ -5515,7 +5840,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 16,
 "str": 13,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 55
 },
 {
 "name": "Splint",
@@ -5523,7 +5849,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 17,
 "str": 15,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 60
 },
 {
 "name": "Plate",
@@ -5531,45 +5858,55 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "base": 18,
 "str": 15,
 "stealth": true,
-"src": "Player's Handbook"
+"src": "Player's Handbook",
+"wt": 65
 }
 ],
 "shields": [
 {
 "name": "Netch leather or chitin",
-"bonus": 2
+"bonus": 2,
+"wt": 4.0
 },
 {
 "name": "Iron, steel or Nordic",
-"bonus": 2
+"bonus": 2,
+"wt": 8.0
 },
 {
 "name": "Bonemold",
-"bonus": 2
+"bonus": 2,
+"wt": 6.0
 },
 {
 "name": "Dwemer",
-"bonus": 2
+"bonus": 2,
+"wt": 8.0
 },
 {
 "name": "Orcish tower",
-"bonus": 3
+"bonus": 3,
+"wt": 12.0
 },
 {
 "name": "Dreugh",
-"bonus": 3
+"bonus": 3,
+"wt": 8.0
 },
 {
 "name": "Glass",
-"bonus": 3
+"bonus": 3,
+"wt": 6.0
 },
 {
 "name": "Ebony",
-"bonus": 3
+"bonus": 3,
+"wt": 12.0
 },
 {
 "name": "Daedric",
-"bonus": 3
+"bonus": 3,
+"wt": 15.0
 }
 ],
 "weapons": [
@@ -5580,7 +5917,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Slashing",
 "props": "Light, Thrown (20/60)",
-"mastery": "Vex"
+"mastery": "Vex",
+"wt": 2.0
 },
 {
 "name": "Club",
@@ -5589,7 +5927,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d4",
 "type": "Bludgeoning",
 "props": "Light",
-"mastery": "Slow"
+"mastery": "Slow",
+"wt": 2.0
 },
 {
 "name": "Dagger",
@@ -5598,7 +5937,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d4",
 "type": "Piercing",
 "props": "Finesse, Light, Thrown (20/60)",
-"mastery": "Nick"
+"mastery": "Nick",
+"wt": 1.0
 },
 {
 "name": "Mace",
@@ -5607,7 +5947,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Bludgeoning",
 "props": "—",
-"mastery": "Sap"
+"mastery": "Sap",
+"wt": 4.0
 },
 {
 "name": "Miner's pick",
@@ -5616,7 +5957,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Piercing",
 "props": "Two-Handed",
-"mastery": "Sap"
+"mastery": "Sap",
+"wt": 8.0
 },
 {
 "name": "Spear",
@@ -5625,7 +5967,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Piercing",
 "props": "Thrown (20/60), Versatile (1d8)",
-"mastery": "Sap"
+"mastery": "Sap",
+"wt": 3.0
 },
 {
 "name": "Staff",
@@ -5634,7 +5977,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Bludgeoning",
 "props": "Versatile (1d8)",
-"mastery": "Topple"
+"mastery": "Topple",
+"wt": 4.0
 },
 {
 "name": "Light crossbow",
@@ -5643,7 +5987,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Piercing",
 "props": "Ammunition (80/320; bolt), Loading, Two-Handed",
-"mastery": "Slow"
+"mastery": "Slow",
+"wt": 5.0
 },
 {
 "name": "Short bow",
@@ -5652,7 +5997,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Piercing",
 "props": "Ammunition (80/320; arrow), Two-Handed",
-"mastery": "Vex"
+"mastery": "Vex",
+"wt": 2.0
 },
 {
 "name": "Battle axe",
@@ -5661,7 +6007,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d12",
 "type": "Slashing",
 "props": "Heavy, Two-Handed",
-"mastery": "Cleave"
+"mastery": "Cleave",
+"wt": 7.0
 },
 {
 "name": "Broadsword",
@@ -5670,7 +6017,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Slashing",
 "props": "Versatile (1d10)",
-"mastery": "Graze"
+"mastery": "Graze",
+"wt": 3.0
 },
 {
 "name": "Claymore",
@@ -5679,7 +6027,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "2d6",
 "type": "Slashing",
 "props": "Heavy, Two-Handed",
-"mastery": "Graze"
+"mastery": "Graze",
+"wt": 6.0
 },
 {
 "name": "Glaive",
@@ -5688,7 +6037,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d10",
 "type": "Slashing",
 "props": "Heavy, Reach, Two-Handed",
-"mastery": "Graze"
+"mastery": "Graze",
+"wt": 6.0
 },
 {
 "name": "Halberd",
@@ -5697,7 +6047,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d10",
 "type": "Slashing",
 "props": "Heavy, Reach, Two-Handed",
-"mastery": "Cleave"
+"mastery": "Cleave",
+"wt": 6.0
 },
 {
 "name": "Long spear",
@@ -5706,7 +6057,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d10",
 "type": "Piercing",
 "props": "Heavy, Reach, Two-Handed",
-"mastery": "Push"
+"mastery": "Push",
+"wt": 10.0
 },
 {
 "name": "Longsword",
@@ -5715,7 +6067,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Slashing",
 "props": "Versatile (1d10)",
-"mastery": "Sap"
+"mastery": "Sap",
+"wt": 3.0
 },
 {
 "name": "Rapier",
@@ -5724,7 +6077,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Piercing",
 "props": "Finesse",
-"mastery": "Vex"
+"mastery": "Vex",
+"wt": 2.0
 },
 {
 "name": "Saber",
@@ -5733,7 +6087,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Slashing",
 "props": "Finesse, Light",
-"mastery": "Nick"
+"mastery": "Nick",
+"wt": 3.0
 },
 {
 "name": "Shortsword",
@@ -5742,7 +6097,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d6",
 "type": "Piercing",
 "props": "Finesse, Light",
-"mastery": "Vex"
+"mastery": "Vex",
+"wt": 2.0
 },
 {
 "name": "Spiked club",
@@ -5751,7 +6107,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Piercing",
 "props": "—",
-"mastery": "Sap"
+"mastery": "Sap",
+"wt": 4.0
 },
 {
 "name": "Trident",
@@ -5760,7 +6117,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Piercing",
 "props": "Thrown (20/60), Versatile (1d10)",
-"mastery": "Topple"
+"mastery": "Topple",
+"wt": 4.0
 },
 {
 "name": "War axe",
@@ -5769,7 +6127,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Slashing",
 "props": "Versatile (1d10)",
-"mastery": "Topple"
+"mastery": "Topple",
+"wt": 4.0
 },
 {
 "name": "Warhammer",
@@ -5778,7 +6137,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "2d6",
 "type": "Bludgeoning",
 "props": "Heavy, Two-Handed",
-"mastery": "Topple"
+"mastery": "Topple",
+"wt": 10.0
 },
 {
 "name": "Whip",
@@ -5787,7 +6147,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d4",
 "type": "Slashing",
 "props": "Finesse, Reach",
-"mastery": "Slow"
+"mastery": "Slow",
+"wt": 3.0
 },
 {
 "name": "Crossbow",
@@ -5796,7 +6157,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d10",
 "type": "Piercing",
 "props": "Ammunition (100/400; bolt), Heavy, Loading, Two-Handed",
-"mastery": "Push"
+"mastery": "Push",
+"wt": 18.0
 },
 {
 "name": "Long bow",
@@ -5805,7 +6167,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d8",
 "type": "Piercing",
 "props": "Ammunition (150/600; arrow), Heavy, Two-Handed",
-"mastery": "Slow"
+"mastery": "Slow",
+"wt": 2.0
 },
 {
 "name": "Dart",
@@ -5814,7 +6177,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d4",
 "type": "Piercing",
 "props": "Finesse, Thrown (20/60)",
-"mastery": "Vex"
+"mastery": "Vex",
+"wt": 0.25
 },
 {
 "name": "Throwing knife",
@@ -5823,7 +6187,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d4",
 "type": "Piercing",
 "props": "Finesse, Light, Thrown (30/90)",
-"mastery": "Nick"
+"mastery": "Nick",
+"wt": 0.5
 },
 {
 "name": "Throwing star",
@@ -5832,10 +6197,12 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "die": "1d4",
 "type": "Slashing",
 "props": "Finesse, Light, Thrown (20/60)",
-"mastery": "Vex"
+"mastery": "Vex",
+"wt": 0.25
 },
 {
 "name": "Javelin",
+"wt": 2,
 "cat": "Simple",
 "as": null,
 "die": "1d6",
@@ -5846,6 +6213,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 {
 "name": "Sickle",
+"wt": 2,
 "cat": "Simple",
 "as": null,
 "die": "1d4",
@@ -5856,6 +6224,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 {
 "name": "Flail",
+"wt": 2,
 "cat": "Martial",
 "as": null,
 "die": "1d8",
@@ -5866,6 +6235,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 {
 "name": "Sling",
+"wt": 0,
 "cat": "Simple",
 "as": null,
 "die": "1d4",
@@ -6323,6 +6693,10 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const wOpts = ["Simple", "Martial"].map((cat) => ({ group: `${cat} weapons`, items: D.weapons.filter((w) => w.cat === cat).map((w) => ({ v: w.name, l: `${w.name}${w.as ? ` [${w.as}]` : ""}${weaponProf(w, X.P) ? "" : " · untrained"}` })) }));
     b7 += field("Weapons you carry", `<div class="row">${[0, 1, 2, 3].map((i) => sel(`weapons.${i}`, wOpts, C.weapons[i], "—")).join("")}</div>`);
     b7 += `<p class="note">Choosing a gear package fills in your armour and weapons; change them freely. Names in brackets are the <i>Player's Handbook</i> weapon each one counts as.</p>`;
+    if (cls || bg) { const K = carrying(X), over = K.total > K.capacity;
+      b7 += `<div class="card"><p><b>Carrying:</b> ${lbText(K.total)} of ${lbText(K.capacity)}${K.str == null ? " (assuming Strength 10 until you set your scores)" : ` (Strength ${K.str} × 15)`}.${over ? ` <span class="warnc">That's over your carrying capacity: you can only push or drag it, at 5 feet of Speed.</span>` : ""}</p>
+        <details><summary>What's counted</summary><ul class="carry">${K.items.map(([l, q, w]) => `<li><span>${q > 1 ? `${q} × ` : ""}${esc(l)}</span><span>${lbText(q * w)}</span></li>`).join("")}</ul>
+        <p class="note">Weights are from <i>Treasures of Morrowind</i> and the <i>Player's Handbook</i>; chitin weapons weigh half, and 50 coins weigh a pound.</p></details></div>`; }
     parts.push(step(6, "Equipment", cls ? (D.equipment[cls.name] || [])[C.classEquip]?.label || "" : "What you carry off the ship", !!cls && !!bg, guideLink("guide-starting-equipment", "Step Seven in the guide") + b7));
 
     // Levels 2 and up: one card each, asking only that level's choices
@@ -6455,7 +6829,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 
     // ---- right: fighting gear, then what makes you special ----
     let right = `<div class="cs-quad">${stat("Initiative", sgn(X.init), sign?.initAdv ? "with Advantage" : "")}${stat("Speed", `${X.speed} ft`)}${stat("Size", race ? race.sizeText.split(" ")[0] : "—", race?.sizeText || "")}${stat("Passive Perception", 10 + X.per.b)}</div>`;
-    if (X.warnings.length) right += X.warnings.map((w) => `<p class="warn">${esc(w)}</p>`).join("");
+    const load = carrying(X), warns = [...X.warnings, ...(load.total > load.capacity ? [`You're carrying ${lbText(load.total)}, over your capacity of ${lbText(load.capacity)}: you can only push or drag it, at 5 feet of Speed.`] : [])];
+    if (warns.length) right += warns.map((w) => `<p class="warn">${esc(w)}</p>`).join("");
     right += box(`Weapons & Damage Cantrips${X.extraAttack ? " · two attacks" : ""}`, `<table class="atk"><thead><tr><th>Name</th><th>Atk / DC</th><th>Damage &amp; Type</th><th>Notes</th></tr></thead><tbody>${X.attacks.map((a) => `<tr><td>${esc(a.name)}</td><td>${sgn(a.hit)}</td><td>${esc(a.dmg)}</td><td>${esc(a.notes)}</td></tr>`).join("")}</tbody></table>`);
     // class features
     const cf = [];
@@ -6538,7 +6913,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     let beneath = box("Appearance", `<div class="cs-lines"></div>`);
     beneath += box("Alignment", `<div class="cs-blank"></div>`);
     beneath += box("Languages", `<p class="kv">${esc(X.P.langs.join(", "))}</p>`);
-    beneath += box("Equipment", `${eq.map((e) => `<p class="feat">${e.replace(/ and \d+ gp$/, "").replace(/,? and \d+ gp/, "")}</p>`).join("") || `<p class="empty">Choose gear in Step 6.</p>`}
+    const K = carrying(X), pct = Math.min(100, Math.round((K.total / Math.max(1, K.capacity)) * 100));
+    beneath += box("Equipment", `<p class="kv"><b>Carrying</b>${lbText(K.total)} of ${lbText(K.capacity)} · push, drag or lift ${lbText(K.drag)}</p><div class="cs-meter${K.total > K.capacity ? " over" : ""}" role="img" aria-label="${pct}% of carrying capacity"><span style="width:${pct}%"></span></div>${eq.map((e) => `<p class="feat">${e.replace(/ and \d+ gp$/, "").replace(/,? and \d+ gp/, "")}</p>`).join("") || `<p class="empty">Choose gear in Step 6.</p>`}
       <span class="cs-l">Magic item attunement</span><div class="cs-blank"></div><div class="cs-blank"></div><div class="cs-blank"></div>`);
     beneath += box("Coins", `<div class="cs-coins">${["CP", "SP", "EP", "GP", "PP"].map((k) => `<div><span class="cs-l">${k}</span><div class="cs-num">${k === "GP" && gold ? gold : "&nbsp;"}</div></div>`).join("")}</div>`);
     h += `<section class="cs-pg cs-p2"><div class="cs-spells"><p class="cs-pagehead">Page two</p>${spells}</div><div class="cs-beneath">${beneath}</div></section>`;
@@ -6555,6 +6931,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     L.push("Skills: " + X.skills.filter((s) => s.p).map((s) => `${s.name} ${sgn(s.b)}${s.e ? " (expertise)" : ""}`).join(", "));
     L.push(`Armour: ${[...X.P.armor].join(", ") || "None"} | Weapons: ${[...X.P.weapons].join(", ")} | Tools: ${X.P.tools.map((t) => t.t).join(", ") || "None"}`);
     L.push(`Languages: ${X.P.langs.join(", ")}`);
+    { const K = carrying(X); L.push(`Carrying: ${lbText(K.total)} of ${lbText(K.capacity)} (push, drag or lift ${lbText(K.drag)})`); }
     L.push("Attacks: " + X.attacks.map((a) => `${a.name} ${sgn(a.hit)} (${a.dmg})`).join("; "));
     if (cls?.cast) L.push(`Spells (${cls.name}, DC ${X.spell.dc}, attack ${sgn(X.spell.atk)}, ${slotsText(cls)}): cantrips ${C.cantrips.filter(Boolean).join(", ") || "-"}; prepared ${C.prepared.filter(Boolean).join(", ") || "-"}${cls.cast.spellbook ? `; spellbook ${C.spellbook.filter(Boolean).join(", ") || "-"}` : ""}`);
     if (race?.spells) L.push(`${race.short} spells: ${[...race.spells.cantrips, C.raceSpell].filter(Boolean).join(", ")} (DC ${X.raceSp.dc})`);
@@ -6566,7 +6943,41 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   const WEAPON_WORDS = [["greataxe", "Battle axe"], ["battle axe", "Battle axe"], ["handaxe", "Axe"], ["chitin axe", "Axe"], ["greatsword", "Claymore"], ["claymore", "Claymore"],
     ["scimitar", "Saber"], ["saber", "Saber"], ["shortsword", "Shortsword"], ["longsword", "Longsword"], ["broadsword", "Broadsword"], ["longbow", "Long bow"], ["long bow", "Long bow"],
     ["shortbow", "Short bow"], ["short bow", "Short bow"], ["quarterstaff", "Staff"], ["staff", "Staff"], ["dagger", "Dagger"], ["mace", "Mace"], ["sickle", "Sickle"], ["flail", "Flail"],
-    ["javelin", "Javelin"], ["spear", "Spear"]];
+    ["javelin", "Javelin"], ["spear", "Spear"], ["light crossbow", "Light crossbow"], ["miner's pick", "Miner's pick"]];
+  // ---------- what the character carries ----------
+  // Weight comes from the Step 6 armour, shield and weapons, plus everything else named in the class and background packages, plus coins.
+  function startingPackages() {
+    const cls = byId(D.classes, C.cls), bg = byId(D.backgrounds, C.bg), o = cls ? (D.equipment[cls.name] || [])[C.classEquip] : null;
+    return { clsText: o?.text || "", bgText: bg && C.bgEquip === "package" ? bg.equipment : "", gold: (o?.gold || 0) + (bg ? (C.bgEquip === "package" ? bg.gold : bg.altGold) : 0) };
+  }
+  function carrying(X) {
+    const { clsText, bgText, gold } = startingPackages(), items = [];
+    const add = (label, qty, each) => { if (qty > 0) items.push([label, qty, each]); };
+    const norm = (s) => s.toLowerCase().replace(/\[[^\]]*\]/g, "").replace(/,? and \d+ gp\b/, "");
+    const ct = norm(clsText), bt = norm(bgText);
+    const arm = D.armour.find((a) => a.name === C.armour); if (arm) add(`${arm.name} armour`, 1, arm.wt || 0);
+    if (C.shield) { const sh = C.shield === "Shield" ? { name: "Shield", wt: 6 } : D.shields.find((s) => s.name === C.shield); if (sh) add(sh.name === "Shield" ? "Shield" : `${sh.name} shield`, 1, sh.wt || 0); }
+    const wpIn = (text, name) => {  // how many of a weapon a package names, and whether they're chitin (half weight)
+      for (const [w, n] of WEAPON_WORDS) { if (n !== name) continue;
+        const m = text.match(new RegExp(`(?:(\\d+)\\s+)?(?:(chitin|steel|iron)\\s+)?${w}s?\\b`)); if (m && !(w === "staff" && /quarterstaff/.test(text) && name !== "Staff")) return { q: +(m[1] || 1), chitin: m[2] === "chitin" || w.startsWith("chitin") }; }
+      return null; };
+    const wpAdd = (n, p) => { const w = D.weapons.find((x) => x.name === n); if (w) add(p.chitin ? `${n} (chitin)` : n, p.q, (w.wt || 0) * (p.chitin ? 0.5 : 1)); };
+    C.weapons.filter(Boolean).forEach((n) => wpAdd(n, wpIn(ct, n) || { q: 1, chitin: false }));
+    [...new Set(WEAPON_WORDS.map(([, n]) => n))].forEach((n) => { const p = wpIn(bt, n); if (p) wpAdd(n, p); });
+    for (const text of [ct, bt]) {
+      D.gear.forEach(([pat, wt, label]) => { const re = new RegExp(`(?:(\\d+)\\s+)?(?:${pat})`, "g"); let m; while ((m = re.exec(text))) add(label, +(m[1] || 1), wt); });
+      Object.entries(D.toolWt).forEach(([n, wt]) => { if (new RegExp(`\\b${n.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(text)) add(n, 1, wt); });
+      if (/you chose|of your choice/.test(text)) { const pick = text === bt ? C.bgTool : C.clsTools.filter(Boolean)[0]; if (pick) add(pick, 1, D.toolWt[pick] ?? 0); }
+    }
+    if (gold) add(`Coins (${gold} gp)`, 1, gold / 50);
+    const merged = []; items.forEach(([l, q, w]) => { const m = merged.find((x) => x[0] === l && x[2] === w); if (m) m[1] += q; else merged.push([l, q, w]); });
+    items.length = 0; items.push(...merged);
+    const total = Math.round(items.reduce((s, [, q, w]) => s + q * w, 0) * 10) / 10;
+    const str = X.S.fin.Str ?? 10;  // every people in the guide is Medium, so no size multiplier
+    return { items, total, capacity: str * 15, drag: str * 30, str: X.S.fin.Str };
+  }
+  const lbText = (n) => `${Math.round(n * 10) / 10} lb`;
+
   function applyPackage() {
     const cls = byId(D.classes, C.cls); if (!cls) return;
     const o = (D.equipment[cls.name] || [])[C.classEquip]; if (!o) return;
