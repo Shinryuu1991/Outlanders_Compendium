@@ -121,6 +121,77 @@ table.atk th { font-family: var(--f-sc); font-weight: 400; color: var(--brown); 
 table.atk td { padding: 0.25rem 0.4rem; border-top: 1px solid var(--rule); vertical-align: top; font-variant-numeric: tabular-nums; }
 .feat { font-size: 0.88rem; margin: 0 0 0.3rem; } .feat b { font-family: var(--f-head); color: var(--brown); font-weight: 400; }
 .sheet .src { font-family: var(--f-sc); font-size: 0.68rem; color: var(--ink-2); }
+
+/* Sheet layout follows the 2024 character sheet: who you are and how tough you are across the top, abilities with their
+   saves and skills on the left, fighting gear and features on the right; spells and story on page two. */
+.sheet { container-type: inline-size; padding: 0.8rem; }
+.cs-pg { display: grid; gap: 0.55rem; }
+.cs-p1 { grid-template-areas: "who" "tough" "left" "right"; }
+.cs-p2 { grid-template-areas: "spells" "beneath"; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 2px dashed var(--rule); }
+@container (min-width: 600px) {
+  .cs-p1 { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: "who tough" "left right"; }
+  .cs-p2 { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); grid-template-areas: "spells beneath"; }
+  .cs-feat2 { columns: 2; column-gap: 1rem; }
+}
+.cs-who { grid-area: who; } .cs-tough { grid-area: tough; } .cs-left { grid-area: left; } .cs-right { grid-area: right; }
+.cs-spells { grid-area: spells; } .cs-beneath { grid-area: beneath; }
+.cs-left, .cs-right, .cs-spells, .cs-beneath { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+.cs-box { border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); padding: 0.4rem 0.55rem 0.5rem; min-width: 0; }
+.cs-h { display: block; font-family: var(--f-sc); color: var(--red); font-size: 0.74rem; letter-spacing: 0.05em; text-align: center; border-bottom: 1px solid var(--rule); margin: -0.05rem -0.2rem 0.35rem; padding-bottom: 0.15rem; }
+.cs-l { display: block; font-family: var(--f-sc); font-size: 0.62rem; color: var(--gold); letter-spacing: 0.04em; line-height: 1.2; }
+.cs-v { font-family: var(--f-head); font-size: 0.95rem; color: var(--ink); min-height: 1.2em; overflow-wrap: anywhere; }
+.cs-who h2 { margin-bottom: 0.1rem; }
+.cs-idgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.3rem 0.5rem; margin-top: 0.35rem; }
+.cs-idgrid > div { border-bottom: 1px solid var(--rule); padding-bottom: 0.1rem; }
+/* armour class on the left; hit points across the top; hit dice and death saves beneath */
+.cs-tough { display: grid; grid-template-columns: 4.8rem minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "ac hp hp" "ac hd ds"; gap: 0.4rem; align-items: stretch; }
+.cs-tough .cs-ac { grid-area: ac; } .cs-tough .cs-hp { grid-area: hp; } .cs-tough .cs-hd { grid-area: hd; } .cs-tough .cs-dsv { grid-area: ds; }
+@container (max-width: 420px) { .cs-idgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat b.cs-txt { font-size: 1rem; padding-top: 0.3rem; }
+.cs-ac { position: relative; display: grid; place-items: center; min-height: 5rem; }
+.cs-ac svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cs-ac div { position: relative; text-align: center; padding-bottom: 0.5rem; }
+.cs-ac b { display: block; font-family: var(--f-head); font-size: 1.6rem; font-weight: 400; line-height: 1; }
+.cs-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.25rem; text-align: center; }
+.cs-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.25rem; text-align: center; }
+.cs-num { font-family: var(--f-head); font-size: 1.35rem; line-height: 1.15; font-variant-numeric: tabular-nums; min-height: 1.5rem; }
+.cs-blank { border-bottom: 1px solid var(--rule); min-height: 1.5rem; }
+.cs-ds { font-size: 0.78rem; display: flex; justify-content: space-between; gap: 0.3rem; align-items: center; flex-wrap: nowrap; }
+.cs-ds > span:last-child { white-space: nowrap; }
+.cs-ds i { display: inline-block; width: 0.65rem; height: 0.65rem; border: 1px solid var(--gold); border-radius: 999px; margin-left: 0.15rem; }
+.cs-abil { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.45rem; align-items: start; }
+.cs-abcol { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
+.cs-pb { display: flex; align-items: center; gap: 0.5rem; }
+.cs-pb .cs-num { border: 1.5px solid var(--gold); border-radius: 999px; width: 2.6rem; height: 2.6rem; display: grid; place-items: center; flex: none; }
+.ab6 { text-align: left; padding: 0.35rem 0.45rem 0.4rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; }
+.ab6 .n { display: block; text-align: center; font-family: var(--f-sc); color: var(--red); font-size: 0.74rem; letter-spacing: 0.05em; }
+.ab6 .ms { display: flex; justify-content: center; align-items: end; gap: 0.35rem; margin: 0.1rem 0 0.25rem; }
+.ab6 .m { font-family: var(--f-head); font-size: 1.55rem; line-height: 1; border: 1.5px solid var(--gold); border-radius: 8px; min-width: 2.7rem; text-align: center; padding: 0.15rem 0.2rem; }
+.ab6 .s { font-size: 0.8rem; color: var(--ink-2); border: 1px solid var(--rule); border-radius: 999px; min-width: 1.9rem; text-align: center; padding: 0 0.2rem; }
+.ab6 .skills { font-size: 0.78rem; }
+.ab6 .skills li { gap: 0.35rem; }
+.ab6 .skills li.sv { border-bottom: 1px solid var(--gold); font-family: var(--f-sc); font-size: 0.74rem; }
+.ab6 .skills .b { min-width: 1.6rem; }
+.cs-insp { display: flex; align-items: center; gap: 0.45rem; }
+.cs-insp i { display: inline-block; width: 1.1rem; height: 1.1rem; border: 1.5px solid var(--gold); border-radius: 3px; }
+.cs-train { font-size: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.15rem 0.6rem; margin-bottom: 0.2rem; }
+.cs-train i { display: inline-block; width: 0.7rem; height: 0.7rem; border: 1px solid var(--gold); border-radius: 2px; margin-right: 0.2rem; vertical-align: -0.05rem; }
+.cs-train i.on { background: var(--gold); }
+.cs-quad { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.4rem; text-align: center; }
+.cs-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: 0.55rem; }
+.cs-box .feat { font-size: 0.82rem; margin: 0 0 0.2rem; break-inside: avoid; }
+.cs-box .kv { font-size: 0.82rem; margin: 0 0 0.25rem; }
+.cs-box table.atk { font-size: 0.82rem; }
+.cs-box table.atk th { font-size: 0.72rem; }
+.cs-slots { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 0.2rem; text-align: center; }
+.cs-slots div { border: 1px solid var(--rule); border-radius: 6px; padding: 0.1rem 0; }
+.cs-slots .cs-num { font-size: 1rem; min-height: 0; }
+.cs-slots .ex { font-size: 0.6rem; letter-spacing: 0.08em; color: var(--ink-2); min-height: 0.8rem; }
+.cs-slots .off { opacity: 0.4; }
+.cs-lines { min-height: 3.4rem; background: repeating-linear-gradient(to bottom, transparent 0 1.25rem, var(--rule) 1.25rem calc(1.25rem + 1px)); }
+.cs-coins { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.25rem; text-align: center; }
+.cs-coins div { border: 1px solid var(--rule); border-radius: 6px; }
+.cs-pagehead { font-family: var(--f-sc); font-size: 0.7rem; color: var(--ink-2); letter-spacing: 0.06em; text-align: right; margin: 0 0 -0.2rem; }
 .empty { color: var(--ink-2); font-style: italic; font-size: 0.9rem; }
 dialog { border: 1px solid var(--gold); border-radius: 10px; background: var(--paper-3); color: var(--ink); max-width: min(34rem, 92vw); }
 dialog::backdrop { background: rgba(20, 12, 6, 0.5); }
@@ -148,8 +219,10 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 @media print {
   header.bar, .buildcol, body::before { display: none !important; }
   main.grid { display: block; padding: 0; }
-  .sheetcol { position: static; max-height: none; overflow: visible; }
+  .sheetcol { position: static; max-height: none; overflow: visible; display: block !important; }  /* paper is narrower than the two-column breakpoint, so the Build/Sheet tab rule would hide it */
   .sheet { border: 0; padding: 0; background: none; }
+  .cs-p2 { break-before: page; border-top: 0; margin-top: 0; }
+  .cs-box, .ab6 { break-inside: avoid; }
   body { background: #fff; color: #000; }
 }
 </style>
@@ -3116,7 +3189,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "traits": [
 {
 "name": "Mara's Gift",
-"text": "<p>You learn <i>Cure Wounds<\/i>.<\/p>"
+"text": "<p>You learn <i>Cure Wounds<\/i>. When you cast it without a spell slot, you cast it at a spell level equal to half your Proficiency Bonus, rounded up: level 1 at character levels 1–4, level 2 at 5–12 and level 3 from level 13.<\/p>"
 },
 {
 "name": "Blessed Word",
@@ -3128,7 +3201,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "Cure Wounds",
 1
 ]
-]
+],
+"freeAtHalfPb": true
 },
 {
 "id": "lover",
@@ -6075,6 +6149,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   // spells: names come from the class lists in data.json; campaign spells (Soul Trap) carry their book
   const spellLabel = (s) => D.spellSource[s] ? `${s} · ${D.spellSource[s].book}` : s;
   const spellList = (list, lvl) => (D.spells[list] || {})[lvl] || [];
+  const spellLevel = (s) => { for (let k = 1; k <= 9; k++) if (Object.values(D.spells).some((l) => (l[String(k)] || []).includes(s))) return k; return ""; };
   const castCantrips = (cls) => cls?.cast ? (at(cls.prog?.cantrips, LV()) ?? cls.cast.cantrips) + (C.order === "thaumaturge" || C.order === "magician" ? 1 : 0) : 0;
   const castPrepared = (cls) => at(cls?.prog?.prepared, LV()) ?? cls?.cast?.prepared ?? 0;
   const castSpellbook = (cls) => at(cls?.prog?.spellbook, LV()) ?? cls?.cast?.spellbook ?? 0;
@@ -6349,77 +6424,124 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 
   // ---------- the sheet ----------
   function renderSheet() {
-    const X = derive(), { race, cls, sign, S } = X, bg = byId(D.backgrounds, C.bg);
-    const line = [race?.short, cls ? `${cls.name} ${LV()}${LV() >= 3 && C.subclass ? ` (${C.subclass})` : ""}` : "", bg?.name, sign?.name].filter(Boolean).join(" · ");
-    let h = `<h2>${esc(C.name || "Unnamed outlander")}</h2><div class="who">${esc(line || "Work through the six steps, and your papers fill in here.")}</div>`;
-    h += `<div class="stats">${[["AC", X.ac.ac, X.ac.how], ["Hit points", X.hp ?? "—", cls ? `d${cls.hitDie} + Con per level${sign?.hpPerLevel ? " + Lady's Grace" : ""}` : ""], ["Speed", `${X.speed} ft`, ""],
-      ["Initiative", sgn(X.init), sign?.initAdv ? "with Advantage" : ""], ["Proficiency", sgn(PB), ""], ["Passive Perception", 10 + X.per.b, ""],
-      ["Darkvision", X.darkvision ? `${X.darkvision} ft` : "—", ""]].map(([n, v, t]) => `<div class="stat" title="${esc(t)}"><b>${esc(v)}</b><span>${esc(n)}</span></div>`).join("")}</div>`;
-    if (X.warnings.length) h += X.warnings.map((w) => `<p class="warn">${esc(w)}</p>`).join("");
-    h += `<h3>Abilities and saving throws</h3><div class="abil">${AB.map((a) => { const sv = X.saves.find((s) => s.a === a);
-      return `<div class="ab6"><div class="n">${ABN[a]}</div><div class="m">${S.fin[a] == null ? "—" : sgn(S.m[a])}</div><div class="s">${S.fin[a] ?? ""}</div><div class="sv${sv.p ? " p" : ""}">save ${sgn(sv.b)}${sv.p ? " ●" : ""}</div></div>`; }).join("")}</div>`;
-    h += `<div class="two"><div><h3>Skills</h3><ul class="skills">${X.skills.map((s) => `<li title="${esc(s.from ? "From " + s.from : "")}"><span class="dot${s.e ? " e" : s.p ? " p" : ""}"></span><span class="b">${sgn(s.b)}</span><span>${esc(s.name)}</span><span class="a">${s.ab}</span></li>`).join("")}</ul></div><div>`;
-    h += `<h3>Proficiencies</h3><p class="kv"><b>Armour</b>${esc([...X.P.armor].join(", ") || "None")}</p><p class="kv"><b>Weapons</b>${esc([...X.P.weapons].join(", ") || "None")}</p>
-      <p class="kv"><b>Tools</b>${esc(X.P.tools.map((t) => t.t).join(", ") || "None")}</p><p class="kv"><b>Languages</b>${esc(X.P.langs.join(", "))}</p>`;
-    const res = [...(race?.resist || [])], adv = [...(race?.adv || [])];
-    if (res.length) h += `<p class="kv"><b>Resistance</b>${esc(res.join(", "))} damage</p>`;
-    if (adv.length) h += `<p class="kv"><b>Advantage</b>on ${esc(adv.join("; "))}</p>`;
-    if (sign?.id === "lord") h += `<p class="kv"><b>Weakness</b>Disadvantage on saves against effects that deal Fire damage</p>`;
-    if (sign?.id === "apprentice") h += `<p class="kv"><b>Weakness</b>Spells deal +2 damage to you (Arcane Frailty)</p>`;
-    h += `</div></div>`;
-    h += `<h3>Attacks${X.extraAttack ? " · two per Attack action" : ""}</h3><table class="atk"><thead><tr><th>Weapon</th><th>Hit</th><th>Damage</th><th>Notes</th></tr></thead><tbody>${X.attacks.map((a) => `<tr><td>${esc(a.name)}</td><td>${sgn(a.hit)}</td><td>${esc(a.dmg)}</td><td>${esc(a.notes)}</td></tr>`).join("")}</tbody></table>`;
-    // Spells
-    const sp = [];
+    const X = derive(), { race, cls, sign, S } = X, bg = byId(D.backgrounds, C.bg), L = LV();
+    const box = (title, body, cls2 = "") => `<div class="cs-box ${cls2}">${title ? `<span class="cs-h">${esc(title)}</span>` : ""}${body}</div>`;
+    const lv = (label, value) => `<div><span class="cs-l">${esc(label)}</span><div class="cs-v">${value ? esc(String(value)) : "&nbsp;"}</div></div>`;
+    const stat = (label, value, tip = "", small = false) => `<div class="stat" title="${esc(tip)}"><b${small ? ' class="cs-txt"' : ""}>${esc(String(value))}</b><span>${esc(label)}</span></div>`;
+    const blank = (label) => `<div><span class="cs-l">${esc(label)}</span><div class="cs-blank"></div></div>`;
+    const empty = C.race || C.cls ? "" : `<div class="who">Work through the six steps, and your papers fill in here.</div>`;
+
+    // ---- page 1, top left: who you are ----
+    let who = `<h2>${esc(C.name || "Unnamed outlander")}</h2>${empty}<div class="cs-idgrid">${lv("Background", bg?.name)}${lv("Class", cls?.name)}${lv("Species", race?.short)}${lv("Subclass", L >= 3 ? C.subclass : "")}${lv("Level", cls ? L : "")}${lv("Birthsign", sign?.name)}</div>`;
+    // ---- top right: how tough you are ----
+    const shield = `<svg viewBox="0 0 60 70" preserveAspectRatio="none" aria-hidden="true"><path d="M30 2 L57 10 V33 C57 51 45 62 30 68 C15 62 3 51 3 33 V10 Z" fill="var(--paper)" stroke="var(--gold)" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>`;
+    let tough = `<div class="cs-ac stat" title="${esc(X.ac.how)}">${shield}<div><b>${X.ac.ac}</b><span>AC</span></div></div>`;
+    tough += box("Hit Points", `<div class="cs-trio"><div><span class="cs-l">Current</span><div class="cs-blank"></div></div><div><span class="cs-l">Temp</span><div class="cs-blank"></div></div><div class="stat" title="${esc(cls ? `d${cls.hitDie} + Con per level${sign?.hpPerLevel ? " + Lady's Grace" : ""}` : "")}"><span class="sr">Hit points</span><span class="cs-l">Max</span><b class="cs-num">${X.hp ?? "—"}</b></div></div>`, "cs-hp");
+    tough += box("Hit Dice", `<div class="cs-duo"><div><span class="cs-l">Spent</span><div class="cs-blank"></div></div><div><span class="cs-l">Max</span><div class="cs-num">${cls ? `${L}d${cls.hitDie}` : "—"}</div></div></div>`, "cs-hd");
+    tough += box("Death Saves", `<div class="cs-ds"><span class="cs-l">Successes</span><span><i></i><i></i><i></i></span></div><div class="cs-ds"><span class="cs-l">Failures</span><span><i></i><i></i><i></i></span></div>`, "cs-dsv");
+
+    // ---- left: abilities, each with its saving throw and skills ----
+    const abBlock = (a) => {
+      const sv = X.saves.find((s) => s.a === a), sk = X.skills.filter((s) => s.ab === a);
+      const row = (s) => `<li title="${esc(s.from ? "From " + s.from : "")}"><span class="dot${s.e ? " e" : s.p ? " p" : ""}"></span><span class="b">${sgn(s.b)}</span><span>${esc(s.name)}</span></li>`;
+      return `<div class="ab6"><span class="n">${ABN[a]}</span><div class="ms"><span class="m">${S.fin[a] == null ? "—" : sgn(S.m[a])}</span><span class="s">${S.fin[a] ?? "–"}</span></div>
+        <ul class="skills"><li class="sv${sv.p ? " p" : ""}"><span class="dot${sv.p ? " p" : ""}"></span><span class="b">${sgn(sv.b)}</span><span>Saving Throw</span></li>${sk.map(row).join("")}</ul></div>`;
+    };
+    const armTrain = ["Light", "Medium", "Heavy", "Shields"].map((a) => `<span><i class="${X.P.armor.has(a) ? "on" : ""}"></i>${a}</span>`).join("");
+    let left = `<div class="cs-abil"><div class="cs-abcol"><div class="cs-box cs-pb"><span class="cs-num">${sgn(PB)}</span><span class="cs-l">Proficiency Bonus</span><span class="sr">${sgn(PB)}</span></div>${["Str", "Dex", "Con"].map(abBlock).join("")}
+      <div class="cs-box cs-insp"><i></i><span class="cs-l">Heroic Inspiration</span></div></div><div class="cs-abcol">${["Int", "Wis", "Cha"].map(abBlock).join("")}</div></div>`;
+    left += box("Equipment Training & Proficiencies", `<span class="cs-l">Armour training</span><div class="cs-train">${armTrain}</div>
+      <p class="kv"><b>Weapons</b>${esc([...X.P.weapons].join(", ") || "None")}</p><p class="kv"><b>Tools</b>${esc(X.P.tools.map((x) => x.t).join(", ") || "None")}</p>`);
+
+    // ---- right: fighting gear, then what makes you special ----
+    let right = `<div class="cs-quad">${stat("Initiative", sgn(X.init), sign?.initAdv ? "with Advantage" : "")}${stat("Speed", `${X.speed} ft`)}${stat("Size", race ? race.sizeText.split(" ")[0] : "—", race?.sizeText || "")}${stat("Passive Perception", 10 + X.per.b)}</div>`;
+    if (X.warnings.length) right += X.warnings.map((w) => `<p class="warn">${esc(w)}</p>`).join("");
+    right += box(`Weapons & Damage Cantrips${X.extraAttack ? " · two attacks" : ""}`, `<table class="atk"><thead><tr><th>Name</th><th>Atk / DC</th><th>Damage &amp; Type</th><th>Notes</th></tr></thead><tbody>${X.attacks.map((a) => `<tr><td>${esc(a.name)}</td><td>${sgn(a.hit)}</td><td>${esc(a.dmg)}</td><td>${esc(a.notes)}</td></tr>`).join("")}</tbody></table>`);
+    // class features
+    const cf = [];
+    if (cls) {
+      cf.push(...cls.features.map(([n]) => [n, `${cls.name} 1`]));
+      for (let n = 2; n <= L; n++) (cls.prog.features[n] || []).filter(([f]) => !/Subclass$|^Ability Score Improvement$/.test(f)).forEach(([f]) => cf.push([f, `${cls.name} ${n}`]));
+      if (L >= 3 && C.subclass) cf.push([`${C.subclass}${D.subclasses[cls.name]?.find((s) => s.name === C.subclass)?.old ? " *" : ""}`, D.subclassMech[C.subclass]?.note || "subclass · features in its book"]);
+      if (cls.id === "barbarian" && L >= 3 && C.primal) cf.push([`Primal Knowledge: ${C.primal}`, "Barbarian 3"]);
+      if (cls.prog.metamagic && L >= 2 && C.metamagic.filter(Boolean).length) cf.push([`Metamagic: ${C.metamagic.filter(Boolean).join(", ")}`, "Sorcerer 2"]);
+    }
+    if (C.order) cf.push([{ protector: "Divine Order: Protector", thaumaturge: "Divine Order: Thaumaturge", magician: "Primal Order: Magician", warden: "Primal Order: Warden" }[C.order], cls?.name]);
+    const invs = C.invocations.slice(0, at(cls?.prog?.invocations, L) || 0).filter(Boolean);
+    if (invs.length) cf.push([`Invocations: ${invs.join(", ")}`, "Warlock"]);
+    const mast = [...C.mastery.slice(0, at(cls?.prog?.mastery, L) || cls?.mastery || 0).filter(Boolean)];
+    if (mast.length) cf.push([`Weapon Mastery: ${mast.join(", ")}`, cls?.name]);
+    if (X.exp.filter(Boolean).length) cf.push([`Expertise: ${X.exp.filter(Boolean).join(", ")}`, cls?.name]);
+    const counters = cls ? Object.entries(cls.prog.counters || {}).map(([k, v]) => [k, at(v, L)]).filter(([, v]) => v) : [];
+    if (cls?.id === "bard") counters.push(["Bardic Inspiration uses", Math.max(1, S.m.Cha)]);
+    const featLine = ([n, f]) => `<p class="feat"><b>${esc(n)}</b> <span class="src">${esc(f || "")}</span></p>`;
+    right += box("Class Features", (counters.length ? `<p class="kv">${counters.map(([k, v]) => `<b>${esc(k)}</b>${esc(String(v))}`).join(" · ")}</p>` : "")
+      + (cf.length ? `<div class="cs-feat2">${cf.map(featLine).join("")}</div>` : `<p class="empty">Choose a class in Step 2.</p>`));
+    // species traits (with the Morrowind extras) and feats (the birthsign stands in for the Origin feat)
+    const st = [];
+    if (race) {
+      if (X.darkvision) st.push([`Darkvision ${X.darkvision} ft`, ""]);
+      if (race.resist?.length) st.push([`Resistance: ${race.resist.join(", ")} damage`, ""]);
+      if (race.adv?.length) st.push([`Advantage on ${race.adv.join("; ")}`, ""]);
+      if (C.sword) st.push([`Way of the Sword mastery: ${C.sword}`, ""]);
+      st.push(...race.traits.filter((x) => !(X.darkvision && x.name === "Darkvision")).map((x) => [x.name, ""]));
+      if (race.id === "nord") st.push([`Battle Cry DC ${8 + PB + S.m.Con}`, ""]);
+    }
+    const ft = [];
+    if (sign) {
+      ft.push(...sign.traits.map((x) => [x.name, sign.name]));
+      if (sign.id === "lord") ft.push(["Weakness: Disadvantage on saves against Fire damage effects", sign.name]);
+      if (sign.id === "apprentice") ft.push(["Weakness: spells deal +2 damage to you", sign.name]);
+      if (/save DC/.test(sign.traits.map((x) => x.text).join(" ")) && !(sign.spells || sign.cantripChoice || sign.extraSlots)) ft.push([`Birthsign save DC ${X.signSp.dc}`, ABN[C.signAbility]]);
+    }
+    if (C.style) ft.push([`Fighting Style: ${C.style}`, cls?.name]);
+    asiLevels().forEach((n) => { const d = lvData(n); if (!d.asi) return;
+      ft.push([d.asi === "asi" ? `Ability Score Improvement: ${d.asiMode === "11" ? [d.a1, d.a2].filter(Boolean).map((a) => `+1 ${a}`).join(", ") : d.a1 ? `+2 ${d.a1}` : ""}` : `${d.asi}${d.featAb ? ` (+1 ${d.featAb})` : ""}`, `level ${n}`]); });
+    right += `<div class="cs-pair">${box(race ? `Species Traits · ${race.short}` : "Species Traits", st.length ? st.map(featLine).join("") : `<p class="empty">Choose your people in Step 1.</p>`)}${box("Feats & Birthsign", ft.length ? ft.map(featLine).join("") : `<p class="empty">Your birthsign takes the place of an Origin feat.</p>`)}</div>`;
+
+    let h = `<section class="cs-pg cs-p1"><div class="cs-who">${who}</div><div class="cs-tough">${tough}</div><div class="cs-left">${left}</div><div class="cs-right">${right}</div></section>`;
+
+    // ---- page 2, left: spells and spellcasting ----
+    const rows = [];  // [level, name, source, notes]
+    let head = "";
     if (cls?.cast) {
-      const c = cls.cast, ct = castCantrips(cls), al = alwaysNow(cls);
-      sp.push(`<p class="kv"><b>${esc(cls.name)}</b>${ABN[c.ability]} · save DC ${X.spell.dc} · attack ${sgn(X.spell.atk)} · ${esc(slotsText(cls))}</p>`);
-      const list = (arr, n) => Array.from({ length: n }, (_, i) => arr[i] || "").map((x) => x ? esc(x) : `<span class="empty">blank</span>`).join(", ");
-      if (ct) sp.push(`<p class="kv"><b>Cantrips</b>${list(C.cantrips, ct)}</p>`);
-      sp.push(`<p class="kv"><b>Prepared</b>${list(C.prepared, castPrepared(cls))}${al.length ? `; always prepared: ${esc(al.join(", "))}` : ""}</p>`);
-      if (castSpellbook(cls)) sp.push(`<p class="kv"><b>Spellbook</b>${list(C.spellbook, castSpellbook(cls))}</p>`);
+      const c = cls.cast, al = alwaysNow(cls), lvlOf = spellLevel;
+      head = `<div class="cs-quad">${stat("Spellcasting Ability", ABN[c.ability], "", true)}${stat("Spellcasting Modifier", sgn(S.m[c.ability]))}${stat("Spell Save DC", X.spell.dc)}${stat("Spell Attack Bonus", sgn(X.spell.atk))}</div>`;
+      const pr = cls.prog || {}, slots = pr.slots === "pact" ? null : slotRow(cls) || [];
+      const pact = pr.slots === "pact" ? { n: at(pr.pact.count, L), l: at(pr.pact.level, L) } : null;
+      head += box(pact ? "Pact Magic Slots" : "Spell Slots", `<div class="cs-slots">${Array.from({ length: 9 }, (_, i) => { const n = pact ? (pact.l === i + 1 ? pact.n : 0) : slots[i] || 0;
+        return `<div class="${n ? "" : "off"}"><span class="cs-l">Level ${i + 1}</span><div class="cs-num">${n || "–"}</div><div class="ex">${"☐".repeat(n)}</div></div>`; }).join("")}</div>`);
+      castCantrips(cls) && Array.from({ length: castCantrips(cls) }, (_, i) => rows.push(["C", C.cantrips[i] || "", cls.name, ""]));
+      al.forEach((s) => rows.push([lvlOf(s), s, cls.name, "always prepared"]));
+      Array.from({ length: castPrepared(cls) }, (_, i) => rows.push([C.prepared[i] ? lvlOf(C.prepared[i]) : "", C.prepared[i] || "", cls.name, ""]));
     }
     if (race?.spells) {
-      const later = (race.spells.later || []).filter(([, l]) => l > LV());
-      const now = [...race.spells.cantrips, ...(C.raceSpell ? [C.raceSpell] : []), ...(race.spells.later || []).filter(([, l]) => l <= LV()).map(([s]) => s)];
-      sp.push(`<p class="kv"><b>${esc(race.short)}</b>${esc(now.join(", ") || "—")} · ${ABN[C.raceAbility]} · DC ${X.raceSp.dc} · attack ${sgn(X.raceSp.atk)}${later.length ? ` <span class="src">· later: ${esc(later.map(([n, l]) => `${n} (level ${l})`).join(", "))}</span>` : ""}</p>`);
+      race.spells.cantrips.forEach((s) => rows.push(["C", s, race.short, `${ABN[C.raceAbility]} · DC ${X.raceSp.dc}`]));
+      if (C.raceSpell) rows.push([1, C.raceSpell, race.short, "once per Long Rest without a slot"]);
+      (race.spells.later || []).forEach(([s, l]) => rows.push([l <= L ? spellLevel(s) : "", s, race.short, l <= L ? "once per Long Rest without a slot" : `from level ${l}`]));
     }
     if (sign) {
-      const ss = [...(sign.spells || []).map((s) => s[0]), ...C.signCantrips.filter(Boolean), ...C.signSpells.filter(Boolean)];
-      if (ss.length || sign.extraSlots) sp.push(`<p class="kv"><b>${esc(sign.name)}</b>${esc(ss.join(", ") || "")}${sign.extraSlots ? `${ss.length ? " · " : ""}${sign.extraSlots} extra level 1 slot${sign.extraSlots > 1 ? "s" : ""}` : ""} · ${ABN[C.signAbility]} · DC ${X.signSp.dc} · attack ${sgn(X.signSp.atk)}</p>`);
-      else if (/save DC/.test(sign.traits.map((t) => t.text).join(" "))) sp.push(`<p class="kv"><b>Birthsign save DC</b>${X.signSp.dc} (${ABN[C.signAbility]})</p>`);
+      (sign.spells || []).forEach(([s, l]) => rows.push([l, s, sign.name, sign.freeAtHalfPb ? `free once per Long Rest, cast at level ${Math.ceil(PB / 2)}` : "birthsign"]));
+      C.signCantrips.filter(Boolean).forEach((s) => rows.push(["C", s, sign.name, `${ABN[C.signAbility]} · DC ${X.signSp.dc}`]));
+      C.signSpells.filter(Boolean).forEach((s) => rows.push([1, s, sign.name, `${ABN[C.signAbility]} · DC ${X.signSp.dc}`]));
+      if (sign.extraSlots) rows.push(["", `${sign.extraSlots} extra level 1 slot${sign.extraSlots > 1 ? "s" : ""}`, sign.name, ""]);
     }
-    if (race?.id === "nord") sp.push(`<p class="kv"><b>Battle Cry DC</b>${8 + PB + S.m.Con}</p>`);
-    if (sp.length) h += `<h3>Spells</h3>` + sp.join("");
-    // Features
-    const feats = [];
-    if (race) feats.push(...race.traits.map((t) => [t.name, race.short]));
-    if (cls) {
-      feats.push(...cls.features.map(([n]) => [n, cls.name]));
-      for (let n = 2; n <= LV(); n++) (cls.prog.features[n] || []).filter(([f]) => !/Subclass$|^Ability Score Improvement$/.test(f)).forEach(([f]) => feats.push([f, `${cls.name} ${n}`]));
-      if (LV() >= 3 && C.subclass) feats.push([`Subclass: ${C.subclass}${D.subclasses[cls.name]?.find((s) => s.name === C.subclass)?.old ? " *" : ""}`, D.subclassMech[C.subclass]?.note || "features in its book"]);
-      asiLevels().forEach((n) => { const d = lvData(n); if (!d.asi) return;
-        feats.push([d.asi === "asi" ? `Ability Score Improvement: ${d.asiMode === "11" ? [d.a1, d.a2].filter(Boolean).map((a) => `+1 ${a}`).join(", ") : d.a1 ? `+2 ${d.a1}` : ""}` : `Feat: ${d.asi}${d.featAb ? ` (+1 ${d.featAb})` : ""}`, `level ${n}`]); });
-      if (cls.id === "barbarian" && LV() >= 3 && C.primal) feats.push([`Primal Knowledge: ${C.primal}`, "Barbarian 3"]);
-      if (cls.prog.metamagic && LV() >= 2 && C.metamagic.filter(Boolean).length) feats.push([`Metamagic: ${C.metamagic.filter(Boolean).join(", ")}`, "Sorcerer 2"]);
-    }
-    if (C.order) feats.push([{ protector: "Divine Order: Protector", thaumaturge: "Divine Order: Thaumaturge", magician: "Primal Order: Magician", warden: "Primal Order: Warden" }[C.order], cls?.name]);
-    if (C.style) feats.push([`Fighting Style: ${C.style}`, "Fighter"]);
-    const invs = C.invocations.slice(0, at(cls?.prog?.invocations, LV()) || 0).filter(Boolean);
-    if (invs.length) feats.push([`Invocations: ${invs.join(", ")}`, "Warlock"]);
-    if (C.mastery.filter(Boolean).length || C.sword) feats.push([`Weapon Mastery: ${[...C.mastery.filter(Boolean), C.sword].filter(Boolean).join(", ")}`, ""]);
-    if (X.exp.filter(Boolean).length) feats.push([`Expertise: ${X.exp.filter(Boolean).join(", ")}`, cls?.name]);
-    if (sign) feats.push(...sign.traits.map((t) => [t.name, sign.name]));
-    const counters = cls ? Object.entries(cls.prog.counters || {}).map(([k, v]) => [k, at(v, LV())]).filter(([, v]) => v) : [];
-    if (cls?.id === "bard") counters.push(["Bardic Inspiration uses", Math.max(1, S.m.Cha)]);
-    if (feats.length) h += `<h3>Features and traits</h3>` + (counters.length ? `<p class="kv">${counters.map(([k, v]) => `<b>${esc(k)}</b>${esc(String(v))}`).join(" · ")}</p>` : "") + feats.map(([n, f]) => `<p class="feat"><b>${esc(n)}</b> <span class="src">${esc(f || "")}</span></p>`).join("");
-    // Equipment
-    const eq = [];
-    let gold = 0;
+    let spells = head;
+    spells += box("Cantrips & Prepared Spells", rows.length ? `<table class="atk"><thead><tr><th>Lvl</th><th>Name</th><th>From</th><th>Notes</th></tr></thead><tbody>${rows.map(([l, n, f, note]) =>
+      `<tr><td>${esc(String(l))}</td><td>${n ? esc(spellLabel(n)) : `<span class="empty">blank</span>`}</td><td>${esc(f)}</td><td>${esc(note)}</td></tr>`).join("")}</tbody></table>` : `<p class="empty">No spells yet. Spellcasting classes, some peoples and some birthsigns give them.</p><div class="cs-lines"></div>`);
+    if (cls?.cast && castSpellbook(cls)) spells += box("Spellbook", `<p class="kv">${Array.from({ length: castSpellbook(cls) }, (_, i) => C.spellbook[i] ? esc(spellLabel(C.spellbook[i])) : `<span class="empty">blank</span>`).join(", ")}</p>`);
+
+    // ---- page 2, right: who you are beneath the stats ----
+    const eq = []; let gold = 0;
     if (cls) { const o = (D.equipment[cls.name] || [])[C.classEquip]; if (o) { if (o.text) eq.push(o.text); gold += o.gold; } }
     if (bg) { if (C.bgEquip === "package") { eq.push(bg.equipment); gold += bg.gold; } else gold += bg.altGold; }
-    if (eq.length || gold) h += `<h3>Equipment</h3>${eq.map((e) => `<p class="feat">${e.replace(/ and \d+ gp$/, "").replace(/,? and \d+ gp/, "")}</p>`).join("")}<p class="kv"><b>Gold</b>${gold} gp</p>`;
-    // Story
-    if (bg) h += `<h3>Story</h3><p class="kv"><b>Connection</b>${bg.connection}</p>`;
+    let beneath = box("Appearance", `<div class="cs-lines"></div>`);
+    beneath += box("Alignment", `<div class="cs-blank"></div>`);
+    beneath += box("Languages", `<p class="kv">${esc(X.P.langs.join(", "))}</p>`);
+    beneath += box("Equipment", `${eq.map((e) => `<p class="feat">${e.replace(/ and \d+ gp$/, "").replace(/,? and \d+ gp/, "")}</p>`).join("") || `<p class="empty">Choose gear in Step 6.</p>`}
+      <span class="cs-l">Magic item attunement</span><div class="cs-blank"></div><div class="cs-blank"></div><div class="cs-blank"></div>`);
+    beneath += box("Coins", `<div class="cs-coins">${["CP", "SP", "EP", "GP", "PP"].map((k) => `<div><span class="cs-l">${k}</span><div class="cs-num">${k === "GP" && gold ? gold : "&nbsp;"}</div></div>`).join("")}</div>`);
+    h += `<section class="cs-pg cs-p2"><div class="cs-spells"><p class="cs-pagehead">Page two</p>${spells}</div><div class="cs-beneath">${beneath}</div></section>`;
     $("#sheet").innerHTML = h;
   }
 
