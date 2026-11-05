@@ -6910,9 +6910,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const eq = []; let gold = 0;
     if (cls) { const o = (D.equipment[cls.name] || [])[C.classEquip]; if (o) { if (o.text) eq.push(o.text); gold += o.gold; } }
     if (bg) { if (C.bgEquip === "package") { eq.push(bg.equipment); gold += bg.gold; } else gold += bg.altGold; }
-    let beneath = box("Appearance", `<div class="cs-lines"></div>`);
-    beneath += box("Alignment", `<div class="cs-blank"></div>`);
-    beneath += box("Languages", `<p class="kv">${esc(X.P.langs.join(", "))}</p>`);
+    let beneath = box("Languages", `<p class="kv">${esc(X.P.langs.join(", "))}</p>`);
     const K = carrying(X), pct = Math.min(100, Math.round((K.total / Math.max(1, K.capacity)) * 100));
     beneath += box("Equipment", `<p class="kv"><b>Carrying</b>${lbText(K.total)} of ${lbText(K.capacity)} · push, drag or lift ${lbText(K.drag)}</p><div class="cs-meter${K.total > K.capacity ? " over" : ""}" role="img" aria-label="${pct}% of carrying capacity"><span style="width:${pct}%"></span></div>${eq.map((e) => `<p class="feat">${e.replace(/ and \d+ gp$/, "").replace(/,? and \d+ gp/, "")}</p>`).join("") || `<p class="empty">Choose gear in Step 6.</p>`}
       <span class="cs-l">Magic item attunement</span><div class="cs-blank"></div><div class="cs-blank"></div><div class="cs-blank"></div>`);
