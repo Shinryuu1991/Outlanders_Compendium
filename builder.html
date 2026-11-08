@@ -241,7 +241,6 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   <label class="sr" for="who">Character</label>
   <select id="who"></select>
   <button class="btn" type="button" id="newBtn">New</button>
-  <button class="btn primary" type="button" id="lvlBtn">Level up</button>
   <button class="btn" type="button" id="copyBtn">Copy sheet</button>
   <button class="btn" type="button" id="codeBtn">Save code</button>
   <button class="btn" type="button" id="loadBtn">Load code</button>
@@ -7073,13 +7072,6 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
   }
   $("#who").addEventListener("change", (e) => { C = chars.find((c) => c.id === e.target.value) || C; refresh(true); });
   $("#newBtn").addEventListener("click", () => { C = blank(); chars.push(C); refresh(true); window.scrollTo(0, 0); });
-  $("#lvlBtn").addEventListener("click", () => {
-    if (!C.cls) return toast("Choose a class first");
-    if (LV() >= MAX_LEVEL) return toast(`Levels above ${MAX_LEVEL} aren't in the builder yet`);
-    C.level = LV() + 1; openSteps.add(`L${C.level}`); store.set("op-open", JSON.stringify([...openSteps])); refresh(true);
-    const card = $(`[data-step="L${C.level}"]`); if (card) card.scrollIntoView({ block: "start", behavior: "smooth" });
-    toast(`Level ${C.level}`);
-  });
   let delArmed = false;
   $("#delBtn").addEventListener("click", (e) => {
     if (!delArmed) { delArmed = true; e.target.textContent = "Delete? Tap again"; setTimeout(() => { delArmed = false; e.target.textContent = "Delete"; }, 3500); return; }
