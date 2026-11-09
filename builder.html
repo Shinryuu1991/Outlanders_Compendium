@@ -3060,7 +3060,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 {
 "id": "lady",
 "name": "The Lady",
-"month": "Heartfire (September)",
+"month": "Hearthfire (September)",
 "guardian": "Warrior",
 "brief": "Persuasion, extra hit points and faster recovery",
 "flavour": "Those born under the Lady are kind, tolerant and hard to wear down.",
@@ -3090,7 +3090,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 {
 "id": "steed",
 "name": "The Steed",
-"month": "Mid Year (June)",
+"month": "Midyear (June)",
 "guardian": "Warrior",
 "brief": "Faster movement, Athletics and quick reactions",
 "flavour": "Those born under the Steed are restless and impatient, always in a hurry to be somewhere else.",
@@ -3930,8 +3930,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 "spellSource": {
 "Soul Trap": {
-"book": "House Rules",
-"anchor": "guide-house-rules--soul-trap"
+"book": "Survival and Crafting",
+"anchor": "guide-survival-and-crafting--soul-trap"
 }
 },
 "subclasses": {
@@ -6306,7 +6306,10 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
     const root = HOST.document.documentElement;
     const syncTheme = () => { if (root.dataset.theme) document.documentElement.dataset.theme = root.dataset.theme; else delete document.documentElement.dataset.theme; };
     syncTheme(); new MutationObserver(syncTheme).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
-    document.addEventListener("click", (e) => { const a = e.target.closest("a[data-guide]"); if (a) { e.preventDefault(); HOST.compendiumGo(a.dataset.guide); } });
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[data-guide]"); if (a) { e.preventDefault(); HOST.compendiumGo(a.dataset.guide); return; }
+      if (e.target.closest("a.brand")) e.preventDefault();   // inside the compendium the title goes nowhere (it would add a stray step to the compendium's Back)
+    });
   }
   const $ = (s, r = document) => r.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
