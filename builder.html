@@ -483,11 +483,11 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "traits": [
 {
 "name": "Beast Tongue",
-"text": "<p>At level 3, you learn <i>Speak with Animals<\/i>.<\/p>"
+"text": "<p>At level 3, you learn <i>Speak with Animals<\/i>.<\/p><p>You can also command a beast outright. As a Magic action, choose a Beast you can see within 60 feet of you. It must succeed on a Wisdom saving throw against your racial spell save DC or have the Charmed condition for 1 minute. The effect ends early if you or your allies damage the Beast. Once you use this command, you can't do so again until you finish a long rest.<\/p>"
 },
 {
 "name": "Bosmer Archery",
-"text": "<p>You have proficiency with Longbows and Shortbows.<\/p>"
+"text": "<p>You have proficiency with Longbows and Shortbows. Your attacks with them ignore Half Cover, and attacking at long range doesn't impose Disadvantage on them.<\/p>"
 },
 {
 "name": "Darkvision",
@@ -500,6 +500,10 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 {
 "name": "Keen Senses",
 "text": "<p>You have proficiency in your choice of Insight, Perception or Survival.<\/p>"
+},
+{
+"name": "Resist Disease",
+"text": "<p>You have Advantage on saving throws against disease.<\/p>"
 },
 {
 "name": "Trance",
@@ -516,7 +520,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "darkvision": 60,
 "spellAbility": true,
 "adv": [
-"saves against the Charmed condition"
+"saves against the Charmed condition",
+"saves against disease"
 ],
 "weapons": [
 "Long bow",
@@ -564,7 +569,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 {
 "name": "Dragonskin",
-"text": "<p>When you take damage from a spell, you can take a Reaction to halve that damage, absorbing some of the spell's energy. You also regain one expended level 1 spell slot, if you have one. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+"text": "<p>When you take damage of any type other than Bludgeoning, Piercing or Slashing, you can take a Reaction to halve that damage, absorbing some of its energy. You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a long rest. The first time you use it after a long rest, you also regain one expended level 1 spell slot, if you have one.<\/p>"
 },
 {
 "name": "Higher Education",
@@ -572,7 +577,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 },
 {
 "name": "Resist Magicka",
-"text": "<p>You have Advantage on saving throws against spells and cantrips that deal damage.<\/p>"
+"text": "<p>You have Advantage on saving throws against spells and other magical effects.<\/p>"
 }
 ],
 "id": "breton",
@@ -580,7 +585,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "speed": 30,
 "darkvision": 60,
 "adv": [
-"saves against spells and cantrips that deal damage"
+"saves against spells and other magical effects"
 ],
 "skills": {
 "choose": [
@@ -740,7 +745,11 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "traits": [
 {
 "name": "Claws",
-"text": "<p>Your claws are natural weapons you can use for Unarmed Strikes. A hit deals Slashing damage equal to 1d6 plus your Strength modifier, instead of the normal Bludgeoning damage.<\/p>"
+"text": "<p>Your claws are natural weapons you can use for Unarmed Strikes. A hit deals Slashing damage equal to 1d6 plus your Strength modifier, instead of the normal Bludgeoning damage. You can use your Dexterity modifier instead of your Strength modifier for the attack and damage rolls of your claws.<\/p>"
+},
+{
+"name": "Eye of Fear",
+"text": "<p>As a Bonus Action, you fix a predator's stare on a creature you can see within 30 feet of you. If it can see you, it must succeed on a Wisdom saving throw (DC 8 + your Constitution modifier + your Proficiency Bonus) or have the Frightened condition for 1 minute. It repeats the save at the end of each of its turns, ending the effect on itself on a success. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
 },
 {
 "name": "Eye of Night",
@@ -770,7 +779,8 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "Perception",
 "Stealth"
 ]
-}
+},
+"finesseClaws": true
 },
 {
 "name": "Nords",
@@ -3165,20 +3175,20 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "name": "The Atronach",
 "month": "Sun's Dusk (November)",
 "guardian": "Mage",
-"brief": "Extra spell slots and spell absorption; slow recovery",
+"brief": "A deep reserve of spell slots that refills slowly; spell absorption",
 "flavour": "Those born under the Atronach are born spellcasters with vast reserves of power. They can't replenish that power naturally, so they draw it from the spells cast at them.",
 "traits": [
 {
 "name": "Deep Reserve",
-"text": "<p>You have two extra spell slots, as described above. You regain them when you finish a long rest, subject to Stunted Magicka.<\/p>"
+"text": "<p>You have a reserve of extra spell slots, as described above. The reserve holds a number of slots equal to your Proficiency Bonus, and it's full when you create your character.<\/p>"
 },
 {
 "name": "Spell Absorption",
-"text": "<p>When you succeed on a saving throw against a spell, or a spell attack roll against you misses, you can take a Reaction to regain one expended spell slot. The slot's level can be no higher than half your Proficiency Bonus, rounded up.<\/p>"
+"text": "<p>When you succeed on a saving throw against a spell, or a spell attack roll against you misses, you can take a Reaction to regain one expended slot of your reserve.<\/p>"
 },
 {
 "name": "Stunted Magicka",
-"text": "<p>Whenever a short or long rest would restore all your expended spell slots, you instead regain only half of them, rounded up. You choose which ones.<\/p>"
+"text": "<p>Rest doesn't refill your reserve the way it refills other magic. When you finish a long rest, you regain only one expended slot of your reserve. Your other spell slots aren't affected.<\/p>"
 }
 ],
 "extraSlots": 2,
@@ -3214,16 +3224,16 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "name": "The Lover",
 "month": "Sun's Dawn (February)",
 "guardian": "Thief",
-"brief": "A stunning touch and a graceful skill",
+"brief": "A paralysing touch that tires you; a graceful skill",
 "flavour": "Those born under the Lover are graceful and passionate. Their touch can stop a person in their tracks, at some cost to themselves.",
 "traits": [
 {
 "name": "Lover's Kiss",
-"text": "<p>As a Magic action, you can touch a creature within reach. It must make a Wisdom saving throw against your birthsign save DC. On a failure, it has the Incapacitated condition and its Speed is 0 until the end of its next turn. Afterward, you have Disadvantage on attack rolls until the end of your next turn. Once you use this trait, you can't do so again until you finish a long rest.<\/p>"
+"text": "<p>As a Bonus Action, you can touch a creature within reach. It must make a Wisdom saving throw against your birthsign save DC. On a failure, it has the Paralyzed condition until the start of your next turn. Each time you use this trait, you gain 1 Exhaustion level.<\/p>"
 },
 {
 "name": "Lover's Grace",
-"text": "<p>You have proficiency in your choice of Acrobatics or Performance.<\/p>"
+"text": "<p>You have proficiency in your choice of Acrobatics or Performance. Opportunity Attacks against you have Disadvantage.<\/p>"
 }
 ],
 "skills": {
@@ -3244,12 +3254,12 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "name": "The Shadow",
 "month": "Second Seed (May)",
 "guardian": "Thief",
-"brief": "Brief invisibility",
+"brief": "Invisibility, and a strike from the dark",
 "flavour": "Those born under the Shadow can hide in plain sight, wrapping themselves in darkness when they need to.",
 "traits": [
 {
 "name": "Moonshadow",
-"text": "<p>As a Bonus Action, you can give yourself the Invisible condition until the end of your next turn. It ends early if you make an attack roll, deal damage or cast a spell. Once you use this trait, you can't do so again until you finish a short or long rest.<\/p>"
+"text": "<p>As a Bonus Action, you can give yourself the Invisible condition for 1 minute. It ends early immediately after you make an attack roll, deal damage or cast a spell. If the attack roll that ends it hits, the target takes an extra 1d6 damage of the attack's type. Once you use this trait, you can't do so again until you finish a short or long rest.<\/p><p>The extra damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6) and 17 (4d6).<\/p>"
 }
 ]
 },
@@ -3289,12 +3299,12 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "name": "The Serpent",
 "month": "None",
 "guardian": "None",
-"brief": "Poisonous touches that hurt you too; shrugging off ailments",
+"brief": "A lingering poison touch that hurts you too; shrugging off ailments",
 "flavour": "The Serpent wanders the sky with no season and no master. Those born under it are said to be both the most blessed and the most cursed of all. Its gift is poison, and it never comes free.",
 "traits": [
 {
 "name": "Star-Curse",
-"text": "<p>As a Magic action, you can touch a creature within reach. It must make a Constitution saving throw against your birthsign save DC. On a failure, it takes 3d6 Poison damage and has the Poisoned condition for 1 minute; it repeats the save at the end of each of its turns, ending the condition on a success. On a success, it takes half as much damage and isn't Poisoned. This damage ignores Resistance to Poison damage. You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a long rest.<\/p><p>The damage increases by 1d6 when you reach levels 5 (4d6), 11 (5d6) and 17 (6d6).<\/p>"
+"text": "<p>As a Bonus Action, you can touch a creature within reach. It must make a Constitution saving throw against your birthsign save DC. On a failure, it is cursed for 1 minute. While cursed, it has the Poisoned condition and takes 1d6 Poison damage at the start of each of its turns. It repeats the save at the end of each of its turns, ending the curse on a success. This damage ignores Resistance to Poison damage. You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a long rest.<\/p><p>The damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6) and 17 (4d6).<\/p>"
 },
 {
 "name": "Shed Skin",
@@ -6499,7 +6509,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
         notes: [w.props !== "—" ? w.props : "", C.mastery.slice(0, at(pr.mastery, L) || cls?.mastery || 0).includes(w.name) || C.sword === w.name ? `Mastery: ${w.mastery}` : "", sm.crit ? `crit on ${sm.crit}–20` : "", p ? "" : "not proficient"].filter(Boolean).join("; ") });
     });
     const ua = race?.unarmed, ma = cls?.martialArts ? at(pr.martialDie, L) || cls.martialArts : null;
-    const uaM = ma ? Math.max(strM, dexM) : strM;
+    const uaM = ma || race?.finesseClaws ? Math.max(strM, dexM) : strM;
     attacks.push({ name: ua ? `${ua[2]} (Unarmed Strike)` : "Unarmed Strike", hit: uaM + PB,
       dmg: ua || ma ? `${ma && (!ua || ma >= ua[0]) ? ma : ua[0]} ${sgn(uaM)} ${ua ? ua[1] : "Bludgeoning"}` : `${Math.max(1, 1 + strM)} Bludgeoning`, notes: "" });
     // Spellcasting
@@ -6863,6 +6873,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
       if (C.sword) st.push([`Way of the Sword mastery: ${C.sword}`, ""]);
       st.push(...race.traits.filter((x) => !(X.darkvision && x.name === "Darkvision")).map((x) => [x.name, ""]));
       if (race.id === "nord") st.push([`Battle Cry DC ${8 + PB + S.m.Con}`, ""]);
+      if (race.id === "khajiit") st.push([`Eye of Fear DC ${8 + PB + S.m.Con}`, ""]);
     }
     const ft = [];
     if (sign) {
