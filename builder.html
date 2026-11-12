@@ -774,13 +774,13 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
 "Slashing",
 "Claws"
 ],
+"finesseClaws": true,
 "skills": {
 "fixed": [
 "Perception",
 "Stealth"
 ]
-},
-"finesseClaws": true
+}
 },
 {
 "name": "Nords",
@@ -6509,7 +6509,7 @@ dialog textarea { min-height: 8rem; font-family: ui-monospace, monospace; font-s
         notes: [w.props !== "—" ? w.props : "", C.mastery.slice(0, at(pr.mastery, L) || cls?.mastery || 0).includes(w.name) || C.sword === w.name ? `Mastery: ${w.mastery}` : "", sm.crit ? `crit on ${sm.crit}–20` : "", p ? "" : "not proficient"].filter(Boolean).join("; ") });
     });
     const ua = race?.unarmed, ma = cls?.martialArts ? at(pr.martialDie, L) || cls.martialArts : null;
-    const uaM = ma || race?.finesseClaws ? Math.max(strM, dexM) : strM;
+    const uaM = ma || race?.finesseClaws ? Math.max(strM, dexM) : strM;   // a Khajiit's claws can use Dexterity
     attacks.push({ name: ua ? `${ua[2]} (Unarmed Strike)` : "Unarmed Strike", hit: uaM + PB,
       dmg: ua || ma ? `${ma && (!ua || ma >= ua[0]) ? ma : ua[0]} ${sgn(uaM)} ${ua ? ua[1] : "Bludgeoning"}` : `${Math.max(1, 1 + strM)} Bludgeoning`, notes: "" });
     // Spellcasting
